@@ -1158,18 +1158,8 @@ child_process.fork( modulePath );
 该方法是spawn()的特殊情景，用于派生Node进程。除了普通ChildProcess实例所具有的所有方法，所返回的对象还具有内建的通讯通道。
 
 
-
 ## 8.6 课程小结
 ### 课程小结
 
 恭喜你学完了本节课程，关于**child_process**的四个函数的基本简单用法，就先讲到这里了，如果您还想深入了解学习的话,可以参考以下地址：
-
-<div class="list-group">
-<a class="list-group-item" traget='_blank' href='http://nodejs.cn/api/child_process'>
-http://nodejs.cn/api/child_process
-</a>
-<a class="list-group-item" traget='_blank' href='http://nodeapi.ucdok.com/#/api/child_process.html'>
-http://nodeapi.ucdok.com/#/api/child_process.html
-</a>
-
-
+http://nodejs.cn/api/child_process.html
