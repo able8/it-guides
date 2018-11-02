@@ -48,7 +48,6 @@
     - [5.5 basename函数返回路径中最后部分](#55-basename函数返回路径中最后部分)
     - [5.6 extname函数返回路径中文件扩展名](#56-extname函数返回路径中文件扩展名)
     - [5.7 课程小结](#57-课程小结)
-- [课程小结](#课程小结)
 - [6 Node.js 字符串转换](#6-nodejs-字符串转换)
     - [6.1 字符串转换简介](#61-字符串转换简介)
     - [6.2 stringify函数序列化node.js对象](#62-stringify函数序列化nodejs对象)
@@ -303,13 +302,7 @@ process.stderr.setEncoding(编码);
 ## 2.10 本节教程小结
 ### 课程小结
 
-process的常用方法就讲到这里了，如果你想了解更多可以参考以下地址：
-
-<div class="list-group">
-<a href="http://nodejs.cn/api/process">
-http://nodejs.cn/api/process
-</a>
-<a href="http://nodeapi.ucdok.com/#/api/process.html">http://nodeapi.ucdok.com/#/api/process.html</a>
+process的常用方法就讲到这里了，如果你想了解更多可以参考以下地址：http://nodejs.cn/api/process.html
 
 # 3 Node.js 文件I/O
 
@@ -767,9 +760,7 @@ console.log(data);
 
 ## 5.7 课程小结
 
-# 课程小结
-
-</div>
+### 课程小结
 
 很高兴您学完了本节课程，关于path的一些常用方法就先讲到这里了，如果您还想了解更多的话,可以参考以下地址：
 http://nodejs.cn/api/path.html
