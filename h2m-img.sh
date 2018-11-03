@@ -1,8 +1,8 @@
 # !/bin/bash
 set -e
 
-Name='Meteor开发平台入门'
-BookUrl='http://cw.hubwiz.com/card/c/55b87a7b3ad79a1b05dcc339/1/1/1/'
+Name='MongoDB教程'
+BookUrl='http://cw.hubwiz.com/card/c/54bdfcb188dba012b4b95c9c/1/1/1/'
 rm -rf tmp/${Name}
 mkdir -p tmp/${Name}
 cd tmp/${Name}
@@ -64,7 +64,7 @@ do
     sed -E 's#<kbd>#> #g;s#</kbd>##g' |\
     sed "s/&#39;/'/g" | sed 's/&quot;/"/g' | sed 's/&lt;/</g;s/&gt;/>/g' | \
     sed -E 's/<code>|<\/code>/`/g;s/<\/p>/∑/g' | tr '∑' '\n' |\
-    sed '/<\/div>/N;/article>/d' | sed '/cw-exe/N;s/<div class[^>]*>\n/∑> /g'|\
+    sed '/<\/div>/N;/article>/d' | sed '/cw-/N;s/<div class[^>]*>\n/∑> /g'|\
     sed "s#img/#images/${DirName}/#g" |\
     tr '∑' '\n' >> ${MdFileName}
 done
