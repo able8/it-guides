@@ -68,3 +68,6 @@ do
     sed "s#img/#images/${DirName}/#g" |\
     tr '∑' '\n' >> ${MdFileName}
 done
+
+# 去掉连续的空行。sed 原处修改文件，兼容 macOS 和 Linux 写法。
+sed -i'' -e '/^$/N;/\n$/D' ${MdFileName}

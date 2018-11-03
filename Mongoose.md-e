@@ -69,6 +69,8 @@ Mongoose能做什么？
 
 $v.vtutor.say('欢迎学习『基础介绍』课程！');
 
+
+
 ## 1.2 如何安装引用连接对象模型库Mongoose
 ### 安装引用
 
@@ -81,19 +83,26 @@ $v.vtutor.say('欢迎学习『基础介绍』课程！');
 npm install mongoose
 ```
 
+
+
 - 引用mongoose：
+
 
 ```bash
 var mongoose = require("mongoose");
 ```
 
+
 - 使用"mongoose"连接数据库：
+
 
 ```bash
 var db = mongoose.connect("mongodb://user:pass@localhost:port/database");
 ```
 
+
 - 执行下面代码检查默认数据库test，是否可以正常连接成功?
+
 
 ```bash
 var mongoose = require("mongoose");
@@ -106,7 +115,9 @@ db.connection.on("open", function () {
 });
 ```
 
+
 > 有兴趣的话，试试console数据库连接对象“db”，看看返回值都有什么？
+
 
 ## 1.3 了解MongoDB中的集合Collection
 ### 了解集合
@@ -127,6 +138,7 @@ db.connection.on("open", function () {
 
 　　好，下面就开始去深入了解它们吧！
 
+
 ## 1.4 Schema文件形式存储的数据库模型骨架
 ### Schema简述
 
@@ -146,7 +158,9 @@ var TestSchema = new mongoose.Schema({
 
 　　基本属性类型有：字符串、日期型、数值型、布尔型(Boolean)、null、数组、内嵌文档等。
 
+
 > 定义一个Schema对象，名称为tschema，由属性name(String类型)、age(Number类型，默认为18)、gender(Boolean类型，默认为true)组成，动手试一试！
+
 
 ```bash
 var mongoose = require("mongoose");
@@ -156,6 +170,7 @@ var tschema= new mongoose.Schema({
     gender: { type: Boolean, default: true }
 });
 ```
+
 
 ## 1.5 用Model进行数据库管理操作
 ### Model简述
@@ -176,7 +191,9 @@ var TestModel = db.model("test1", TestSchema);
 
 　　如果你想对某个集合有所作为，那就交给Model模型来处理吧，创建一个Model模型，我们需要指定：1.集合名称，2.集合的Schema结构对象，满足这两个条件，我们就会拥有一个操作数据库的金钥匙。
 
+
 > 使用预置代码创建一个Model对象(默认连接数据库test)，试一试？
+
 
 ```bash
 var db = mongoose.connect("mongodb://127.0.0.1:27017/test");
@@ -201,6 +218,7 @@ console.log(TestEntity.age); // 36
 ```
 
 　　创建成功之后，Schema属性就变成了Model和Entity的公共属性了。
+
 
 > 使用预置代码创建一个Entity对象并为其属性赋值，然后console其属性查看是否有值？
 
@@ -244,6 +262,9 @@ TestEntity.save(function(error,doc){
 
 <div class='cw-exe'>由于此处代码量过多，可运行以上代码直接来创建test1集合，然后查看运行结果的返回值是什么，test1是否创建成功？
 
+
+
+
 ## 1.8 课程小结
 ### 课程小结
 
@@ -258,6 +279,8 @@ TestEntity.save(function(error,doc){
  *Entity* ：通过Model创建的实体，它也可以操作数据库。
 
 在下节课程里，我们将对数据库进行实战性的操作了，也就是增删改查，继续加油吧！
+
+
 
 # 2 Mongoose 增删改查
 
@@ -284,6 +307,7 @@ Model.find({ "age": 28 }, function (error, docs) {
 });
 ```
 
+
 > 参考示例，查询全部文档并console输出所有结果？
 
 ```bash
@@ -308,6 +332,7 @@ Model.create({ name:"model_create", age:26}, function(error,doc){
     }
 });
 ```
+
 
 > 参考示例，用create方法为集合“test1”添加一条数据(包含属性name、age、email)，并console输出返回值？
 
@@ -341,6 +366,7 @@ Entity.save(function(error,doc) {
 ```
 
 　　model调用的是create方法，entity调用的是save方法，记住了嘛！
+
 
 > 参考示例，用save方法为集合“test1”添加一条数据(包含属性name、age、email)，并console输出返回值？
 
@@ -378,6 +404,7 @@ TestModel.update(conditions, update, function(error){
 
 　　更新后find一下，此时数据已经修改成功了！
 
+
 > 结合find查询功能，去update某些数据，试试是否可以成功？
 
 ## 2.5 remove删除MongoDB数据
@@ -401,6 +428,7 @@ TestModel.remove(conditions, function(error){
 
 和update类似吧，有了remove方法我们就可以进行删除操作了，看了上面的示例，接着看下下面的问题吧！
 
+
 > 结合find的查询功能试一试remove某些数据，然后查询是否成功？
 
 ## 2.6 课程小结
@@ -419,6 +447,8 @@ TestModel.remove(conditions, function(error){
 　　删除：obj.remove(查询条件,callback)，根据条件删除相关数据。
 
 在下节课程里，我们详细讲诉关于查询的各种方法，继续加油吧！
+
+
 
 # 3 Mongoose 简单查询
 
@@ -452,6 +482,8 @@ TestModel.create([
 
 以上数据仅供后面测试，可以自行修改属性值，但是必须符合我们之前所定义集合属性，否则出错就...
 
+
+
 ## 3.2 用find过滤查询MongoDB数据记录
 ### find 过滤查询
 
@@ -470,7 +502,9 @@ Model.find({},{name:1, age:1, _id:0}，function(err,docs){
 
 说明：我们只需要把显示的属性设置为大于零的数就可以，当然1是最好理解的，_id是默认返回，如果不要显示加上("_id":0)，但是，对其他不需要显示的属性且不是_id，如果设置为0的话将会抛异常或查询无果。
 
+
 > 参考示例，查询只包含name和email属性的全部文档并console输出。
+
 
 ```bash
 TestModel.find({},{name:1, email:1, _id:0},function(err,docs){
@@ -494,6 +528,7 @@ TestModel.findOne({ age: 27}, function (err, doc){
 
 findOne方法，只返回第一个符合条件的文档数据。
 
+
 > 查看具有相同条件的N条数据，测试findOne方法是否真的只返回第一个符合条件的文档数据呢？
 
 ## 3.4 用findById查询指定Id的数据文档
@@ -511,6 +546,7 @@ TestModel.findById('obj._id', function (err, doc){
 
 同样是单条数据，findById和findOne还是有些区别的。
 
+
 > 根据_id属性值，试一试使用findById方法获取单个文档对象。
 
 ## 3.5 课程小结
@@ -520,13 +556,22 @@ TestModel.findById('obj._id', function (err, doc){
 
 简单回顾：
 
+
+
 - find过滤查询 ：find查询时我们可以过滤返回结果所显示的属性个数。
+
 
 - findOne查询 ：只返回符合条件的首条文档数据。
 
+
 - findById查询：根据文档_id来查询文档。
 
+
+
+
 在下节课程里，我们将学习”高级查询“，继续加油吧！
+
+
 
 # 4 Mongoose 高级查询
 
@@ -538,6 +583,8 @@ TestModel.findById('obj._id', function (err, doc){
 　　"$lt"(小于)，"$lte"(小于等于),"$gt"(大于)，"$gte"(大于等于)，"$ne"(不等于)，"$in"(可单值和多个值的匹配)，"$or"(查询多个键值的任意给定值)，"$exists"(表示是否存在的意思)"$all"。
 
 　　看了上面的简单介绍，下面就来详细的学习它们都各自拥有什么样的功能吧！
+
+
 
 ## 4.2 MongoDB比较数据时大于$gt、小于$lt
 ### $gt、$lt简述
@@ -560,8 +607,10 @@ Model.find({"age":{"$gt":18,"$lt":60}},function(error,docs){
 
 　　如果我们要对类似age字段的数据进行筛选，使用$gt、$lt是不是很方便快捷呢！
 
+
 > 参考示例，查询20≤age≤50的所有文档并console输出。
 </div>
+
 
 ```bash
 TestModel.find({"age":{"$gte":20,"$lte":50}},function(error,docs){
@@ -587,8 +636,10 @@ Model.find({name:{$ne:"tom"},age:{$gte:18}},function(error,docs){
 
 $ne可以匹配单个值，也可以匹配不同类型的值。
 
+
 > 综上学习，试一试查询name不为"test4"且age小于27的所有文档并console输出。
 </div>
+
 
 ```bash
 TestModel.find({name:{$ne:"test4"},age:{$lt:27}},function(error,docs){
@@ -613,8 +664,10 @@ Model.find({ age:{$in:[20,30]}},function(error,docs){
 
 $in和$ne除了条件判定不同，用法是不是很相似呀！
 
+
 > 参考示例，查询age为24、25、27的所有文档并console输出。
 </div>
+
 
 ```bash
 TestModel.find({ age: {$in:[24,25,27]}},function(error,docs){
@@ -636,8 +689,10 @@ Model.find({"$or":[{"name":"yaya"},{"age":28}]},function(error,docs){
 
 $or操作符和$in操作符相比较，有什么不同和相同呢，想一想?
 
+
 > 综上示例，试一试查询name为”test4“或者age为27的的所有文档并console输出。
 </div>
+
 
 ```bash
 TestModel.find({$or:[{ name:"test4"},{age:27}]},function(error,docs){
@@ -659,8 +714,10 @@ Model.find({telephone: {$exists: false}},function(error,docs){
 });
 ```
 
+
 > 参考示例，试一试使用$exists操作符来判定存在属性email的所有文档并console输出。
 </div>
+
 
 ```bash
 TestModel.find({email: {$exists: true}},function(error,docs){
@@ -687,6 +744,8 @@ TestModel.find({email: {$exists: true}},function(error,docs){
 
 　　在下节课程里，我们将学习”游标“，继续加油！
 
+
+
 # 5 Mongoose 游标
 
 ## 5.1 MongoDB学习游标的入门使用
@@ -697,6 +756,8 @@ TestModel.find({email: {$exists: true}},function(error,docs){
 　　最常用的查询选项就是限制返回结果的数量(limit函数)、忽略一点数量的结果(skip函数)以及排序(sort函数)。所有这些选项一点要在查询被发送到服务器之前指定。
 
 看了上面的简单介绍，是不是已经对它们产生了兴趣，下面我们就来近距离的了解它吧！
+
+
 
 ## 5.2 limit函数限制游标返数据结果数量
 ### limit函数的基本用法
@@ -713,8 +774,10 @@ Model.find({},null,{limit:20},function(err,docs){
 
 　　如果匹配的结果不到20个，则返回匹配数量的结果，也就是说limit函数指定的是上限而非下限。
 
+
 > 　　试一试查询以age为条件、过滤属性为null的所有文档并console输出，但必须使用limit函数来限制返回的文档数量。
 </div>
+
 
 ```bash
 TestModel.find({age:27},null,{limit:4},function(err,docs){
@@ -737,8 +800,10 @@ Model.find({},null,{skip:4},function(err,docs){
 
 如果查询结果数量中少于4个的话，则不会返回任何结果。
 
+
 > 查询以age为条件、过滤属性为null的所有文档并console输出而且使用skip函数来跳过N条文档。
 </div>
+
 
 ```bash
 TestModel.find({age:27},null,{skip:2},function(err,docs){
@@ -761,8 +826,10 @@ Model.find({},null,{sort:{age:-1}},function(err,docs){
 
 　　sort函数可根据用户自定义条件有选择性的来进行排序显示数据结果。
 
+
 > 　　结合前面的学习，试一试查询所有文档(只显示属性name和age)且按照age升序展示结果，并console输出所有文档。
 </div>
+
 
 ```bash
 TestModel.find({},
@@ -788,6 +855,8 @@ TestModel.find({},
 
 　　好，到这里我们就暂时结束了游标的学习，通过本节课程的学习，相信对你也有了一定的帮助和提升，再接再厉，继续加油吧！
 
+
+
 # 6 Mongoose 属性方法
 
 ## 6.1 mongodb中文档的ObjectId类型
@@ -797,10 +866,14 @@ TestModel.find({},
 
 使用过MySQL等关系型数据库的友友们都知道，主键都是设置成自增的。但在分布式环境下，这种方法就不可行了，会产生冲突。为此，MongoDB采用了一个称之为ObjectId的类型来做主键。ObjectId是一个12字节的  BSON 类型字符串。按照字节顺序，一次代表：
 
+
+
 - 4字节：UNIX时间戳
 - 3字节：表示运行MongoDB的机器
 - 2字节：表示生成此_id的进程
 - 3字节：由一个随机数开始的计数器生成的值
+
+
 
 ```bash
 var mongoose = require('mongoose');
@@ -808,6 +881,8 @@ var tSchema = new mongoose.Schema({}); //默认_id:ObjectId类型
 ```
 
 　　每一个文档都有一个特殊的键“_id”，这个键在文档所属的集合中是唯一的。
+
+
 
 ## 6.2 用Schema模型来添加属性
 ### Schema添加属性值
@@ -819,6 +894,7 @@ var mongoose = require('mongoose');
 var TempSchema = new mongoose.Schema;
 TempSchema.add({ name: 'String', email: 'String', age: 'Number' });
 ```
+
 
 > 　　console一下，TempSchema前后有什么变化呢！
 
@@ -837,6 +913,7 @@ var say = mongoose.model('say', saySchema);
 var lenka = new say();
 lenka.say(); //Trouble Is A Friend
 ```
+
 
 > 是不是很简单，赶快自己定义一个实例方法试试效果吧！
 
@@ -865,6 +942,7 @@ TestModel.findByName('tom', function (err, docs) {
 });
 ```
 
+
 > 试一试，自己动手去创建一个自定义的静态方法，该怎么实现？
 
 ## 6.5 Schema模型来追加一个属性方法
@@ -892,5 +970,6 @@ var TestModel = db.model('test1',TestSchema);
 var TestEntity = new TestModel({name:'Lenka'});
 TestEntity.speak();//我的名字叫Lenka
 ```
+
 
 > 是不是和前面的方法很类似，赶快动手试试吧！
