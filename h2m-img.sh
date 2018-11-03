@@ -1,8 +1,8 @@
 # !/bin/bash
 set -e
 
-Name='微信公众平台开发'
-BookUrl='http://cw.hubwiz.com/card/c/569dc7fdacf9a45a69b051cd/1/1/1/'
+Name='Meteor开发平台入门'
+BookUrl='http://cw.hubwiz.com/card/c/55b87a7b3ad79a1b05dcc339/1/1/1/'
 rm -rf tmp/${Name}
 mkdir -p tmp/${Name}
 cd tmp/${Name}
