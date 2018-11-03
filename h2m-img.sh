@@ -1,8 +1,8 @@
 # !/bin/bash
 set -e
 
-Name='Underscore'
-BookUrl='http://cw.hubwiz.com/card/c/569b99a4acf9a45a69b0513f/1/1/1/'
+Name='Mocha测试利器'
+BookUrl='http://cw.hubwiz.com/card/c/562085141bc20c980538e25a/1/1/1/'
 rm -rf tmp/${Name}
 mkdir -p tmp/${Name}
 cd tmp/${Name}
