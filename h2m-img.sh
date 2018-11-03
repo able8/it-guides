@@ -1,8 +1,8 @@
 # !/bin/bash
 set -e
 
-Name='Nodejs-session应用'
-BookUrl="http://cw.hubwiz.com/card/c/55c2c01e3ad79a1b05dcc432/1/1/1/"
+Name='Socket-io实时通讯'
+BookUrl=http://cw.hubwiz.com/card/c/543b9914032c781494012b65/1/1/1/
 rm -rf tmp/${Name}
 mkdir -p tmp/${Name}
 cd tmp/${Name}
@@ -58,7 +58,7 @@ do
 
     cat ${Html} | sed -n '/<article/,/article>/p' | sed '/<article/d' | \
     LC_ALL=C sed 's/^[[:space:]]*//g' | \
-    sed -E 's/<h1 id[^>]*>/### /g;s/<\/h1>/∑/g;s/<h2 id[^>]*>/#### /g;s/<\/h2>/∑/g;s/<h3 id[^>]*>/##### /g;s/<\/h3>/∑/g;s/<h4 id[^>]*>/##### /g;s/<\/h4>/∑/g;s/<hr>/-----------------/g;s/<strong>/ **/g;s/<\/strong>/** /g;s/<em>/ */g;s/<\/em>/* /g;s/<p>//g;s/<pre><code>/```javascript∑/g;s/<\/code><\/pre>/```∑∑/g;s/<li>/- /g;s/<\/li>//g;s/<ul>/∑/g;s/<\/ul>/∑/g;s/<ol>/∑/g;s/<\/ol>/∑/g'          |\
+    sed -E 's/<h1 id[^>]*>/### /g;s/<\/h1>/∑/g;s/<h2 id[^>]*>/#### /g;s/<\/h2>/∑/g;s/<h3 id[^>]*>/##### /g;s/<\/h3>/∑/g;s/<h4 id[^>]*>/##### /g;s/<\/h4>/∑/g;s/<hr>/∑/g;s/<strong>/ **/g;s/<\/strong>/** /g;s/<em>/ */g;s/<\/em>/* /g;s/<p>//g;s/<pre><code>/```javascript∑/g;s/<\/code><\/pre>/```∑∑/g;s/<li>/- /g;s/<\/li>//g;s/<ul>/∑/g;s/<\/ul>/∑/g;s/<ol>/∑/g;s/<\/ol>/∑/g'          |\
     sed "s/&#39;/'/g" | sed 's/&quot;/"/g' | sed 's/&lt;/</g;s/&gt;/>/g' | \
     sed -E 's/<code>|<\/code>/`/g;s/<\/p>/∑/g' | tr '∑' '\n' |\
     sed '/<\/div>/N;/article>/d' | sed '/cw-exe/N;s/<div class[^>]*>\n/∑> /g'|\
