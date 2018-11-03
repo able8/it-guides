@@ -1,8 +1,8 @@
 # !/bin/bash
 set -e
 
-Name='YAML'
-BookUrl='http://cw.hubwiz.com/card/c/5667d5e27e7d40946afc5d84/1/1/1/'
+Name='JavaScript面向对象开发'
+BookUrl='http://cw.hubwiz.com/card/c/574bac8cda97b6e9299d2f04/1/1/1/'
 rm -rf tmp/${Name}
 mkdir -p tmp/${Name}
 cd tmp/${Name}
