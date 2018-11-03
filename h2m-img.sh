@@ -1,8 +1,8 @@
 # !/bin/bash
 set -e
 
-Name='Node异步编程'
-BookUrl="http://cw.hubwiz.com/card/c/543e1a4f032c7816c0d5dfa1/1/1/1/"
+Name='Nodejs-session应用'
+BookUrl="http://cw.hubwiz.com/card/c/55c2c01e3ad79a1b05dcc432/1/1/1/"
 rm -rf tmp/${Name}
 mkdir -p tmp/${Name}
 cd tmp/${Name}
