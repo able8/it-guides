@@ -1,8 +1,8 @@
 # !/bin/bash
 set -e
 
-Name='Vue.js'
-BookUrl='http://cw.hubwiz.com/card/c/566e67417e7d40946afc5ddc/1/1/1/'
+Name='Underscore'
+BookUrl='http://cw.hubwiz.com/card/c/569b99a4acf9a45a69b0513f/1/1/1/'
 rm -rf tmp/${Name}
 mkdir -p tmp/${Name}
 cd tmp/${Name}
