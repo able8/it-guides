@@ -1,8 +1,8 @@
 # !/bin/bash
 set -e
 
-Name='Nginx入门'
-BookUrl=http://cw.hubwiz.com/card/c/54f031e2f8638715e4cb8e0c/1/1/1/
+Name='Cheerio'
+BookUrl='http://cw.hubwiz.com/card/c/5636b7a11bc20c980538e998/1/1/1/'
 rm -rf tmp/${Name}
 mkdir -p tmp/${Name}
 cd tmp/${Name}
@@ -59,6 +59,7 @@ do
     cat ${Html} | sed -n '/<article/,/article>/p' | sed '/<article/d' | \
     LC_ALL=C sed 's/^[[:space:]]*</</g' | \
     sed -E 's/<h1 id[^>]*>/### /g;s/<\/h1>/∑/g;s/<h2 id[^>]*>/#### /g;s/<\/h2>/∑/g;s/<h3 id[^>]*>/##### /g;s/<\/h3>/∑/g;s/<h4 id[^>]*>/##### /g;s/<\/h4>/∑/g;s/<hr>/∑/g;s/<strong>/ **/g;s/<\/strong>/** /g;s/<em>/ */g;s/<\/em>/* /g;s/<p>//g;s/<pre><code>/```javascript∑/g;s/<\/code><\/pre>/```∑∑/g;s/<li>/- /g;s/<\/li>//g;s/<ul>/∑/g;s/<\/ul>/∑/g;s/<ol>/∑/g;s/<\/ol>/∑/g'          |\
+    sed -E 's#<kbd>#> #g;s#</kbd>##g' |\
     sed "s/&#39;/'/g" | sed 's/&quot;/"/g' | sed 's/&lt;/</g;s/&gt;/>/g' | \
     sed -E 's/<code>|<\/code>/`/g;s/<\/p>/∑/g' | tr '∑' '\n' |\
     sed '/<\/div>/N;/article>/d' | sed '/cw-exe/N;s/<div class[^>]*>\n/∑> /g'|\
