@@ -1,8 +1,8 @@
 # !/bin/bash
 set -e
 
-Name='Mocha测试利器'
-BookUrl='http://cw.hubwiz.com/card/c/562085141bc20c980538e25a/1/1/1/'
+Name='微信公众平台开发'
+BookUrl='http://cw.hubwiz.com/card/c/569dc7fdacf9a45a69b051cd/1/1/1/'
 rm -rf tmp/${Name}
 mkdir -p tmp/${Name}
 cd tmp/${Name}
