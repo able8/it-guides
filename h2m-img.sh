@@ -1,8 +1,8 @@
 # !/bin/bash
 set -e
 
-Name='webpack入门'
-BookUrl='http://cw.hubwiz.com/card/c/5670d0a77e7d40946afc5e65/1/1/1/'
+Name='Vue.js'
+BookUrl='http://cw.hubwiz.com/card/c/566e67417e7d40946afc5ddc/1/1/1/'
 rm -rf tmp/${Name}
 mkdir -p tmp/${Name}
 cd tmp/${Name}
