@@ -69,5 +69,5 @@ do
     tr '∑' '\n' >> ${MdFileName}
 done
 
-# 去掉连续的空行。sed 原处修改文件，兼容 macOS 和 Linux 写法。
-sed -i'' -e '/^$/N;/\n$/D' ${MdFileName}
+# 去掉连续的空行。sed 原处修改文件，mac下i后面加空格两个单引号才可以，Linux下需要去掉引号
+sed -i '' '/^$/N;/\n$/D' ${MdFileName}
