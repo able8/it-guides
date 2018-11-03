@@ -1,8 +1,8 @@
 # !/bin/bash
 set -e
 
-Name='Shell教程1'
-BookUrl='http://cw.hubwiz.com/card/c/56d906a0ecba4b4d31cd28ef/1/1/1/'
+Name='Shell教程2'
+BookUrl='http://cw.hubwiz.com/card/c/56f2a2d50d6455625e04435a/1/1/1/'
 rm -rf tmp/${Name}
 mkdir -p tmp/${Name}
 cd tmp/${Name}
