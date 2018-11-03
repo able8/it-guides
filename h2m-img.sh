@@ -1,8 +1,8 @@
 # !/bin/bash
 set -e
 
-Name='MongoDB教程'
-BookUrl='http://cw.hubwiz.com/card/c/54bdfcb188dba012b4b95c9c/1/1/1/'
+Name='Mongoose'
+BookUrl='http://cw.hubwiz.com/card/c/543b2e7788dba02718b5a4bd/1/1/1/'
 rm -rf tmp/${Name}
 mkdir -p tmp/${Name}
 cd tmp/${Name}
