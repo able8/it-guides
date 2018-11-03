@@ -1,3 +1,33 @@
+# 测试利器Mocha
+<!-- TOC -->
+
+- [测试利器Mocha](#测试利器mocha)
+- [1  快速开始](#1--快速开始)
+    - [1.1  什么是mocha？](#11--什么是mocha)
+    - [1.2  第一个测试用例](#12--第一个测试用例)
+    - [1.3  assert断言](#13--assert断言)
+    - [1.4  chai.js断言库](#14--chaijs断言库)
+    - [1.5  expect 的语法](#15--expect-的语法)
+- [2  mocha 接口](#2--mocha-接口)
+    - [2.1  BDD 行为驱动开发](#21--bdd-行为驱动开发)
+    - [2.2  方法解析](#22--方法解析)
+    - [2.3  TDD 测试驱动开发](#23--tdd-测试驱动开发)
+    - [2.4  exports 风格](#24--exports-风格)
+    - [2.5  总结](#25--总结)
+- [3  hook 机制 和 测试技巧](#3--hook-机制-和-测试技巧)
+    - [3.1  hook 机制](#31--hook-机制)
+    - [3.2  描述 hook](#32--描述-hook)
+    - [3.3  测试占位](#33--测试占位)
+    - [3.4  仅执行指定测试](#34--仅执行指定测试)
+    - [3.5  忽略指定测试](#35--忽略指定测试)
+    - [3.6  动态生成测试](#36--动态生成测试)
+- [4 为项目开发一个BDD测试](#4-为项目开发一个bdd测试)
+    - [4.1 辅助模块](#41-辅助模块)
+    - [4.2 项目描述](#42-项目描述)
+    - [4.3 项目重构](#43-项目重构)
+    - [4.4 测试用例](#44-测试用例)
+
+<!-- /TOC -->
 
 # 1  快速开始
 
@@ -12,15 +42,15 @@ mocha 是一个功能丰富的 *javascript测试框架* ，可以运行在nodejs
 
 
 
--  **简单** 
--  **灵活** 
--  **有趣** 
+-  **简单**
+-  **灵活**
+-  **有趣**
 
 
 ### 安装
 
 通过npm全局安装：
- *npm install -g mocha* 
+ *npm install -g mocha*
 
 <img src="images/562085141bc20c980538e25a/1-1-1/mocha001.png" alt="introduce">
 
@@ -50,7 +80,7 @@ describe('Array', function(){
 
  **示例解析** ：测试用例首先需要引用断言模块，如上文中 *var assert = require('assert');* ，代码  *assert.equal(-1, [1,2,3].indexOf(5));*  中使用的是assert.equal(actual, expected, [message]) 语法。作用等同于使用'=='进行相等判断。 *actual* 为实际值， *expected*  为期望值。 *message* 为返回的信息。
 
-运行 Mocha： *$ mocha* 
+运行 Mocha： *$ mocha*
 
 
 > 这节课让我们熟悉一下学习环境中终端的使用方法，以及运行结果的查看。
@@ -78,9 +108,9 @@ describe('Array', function(){
 
 比如上节示例中的：
 
- *assert.equal(-1, [1,2,3].indexOf(5));* 
+ *assert.equal(-1, [1,2,3].indexOf(5));*
 
- *assert.equal(-1, [1,2,3].indexOf(0));* 
+ *assert.equal(-1, [1,2,3].indexOf(0));*
 
  *实际值（-1）* 和 *期望值（[1,2,3].indexOf(5)）* 是一样的，断言为true，所以这个测试用例成功了。
 
@@ -104,23 +134,23 @@ mocha 允许开发者使用 *任意的断言库* ，当这些断言库抛出了�
 
 Chai 是一个非常灵活的断言库，它可以让你使用如下三种主要断言方式的任何一种：
 
- **assert：** 
+ **assert：**
 
 这是来自老派测试驱动开发的经典的assert方式。比如：
 
- *assert.equal(variable, "value");* 
+ *assert.equal(variable, "value");*
 
- **expect：** 
+ **expect：**
 
 这种链式的断言方式在行为驱动开发中最为常见。比如：
 
- *expect(variable).to.equal("value");* 
+ *expect(variable).to.equal("value");*
 
- **should：** 
+ **should：**
 
 这也是在测试驱动开发中比较常用的方式之一。举例：
 
- *variable.should.equal("value");* 
+ *variable.should.equal("value");*
 
 > PS:在本课程中我们将使用expect的断言方式。
 
@@ -182,11 +212,11 @@ BDD的特征就是使用 *describe()和it()*  这两个方法。我们将在下�
 ## 2.2  方法解析
 ### descript()和it()
 
-###  **descript() ** 
+###  **descript() **
 
 describe()方法接收两个参数：第一个参数是一个字符串，表示 *测试套件* 的名字或标题，表示将要测试什么。第二个参数是一个函数，用来实现这个 *测试套件* 。
 
- **上述中引出了一个概念： *测试套件* 。那什么是 *测试套件* 呢？** 
+ **上述中引出了一个概念： *测试套件* 。那什么是 *测试套件* 呢？**
 
 测试套件（test suite）指的是，一组针对软件规格的某个方面的 *测试用例* 。也可以看作，对软件的某个方面的描述（describe）。结构如下：
 
@@ -196,14 +226,14 @@ describe("A suite", function() {
 });
 ```
 
-###  **it()** 
+###  **it()**
 
 要想理解it()，首先我们要知道什么是 ** *测试用例* ** ?
 测试用例（test case）指的是，针对软件一个功能点的测试，是软件测试的最 *基本单位* 。一组相关的测试用例，构成一个测试套件。
 
 测试用例由it函数构成，它与describe函数一样，接受两个参数：第一个参数是字符串，表示 *测试用例的标题* ；第二个参数是函数，用来实现这个 *测试用例* 。
 
-###  **BDD风格用例** 
+###  **BDD风格用例**
 
 ```javascript
 var expect = require('chai').expect;
@@ -222,7 +252,7 @@ describe('Array', function(){
 ```
 
 
-> 
+>
 
 - 点击<span style="margin:0px 5px;padding:5px;background:#333;color:white;border-radius:3px;">文件管理</span>按钮，点击我们新创建的tests文件夹 **右键** ，再点击 **创建** 一个expect.js文件，然后双击文件。
 - 再把上述中的示例写入到我们新创建的expect.js文件当中，然后点击> 保存文件。（不建议拷贝）
@@ -276,7 +306,7 @@ suite('Array', function(){
 > PS：mocha 默认是使用 bdd 的接口，所以在这里我们告诉mocha我们用的是tdd.
 
 
-> 
+>
 
 - 点击<span style="margin:0px 5px;padding:5px;background:#333;color:white;border-radius:3px;">文件管理</span>按钮，点击新创建的tests文件夹 **右键** ，再点击 **创建** 一个tdd.js文件，然后双击文件。
 - 再把上述中的示例写入到我们新创建的tdd.js文件当中，然后点击> 保存文件。（不建议拷贝）
@@ -292,7 +322,7 @@ suite('Array', function(){
 
 exports类似于nodejs里的 *模块语法* ,关键字 before, after, beforeEach, 和 afterEach 是特殊保留的，值为对象时是一个 *测试套件* ，为函数时则是一个 *测试用例* 。
 
- **示例如下：** 
+ **示例如下：**
 
 ```javascript
 module.exports = {
@@ -310,9 +340,9 @@ module.exports = {
 };
 ```
 
- **运行 mocha** 
+ **运行 mocha**
 
- *mocha --ui exports *.js* 
+ *mocha --ui exports *.js*
 
 
 
@@ -426,7 +456,7 @@ describe('Array', function() {
 ```
 
 
-> 
+>
 
 - 在tests文件夹中创建一个pending.js文件
 - 再把上述中的示例写入到我们新创建的pending.js文件当中，然后点击> 保存文件。（不建议拷贝）
@@ -531,7 +561,7 @@ describe('add()', function() {
 ```
 
 
-> 
+>
 
 - 在tests文件夹中创建一个dynamically.js文件
 - 再把上述中的示例写入到我们新创建的dynamically.js文件当中，然后点击> 保存文件。（不建议拷贝）
@@ -548,11 +578,11 @@ describe('add()', function() {
 
 我们进行单元测试，一般都需要组合几个工具来来使用的。下面我们开始介绍：
 
-###  **chai断言库** 
+###  **chai断言库**
 
 chai 断言库支持BDD 的 expect/should 语法风格 和TDD的 assert 语法风格。（在第一章的中有讲到）
 
-###  **superagent** 
+###  **superagent**
 
 在用Node做Web开发的时候，模拟HTTP请求时必不可少的。这也就引出了superagent这个模块，它是一个模拟http请求的库。它作用是简化发起请求的库。
 
@@ -601,7 +631,7 @@ server.listen(PORT);
 描述：为了让项目尽可能的简单，我们没有用到任何的框架。只是创建了一个http服务器监听了80端口。
 
 
-> 
+>
 
 - 在project文件夹中创建一个app.js文件
 - 再把上述中的内容写入到app.js文件中，然后点击> 保存文件。一定要保存！一定要保存！一定要保存！重要的事说要三遍（不建议拷贝）
@@ -683,10 +713,10 @@ describe('server', function () {
 });
 ```
 
-运行命令： *mocha tests* 
+运行命令： *mocha tests*
 
 
-> 
+>
 
 - 在tests文件夹中创建一个index.js文件
 - 再把上述中的内容写入到index.js文件中，然后点击> 保存文件。一定要保存！一定要保存！一定要保存！重要的事说要三遍（不建议拷贝）
