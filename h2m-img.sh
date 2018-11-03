@@ -1,8 +1,8 @@
 # !/bin/bash
 set -e
 
-Name='自动化工具Gulp'
-BookUrl='http://cw.hubwiz.com/card/c/562089cb1bc20c980538e25b/1/1/5/'
+Name='webpack入门'
+BookUrl='http://cw.hubwiz.com/card/c/5670d0a77e7d40946afc5e65/1/1/1/'
 rm -rf tmp/${Name}
 mkdir -p tmp/${Name}
 cd tmp/${Name}
