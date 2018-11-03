@@ -1,6 +1,6 @@
 # Meteor开发平台入门
 
-<!-- TOC -->
+<!-- TOC  -->
 
 - [Meteor开发平台入门](#meteor开发平台入门)
 - [1 Meteor简介](#1-meteor简介)
@@ -50,7 +50,7 @@
     - [5.5 查找文档 - Collection.find](#55-查找文档---collectionfind)
     - [5.6 查询结果 - 游标/Cursor](#56-查询结果---游标cursor)
 
-<!-- /TOC -->
+<!-- /TOC  -->
 
 # 1 Meteor简介
 

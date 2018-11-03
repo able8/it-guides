@@ -1,4 +1,4 @@
-<!-- TOC -->
+<!-- TOC  -->
 
 - [1 Git简介](#1-git简介)
     - [1.1 Git的诞生](#11-git的诞生)
@@ -54,7 +54,7 @@
     - [7.5 搭建Git服务器](#75-搭建git服务器)
     - [7.6 管理公钥和权限 authorized_keys/Gitolite](#76-管理公钥和权限-authorized_keysgitolite)
 
-<!-- /TOC -->
+<!-- /TOC  -->
 
 # 1 Git简介
 

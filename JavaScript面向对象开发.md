@@ -1,7 +1,7 @@
 
 # JavaScript 面向对象开发
 
-<!-- TOC -->
+<!-- TOC  -->
 
 - [JavaScript 面向对象开发](#javascript-面向对象开发)
 - [1 JavaScript是什么](#1-javascript是什么)
@@ -35,7 +35,7 @@
     - [5.4 解决this的问题](#54-解决this的问题)
     - [5.5 总结](#55-总结)
 
-<!-- /TOC -->
+<!-- /TOC  -->
 
 # 1 JavaScript是什么
 

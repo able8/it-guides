@@ -1,5 +1,5 @@
 # MongoDB 教程
-<!-- TOC -->
+<!-- TOC  -->
 
 - [MongoDB 教程](#mongodb-教程)
 - [1 MongoDB 的简单介绍](#1-mongodb-的简单介绍)
@@ -26,7 +26,7 @@
     - [5.2 MongoDB 文档数量 - 结果集](#52-mongodb-文档数量---结果集)
     - [5.3 MongoDB 字段条件 - 结果集](#53-mongodb-字段条件---结果集)
 
-<!-- /TOC -->
+<!-- /TOC  -->
 
 # 1 MongoDB 的简单介绍
 

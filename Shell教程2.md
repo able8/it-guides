@@ -1,7 +1,7 @@
 
 # Shell教程 2
 
-<!-- TOC -->
+<!-- TOC  -->
 
 - [Shell教程 2](#shell教程-2)
 - [1 Shell运行环境](#1-shell运行环境)
@@ -51,7 +51,7 @@
     - [6.5  print和printf](#65--print和printf)
     - [6.6  awk编程](#66--awk编程)
 
-<!-- /TOC -->
+<!-- /TOC  -->
 
 # 1 Shell运行环境
 
