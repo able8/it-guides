@@ -1,8 +1,8 @@
 # !/bin/bash
 set -e
 
-Name='js让页面动起来'
-BookUrl="http://cw.hubwiz.com/card/c/56d64dc4ecba4b4d31cd280b/1/4/2/"
+Name='Node异步编程'
+BookUrl="http://cw.hubwiz.com/card/c/543e1a4f032c7816c0d5dfa1/1/1/1/"
 rm -rf tmp/${Name}
 mkdir -p tmp/${Name}
 cd tmp/${Name}
