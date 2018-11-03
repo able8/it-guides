@@ -1,8 +1,8 @@
 # !/bin/bash
 set -e
 
-Name='jQuery'
-BookUrl='http://cw.hubwiz.com/card/c/5437538a032c781670afddbe/1/1/1/'
+Name='自动化工具Gulp'
+BookUrl='http://cw.hubwiz.com/card/c/562089cb1bc20c980538e25b/1/1/5/'
 rm -rf tmp/${Name}
 mkdir -p tmp/${Name}
 cd tmp/${Name}
@@ -13,7 +13,7 @@ curl -s "${BookUrl}" | grep '" $' | awk -F '"' '{print "http://cw.hubwiz.com"$2}
 # echo $testurl > url.txt
 cat url.txt
 
-# 如果不想继续，按 ctrl+c 退出
+echo 如果不想继续，按 ctrl+c 退出
 read goOnOrStop
 
 MdFileName="${Name}.md"
