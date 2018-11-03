@@ -1,8 +1,8 @@
 # !/bin/bash
 set -e
 
-Name='CSS3'
-BookUrl='http://cw.hubwiz.com/card/c/54d1cae088dba03f2cd1fec1/1/1/1/'
+Name='YAML'
+BookUrl='http://cw.hubwiz.com/card/c/5667d5e27e7d40946afc5d84/1/1/1/'
 rm -rf tmp/${Name}
 mkdir -p tmp/${Name}
 cd tmp/${Name}
