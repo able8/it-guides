@@ -1,0 +1,689 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Language" content="zh-CN">
+  <meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0,user-scalable=no">
+  <meta name="keywords" content="CSS，CSS3，CSS教程，CSS选择器，CSS居中，CSS3教程，css样式，css div，css代码，css手册">
+  <meta name="description" content="CSS是一种用于屏幕上渲染html，xml等一种语言，CSS主要是在相应的元素中应用样式，来渲染相对应用的元素，那么这样我们选择相应的元素就很重要了，如何选择对应的元素，此时就需要我们所说的选择器。选择器主要是用来确定html的树形结构中的DOM元素节点，此课程就和大家一起来学习一下CSS3中新增的一些特性。">
+  
+  <title>CSS3 / 中央图像自动拉伸 - 汇智网</title>
+  
+  <link rel="stylesheet" href="/dist/card.min.css">
+  
+</head>
+<body>
+  <header class="navbar navbar-inverse navbar-fixed-top docs-nav" role="banner">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="http://www.hubwiz.com/" class="navbar-brand">
+                <img src="/images/logo.png" alt="汇智网欢迎你！"/>
+            </a>
+        </div>
+        <nav id="hb-nav" class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
+            <ul class="nav navbar-nav">
+                <li><a href="/">教程目录</a></li>
+                <li><a href="http://www.hubwiz.com/course">互动课程</a></li>
+            </ul>
+            <!--ul class="nav navbar-nav navbar-right profile">
+              <li><a href="/login"><i class="fa fa-sign-in"></i> 登录 </a></li>
+              <li><a href="/register"><i class="fa fa-pencil"></i> 注册</a></li>
+            </ul-->                                
+        </nav>
+    </div>
+</header>    
+
+  <div class="wrapper">
+    <div class="kp-index">
+      <h3>
+        <a href="/card/c/54d1cae088dba03f2cd1fec1/">CSS3</a>
+        
+        <a href="http://www.hubwiz.com/course/54d1cae088dba03f2cd1fec1" class="btn btn-default btn-xs">
+          <i class="fa fa-keyboard-o"></i>
+          互动版
+        </a>
+        
+      </h3>
+      <div class="list-group">
+      
+        <div class="list-group-item"><b>新增属性选择器</b></div>
+          
+              <a href="/card/c/54d1cae088dba03f2cd1fec1/1/1/1/" 
+                 class="list-group-item " title="简介">
+                简介
+              </a>
+            </li>
+          
+              <a href="/card/c/54d1cae088dba03f2cd1fec1/1/1/2/" 
+                 class="list-group-item " title="匹配属性值——开始值">
+                匹配属性值——开始值
+              </a>
+            </li>
+          
+              <a href="/card/c/54d1cae088dba03f2cd1fec1/1/1/3/" 
+                 class="list-group-item " title="匹配属性值——包含值">
+                匹配属性值——包含值
+              </a>
+            </li>
+          
+              <a href="/card/c/54d1cae088dba03f2cd1fec1/1/1/4/" 
+                 class="list-group-item " title="匹配属性值——结尾值">
+                匹配属性值——结尾值
+              </a>
+            </li>
+          
+      
+        <div class="list-group-item"><b>新增结构伪类选择器</b></div>
+          
+              <a href="/card/c/54d1cae088dba03f2cd1fec1/1/2/1/" 
+                 class="list-group-item " title="简介">
+                简介
+              </a>
+            </li>
+          
+              <a href="/card/c/54d1cae088dba03f2cd1fec1/1/2/2/" 
+                 class="list-group-item " title="选择首个子元素">
+                选择首个子元素
+              </a>
+            </li>
+          
+              <a href="/card/c/54d1cae088dba03f2cd1fec1/1/2/3/" 
+                 class="list-group-item " title="选择末尾子元素">
+                选择末尾子元素
+              </a>
+            </li>
+          
+              <a href="/card/c/54d1cae088dba03f2cd1fec1/1/2/4/" 
+                 class="list-group-item " title="选择首个类型子元素">
+                选择首个类型子元素
+              </a>
+            </li>
+          
+              <a href="/card/c/54d1cae088dba03f2cd1fec1/1/2/5/" 
+                 class="list-group-item " title="选择末尾类型子元素">
+                选择末尾类型子元素
+              </a>
+            </li>
+          
+              <a href="/card/c/54d1cae088dba03f2cd1fec1/1/2/6/" 
+                 class="list-group-item " title="选择一或多个子元素">
+                选择一或多个子元素
+              </a>
+            </li>
+          
+              <a href="/card/c/54d1cae088dba03f2cd1fec1/1/2/7/" 
+                 class="list-group-item " title="选择类型子元素(倒序)">
+                选择类型子元素(倒序)
+              </a>
+            </li>
+          
+              <a href="/card/c/54d1cae088dba03f2cd1fec1/1/2/8/" 
+                 class="list-group-item " title="选择指定类型元素">
+                选择指定类型元素
+              </a>
+            </li>
+          
+              <a href="/card/c/54d1cae088dba03f2cd1fec1/1/2/9/" 
+                 class="list-group-item " title="选择父元素的特定子元素(倒序)">
+                选择父元素的特定子元素(倒序)
+              </a>
+            </li>
+          
+              <a href="/card/c/54d1cae088dba03f2cd1fec1/1/2/10/" 
+                 class="list-group-item " title="选择有唯一子元素的元素">
+                选择有唯一子元素的元素
+              </a>
+            </li>
+          
+              <a href="/card/c/54d1cae088dba03f2cd1fec1/1/2/11/" 
+                 class="list-group-item " title="选择元素的子元素并类型是唯一的子元素">
+                选择元素的子元素并类型是唯一的子元素
+              </a>
+            </li>
+          
+              <a href="/card/c/54d1cae088dba03f2cd1fec1/1/2/12/" 
+                 class="list-group-item " title="选择内容为空的元素">
+                选择内容为空的元素
+              </a>
+            </li>
+          
+      
+        <div class="list-group-item"><b>CSS3 圆角边框</b></div>
+          
+              <a href="/card/c/54d1cae088dba03f2cd1fec1/1/3/1/" 
+                 class="list-group-item " title="简介">
+                简介
+              </a>
+            </li>
+          
+              <a href="/card/c/54d1cae088dba03f2cd1fec1/1/3/2/" 
+                 class="list-group-item " title="border-radius属性">
+                border-radius属性
+              </a>
+            </li>
+          
+              <a href="/card/c/54d1cae088dba03f2cd1fec1/1/3/3/" 
+                 class="list-group-item " title="border-radius中指定两个半径">
+                border-radius中指定两个半径
+              </a>
+            </li>
+          
+              <a href="/card/c/54d1cae088dba03f2cd1fec1/1/3/4/" 
+                 class="list-group-item " title="不显示边框">
+                不显示边框
+              </a>
+            </li>
+          
+              <a href="/card/c/54d1cae088dba03f2cd1fec1/1/3/5/" 
+                 class="list-group-item " title="修改边框种类">
+                修改边框种类
+              </a>
+            </li>
+          
+              <a href="/card/c/54d1cae088dba03f2cd1fec1/1/3/6/" 
+                 class="list-group-item " title="绘制四个角不同半径的圆角边框">
+                绘制四个角不同半径的圆角边框
+              </a>
+            </li>
+          
+              <a href="/card/c/54d1cae088dba03f2cd1fec1/1/3/7/" 
+                 class="list-group-item " title="CSS3 圆角边框练习">
+                CSS3 圆角边框练习
+              </a>
+            </li>
+          
+      
+        <div class="list-group-item"><b>CSS3 图像边框</b></div>
+          
+              <a href="/card/c/54d1cae088dba03f2cd1fec1/1/4/1/" 
+                 class="list-group-item " title="简介">
+                简介
+              </a>
+            </li>
+          
+              <a href="/card/c/54d1cae088dba03f2cd1fec1/1/4/2/" 
+                 class="list-group-item " title="border-image属性">
+                border-image属性
+              </a>
+            </li>
+          
+              <a href="/card/c/54d1cae088dba03f2cd1fec1/1/4/3/" 
+                 class="list-group-item " title="border-image属性最简单的使用方法">
+                border-image属性最简单的使用方法
+              </a>
+            </li>
+          
+              <a href="/card/c/54d1cae088dba03f2cd1fec1/1/4/4/" 
+                 class="list-group-item " title="使用border-image属性来指定边框宽度">
+                使用border-image属性来指定边框宽度
+              </a>
+            </li>
+          
+              <a href="/card/c/54d1cae088dba03f2cd1fec1/1/4/5/" 
+                 class="list-group-item active" title="中央图像自动拉伸">
+                中央图像自动拉伸
+              </a>
+            </li>
+          
+              <a href="/card/c/54d1cae088dba03f2cd1fec1/1/4/6/" 
+                 class="list-group-item " title="指定四条边中图像的显示方法">
+                指定四条边中图像的显示方法
+              </a>
+            </li>
+          
+              <a href="/card/c/54d1cae088dba03f2cd1fec1/1/4/7/" 
+                 class="list-group-item " title="使用背景图像">
+                使用背景图像
+              </a>
+            </li>
+          
+      
+        <div class="list-group-item"><b>CSS3 背景</b></div>
+          
+              <a href="/card/c/54d1cae088dba03f2cd1fec1/1/5/1/" 
+                 class="list-group-item " title="简介">
+                简介
+              </a>
+            </li>
+          
+              <a href="/card/c/54d1cae088dba03f2cd1fec1/1/5/2/" 
+                 class="list-group-item " title="background-size 属性（调整图片大小）">
+                background-size 属性（调整图片大小）
+              </a>
+            </li>
+          
+              <a href="/card/c/54d1cae088dba03f2cd1fec1/1/5/3/" 
+                 class="list-group-item " title="background-size 属性（背景图片拉伸）">
+                background-size 属性（背景图片拉伸）
+              </a>
+            </li>
+          
+              <a href="/card/c/54d1cae088dba03f2cd1fec1/1/5/4/" 
+                 class="list-group-item " title="background-origin 属性">
+                background-origin 属性
+              </a>
+            </li>
+          
+              <a href="/card/c/54d1cae088dba03f2cd1fec1/1/5/5/" 
+                 class="list-group-item " title="多重背景图片">
+                多重背景图片
+              </a>
+            </li>
+          
+              <a href="/card/c/54d1cae088dba03f2cd1fec1/1/5/6/" 
+                 class="list-group-item " title="background-clip 属性">
+                background-clip 属性
+              </a>
+            </li>
+          
+              <a href="/card/c/54d1cae088dba03f2cd1fec1/1/5/7/" 
+                 class="list-group-item " title="新的背景属性">
+                新的背景属性
+              </a>
+            </li>
+          
+      
+        <div class="list-group-item"><b>CSS3 文本效果</b></div>
+          
+              <a href="/card/c/54d1cae088dba03f2cd1fec1/1/6/1/" 
+                 class="list-group-item " title="简介">
+                简介
+              </a>
+            </li>
+          
+              <a href="/card/c/54d1cae088dba03f2cd1fec1/1/6/2/" 
+                 class="list-group-item " title="text-shadow属性使用方法">
+                text-shadow属性使用方法
+              </a>
+            </li>
+          
+              <a href="/card/c/54d1cae088dba03f2cd1fec1/1/6/3/" 
+                 class="list-group-item " title="位移距离">
+                位移距离
+              </a>
+            </li>
+          
+              <a href="/card/c/54d1cae088dba03f2cd1fec1/1/6/4/" 
+                 class="list-group-item " title="阴影的模糊半径">
+                阴影的模糊半径
+              </a>
+            </li>
+          
+              <a href="/card/c/54d1cae088dba03f2cd1fec1/1/6/5/" 
+                 class="list-group-item " title="阴影的颜色">
+                阴影的颜色
+              </a>
+            </li>
+          
+              <a href="/card/c/54d1cae088dba03f2cd1fec1/1/6/6/" 
+                 class="list-group-item " title="指定多个阴影">
+                指定多个阴影
+              </a>
+            </li>
+          
+              <a href="/card/c/54d1cae088dba03f2cd1fec1/1/6/7/" 
+                 class="list-group-item " title="自动换行">
+                自动换行
+              </a>
+            </li>
+          
+      
+        <div class="list-group-item"><b>CSS3 字体</b></div>
+          
+              <a href="/card/c/54d1cae088dba03f2cd1fec1/1/7/1/" 
+                 class="list-group-item " title="使用您需要的字体">
+                使用您需要的字体
+              </a>
+            </li>
+          
+              <a href="/card/c/54d1cae088dba03f2cd1fec1/1/7/2/" 
+                 class="list-group-item " title="使用粗体文本">
+                使用粗体文本
+              </a>
+            </li>
+          
+              <a href="/card/c/54d1cae088dba03f2cd1fec1/1/7/3/" 
+                 class="list-group-item " title="CSS3 字体描述符">
+                CSS3 字体描述符
+              </a>
+            </li>
+          
+      
+        <div class="list-group-item"><b>CSS3 2D 转换</b></div>
+          
+              <a href="/card/c/54d1cae088dba03f2cd1fec1/1/8/1/" 
+                 class="list-group-item " title="简介">
+                简介
+              </a>
+            </li>
+          
+              <a href="/card/c/54d1cae088dba03f2cd1fec1/1/8/2/" 
+                 class="list-group-item " title="2D 转换 ">
+                2D 转换 
+              </a>
+            </li>
+          
+              <a href="/card/c/54d1cae088dba03f2cd1fec1/1/8/3/" 
+                 class="list-group-item " title="translate() 方法">
+                translate() 方法
+              </a>
+            </li>
+          
+              <a href="/card/c/54d1cae088dba03f2cd1fec1/1/8/4/" 
+                 class="list-group-item " title="rotate() 方法">
+                rotate() 方法
+              </a>
+            </li>
+          
+              <a href="/card/c/54d1cae088dba03f2cd1fec1/1/8/5/" 
+                 class="list-group-item " title="scale() 方法">
+                scale() 方法
+              </a>
+            </li>
+          
+              <a href="/card/c/54d1cae088dba03f2cd1fec1/1/8/6/" 
+                 class="list-group-item " title="skew() 方法">
+                skew() 方法
+              </a>
+            </li>
+          
+              <a href="/card/c/54d1cae088dba03f2cd1fec1/1/8/7/" 
+                 class="list-group-item " title="matrix() 方法">
+                matrix() 方法
+              </a>
+            </li>
+          
+              <a href="/card/c/54d1cae088dba03f2cd1fec1/1/8/8/" 
+                 class="list-group-item " title="新的转换属性">
+                新的转换属性
+              </a>
+            </li>
+          
+              <a href="/card/c/54d1cae088dba03f2cd1fec1/1/8/9/" 
+                 class="list-group-item " title="2D Transform 方法">
+                2D Transform 方法
+              </a>
+            </li>
+          
+      
+        <div class="list-group-item"><b>CSS3 3D 转换</b></div>
+          
+              <a href="/card/c/54d1cae088dba03f2cd1fec1/1/9/1/" 
+                 class="list-group-item " title="简介">
+                简介
+              </a>
+            </li>
+          
+              <a href="/card/c/54d1cae088dba03f2cd1fec1/1/9/2/" 
+                 class="list-group-item " title="如何工作与浏览器支持">
+                如何工作与浏览器支持
+              </a>
+            </li>
+          
+              <a href="/card/c/54d1cae088dba03f2cd1fec1/1/9/3/" 
+                 class="list-group-item " title="rotateX() 方法">
+                rotateX() 方法
+              </a>
+            </li>
+          
+              <a href="/card/c/54d1cae088dba03f2cd1fec1/1/9/4/" 
+                 class="list-group-item " title="rotateY() 旋转">
+                rotateY() 旋转
+              </a>
+            </li>
+          
+              <a href="/card/c/54d1cae088dba03f2cd1fec1/1/9/5/" 
+                 class="list-group-item " title="转换属性">
+                转换属性
+              </a>
+            </li>
+          
+              <a href="/card/c/54d1cae088dba03f2cd1fec1/1/9/6/" 
+                 class="list-group-item " title="2D Transform 方法">
+                2D Transform 方法
+              </a>
+            </li>
+          
+      
+        <div class="list-group-item"><b>CSS3 过渡</b></div>
+          
+              <a href="/card/c/54d1cae088dba03f2cd1fec1/1/10/1/" 
+                 class="list-group-item " title="简介">
+                简介
+              </a>
+            </li>
+          
+              <a href="/card/c/54d1cae088dba03f2cd1fec1/1/10/2/" 
+                 class="list-group-item " title="如何工作">
+                如何工作
+              </a>
+            </li>
+          
+              <a href="/card/c/54d1cae088dba03f2cd1fec1/1/10/3/" 
+                 class="list-group-item " title="多项改变">
+                多项改变
+              </a>
+            </li>
+          
+              <a href="/card/c/54d1cae088dba03f2cd1fec1/1/10/4/" 
+                 class="list-group-item " title="过渡属性">
+                过渡属性
+              </a>
+            </li>
+          
+              <a href="/card/c/54d1cae088dba03f2cd1fec1/1/10/5/" 
+                 class="list-group-item " title="使用了简写的 transition 属性">
+                使用了简写的 transition 属性
+              </a>
+            </li>
+          
+      
+        <div class="list-group-item"><b>CSS3 动画</b></div>
+          
+              <a href="/card/c/54d1cae088dba03f2cd1fec1/1/11/1/" 
+                 class="list-group-item " title="简介">
+                简介
+              </a>
+            </li>
+          
+              <a href="/card/c/54d1cae088dba03f2cd1fec1/1/11/2/" 
+                 class="list-group-item " title="实例">
+                实例
+              </a>
+            </li>
+          
+              <a href="/card/c/54d1cae088dba03f2cd1fec1/1/11/3/" 
+                 class="list-group-item " title="CSS3 动画">
+                CSS3 动画
+              </a>
+            </li>
+          
+              <a href="/card/c/54d1cae088dba03f2cd1fec1/1/11/4/" 
+                 class="list-group-item " title="什么是 CSS3 中的动画？">
+                什么是 CSS3 中的动画？
+              </a>
+            </li>
+          
+              <a href="/card/c/54d1cae088dba03f2cd1fec1/1/11/5/" 
+                 class="list-group-item " title="实例改变背景色和位置">
+                实例改变背景色和位置
+              </a>
+            </li>
+          
+              <a href="/card/c/54d1cae088dba03f2cd1fec1/1/11/6/" 
+                 class="list-group-item " title="CSS3 动画属性">
+                CSS3 动画属性
+              </a>
+            </li>
+          
+              <a href="/card/c/54d1cae088dba03f2cd1fec1/1/11/7/" 
+                 class="list-group-item " title="包含所有动画属性实例">
+                包含所有动画属性实例
+              </a>
+            </li>
+          
+              <a href="/card/c/54d1cae088dba03f2cd1fec1/1/11/8/" 
+                 class="list-group-item " title="使用了简写的动画 animation 属性">
+                使用了简写的动画 animation 属性
+              </a>
+            </li>
+          
+      
+        <div class="list-group-item"><b>CSS3 多列</b></div>
+          
+              <a href="/card/c/54d1cae088dba03f2cd1fec1/1/12/1/" 
+                 class="list-group-item " title="简介">
+                简介
+              </a>
+            </li>
+          
+              <a href="/card/c/54d1cae088dba03f2cd1fec1/1/12/2/" 
+                 class="list-group-item " title="CSS3 创建多列">
+                CSS3 创建多列
+              </a>
+            </li>
+          
+              <a href="/card/c/54d1cae088dba03f2cd1fec1/1/12/3/" 
+                 class="list-group-item " title="CSS3 规定列之间的间隔">
+                CSS3 规定列之间的间隔
+              </a>
+            </li>
+          
+              <a href="/card/c/54d1cae088dba03f2cd1fec1/1/12/4/" 
+                 class="list-group-item " title="CSS3 列规则">
+                CSS3 列规则
+              </a>
+            </li>
+          
+              <a href="/card/c/54d1cae088dba03f2cd1fec1/1/12/5/" 
+                 class="list-group-item " title="新的多列属性">
+                新的多列属性
+              </a>
+            </li>
+          
+      
+        <div class="list-group-item"><b>CSS3 用户界面</b></div>
+          
+              <a href="/card/c/54d1cae088dba03f2cd1fec1/1/13/1/" 
+                 class="list-group-item " title="简介">
+                简介
+              </a>
+            </li>
+          
+              <a href="/card/c/54d1cae088dba03f2cd1fec1/1/13/2/" 
+                 class="list-group-item " title="CSS3 Resizing">
+                CSS3 Resizing
+              </a>
+            </li>
+          
+              <a href="/card/c/54d1cae088dba03f2cd1fec1/1/13/3/" 
+                 class="list-group-item " title="CSS3 Box Sizing">
+                CSS3 Box Sizing
+              </a>
+            </li>
+          
+              <a href="/card/c/54d1cae088dba03f2cd1fec1/1/13/4/" 
+                 class="list-group-item " title="CSS3 Outline Offset">
+                CSS3 Outline Offset
+              </a>
+            </li>
+          
+              <a href="/card/c/54d1cae088dba03f2cd1fec1/1/13/5/" 
+                 class="list-group-item " title="新的用户界面属性">
+                新的用户界面属性
+              </a>
+            </li>
+          
+          
+      </div>
+    </div>
+    <div class="kp-card">
+      <!--div class="title"></div-->
+      <div class="kp-content">
+        <div class="content-wrapper">
+          <div class="content-path">
+            <ol class="breadcrumb">
+              <li><a href="/card/c">全部教程</a></li>
+              <li class="index-small"><a href="javascript:void()" onclick="toggleIndex()">CSS3</a></li>
+              <li class="index-big"><a href="/card/c/54d1cae088dba03f2cd1fec1/">CSS3</a></li>
+              
+              <li>中央图像自动拉伸</li>
+              
+            </ol>
+          </div>
+          <article class="content">
+          <div class="page-header">
+  <h3>中央图像自动拉伸</h3>
+</div>
+
+<p><p>浏览器将边框所用图像自动分割为9部分后，除了将border-top-image、border-left-image、border-right-image、border-bottom-image这4部分自动分配为<em>四条边</em>所用的图像之外，将位于中间部分的图像分配给元素边框包围的中间区域，随着div元素的内容变化的同时，或者在样式代码中修改div元素的宽度或高度的同时，中间部分的图像也会<em>自动进行伸缩</em>，以填满该中间区域。</p></p>
+<p><h4>样式代码如下：</h4></p>
+<pre><code>.wrap {
+   border: solid;
+   border-image:url(img/border.png) 18/5px;
+   -webkit-border-image:url(img/border.png) 18/5px ;
+   -moz-border-image:url(img/border.png)  18/5px ;
+   width:300px;
+}
+</code></pre>
+          </article>
+          <div class="course-banner" style="background:white;margin-bottom:10px;">
+            <p>如果你希望马上开始学习以太坊DApp开发，可以访问我们的在线互动教程：</p>
+            <ul>
+              <li><a href="http://xc.hubwiz.com/course/5a952991adb3847553d205d1?affid=cw7878" target="_blank" rel="noopener">以太坊智能合约与应用开发入门</a></li>
+              <li><a href="http://xc.hubwiz.com/course/5abbb7acc02e6b6a59171dd6?affid=cw7878" target="_blank" rel="noopener">以太坊去中心化电商DApp实战开发</a></li>
+              <li><a href="http://xc.hubwiz.com/course/5b2b6e82c02e6b6a59171de2?affid=cw7878" target="_blank" rel="noopener">web3j以太坊开发java应用详解</a></li>
+            </ul>
+          </div>
+          
+          <div class="content-navi bottom">
+            <div class="btn-group btn-group-justified">
+              
+              <div class="btn-group">
+                <a class="btn btn-default prev" href="/card/c/54d1cae088dba03f2cd1fec1/1/4/4/">
+                  <i class="glyphicon glyphicon-arrow-left"></i> 使用border-image属性来指定边框宽度
+                </a>
+              </div>
+              
+              
+              <div class="btn-group">
+                <a class="btn btn-default next" href="/card/c/54d1cae088dba03f2cd1fec1/1/4/6/">
+                  指定四条边中图像的显示方法 <i class="glyphicon glyphicon-arrow-right"></i>
+                </a>
+              </div>
+              
+            </div>
+          </div>
+          
+        </div>
+      </div>
+      
+      <div class="kp-recommend">
+        <p><b>推荐</b></p>
+        
+        <iframe src="https://rcm-cn.amazon-adsystem.com/e/cm?o=28&p=11&l=ur1&category=wireless&banner=09C5Z83JXCYPTN6EJ902&f=ifr&linkID=8cff915d8375d1c50467399fa5b83384&t=hubwiz-23&tracking_id=hubwiz-23" width="120" height="600" scrolling="no" border="0" marginwidth="0" style="border:none;" frameborder="0"></iframe>        
+        
+      </div>
+    </div>
+    
+  </div>
+  
+  <script src="/dist/card.min.js"></script>
+  
+  <script>
+var _hmt = _hmt || [];
+(function() {
+    var hm = document.createElement("script");
+    hm.src = "//hm.baidu.com/hm.js?f1ba5b4a33d29d84db69f029b9ace483";
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(hm, s);
+})();    
+</script>
+</body>
+</html>
