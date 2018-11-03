@@ -30,9 +30,12 @@
 
  **Cookie的处理** ：
 
+
+
 - 服务端向客户端 *发送Cookie*
 - 客户端的浏览器把 *Cookie保存*
 - 然后在每次请求浏览器都会将Cookie发送到服务端
+
 
 在HTML文档被发送之前，Web服务器通过传送HTTP 包头中的 *Set-Cookie*  消息把一个cookie 发送到用户的浏览器中，如下示例：
 
@@ -42,6 +45,8 @@ Set-Cookie: name=value; Path=/; expires=Wednesday, 09-Nov-99 23:12:40 GMT;
 
 其中比较重要的属性：
 
+
+
 -  **name=value** ：键值对，可以设置要保存的 * Key/Value* ，注意这里的 name 不能和其他属性项的名字一样
 -  **Expires** ：    过期时间（秒），在设置的某个时间点后该 Cookie 就会失效，如 expires=Wednesday, 09-Nov-99 23:12:40 GMT
 -  **maxAge** ：    最大失效时间（毫秒），设置在多少后失效
@@ -49,13 +54,19 @@ Set-Cookie: name=value; Path=/; expires=Wednesday, 09-Nov-99 23:12:40 GMT;
 -  **Path** ：     表示 cookie 影响到的路，如 path=/。如果路径不能匹配时，浏览器则不发送这个Cookie
 -  **httpOnly** ： 是微软对COOKIE做的扩展。如果在COOKIE中设置了“httpOnly”属性，则通过程序（JS脚本、applet等）将无法读取到COOKIE信息，防止XSS攻击产生
 
+
+
+
 ## 1.2 nodejs中的cookie
 ### nodejs中的cookie
 
 nodejs是如何想客户端发送cookie的呢？
 有两个中方案：
 
+
+
 - 使用 **response.writeHead** ，代码如下：
+
 
 ```javascript
 //设置过期时间为一分钟
@@ -70,7 +81,10 @@ response.writeHead({
 
 缺点：使用response.writeHead只能发送一次头部，即只能调用一次，且不能与response.render共存，否则会报错。
 
+
+
 - 使用 **response.cookie** ，代码示例如下：
+
 
 ```javascript
 response.cookie('haha', 'name1=value1&amp;name2=value2', {maxAge:10*1000, path:'/', httpOnly:true});
@@ -79,6 +93,8 @@ response.cookie('haha', 'name1=value1&amp;name2=value2', {maxAge:10*1000, path:'
 语法:  *response.cookie('cookieName', 'name=value[name=value...]',[options]);*
 
 options 每个字段的意思在上文中都讲解了，这里不再重复阐述了。
+
+
 
 ## 1.3 express中的cookie
 ### cookie的简单使用
@@ -111,10 +127,14 @@ res.send("欢迎第一次访问");
 app.listen(80);
 ```
 
+
 > 首先熟悉一下右边环境的使用，
+
 
 - 在app.js文件中引入express使用cookie需要的模块
 - 按照上面示例验证一下cookie。
+
+
 
 ## 1.4 session
 ### 什么是session？
@@ -129,17 +149,28 @@ session相当于程序在服务器上建立的一份客户档案，客户来访�
 
 #####  **两者的区别：**
 
+
+
 - cookie数据存放在客户的浏览器上，session数据放在服务器上。
+
 
 - cookie不是很安全，别人可以分析存放在本地的COOKIE并进行COOKIE欺骗
 考虑到安全应当使用session。
 
+
 - session会在一定时间内保存在服务器上。当访问增多，会比较占用你服务器的性能
 考虑到减轻服务器性能方面，应当使用COOKIE。
 
+
 - 单个cookie保存的数据不能超过4K，很多浏览器都限制一个站点最多保存20个cookie。
 
+
 - 所以建议： *将登陆信息等重要信息存放为session、其他信息如果需要保留，可以放在cookie中*
+
+
+
+
+
 
 ## 1.5 express中的session
 ### session的简单应用
@@ -147,6 +178,8 @@ session相当于程序在服务器上建立的一份客户档案，客户来访�
 跟cookie一样都需要单独的安装和引用模块，
 安装模块： *$sudo npm install express-session*
 主要的方法就是 session(options)，其中 options 中包含可选参数，主要有：
+
+
 
 -  **name** : 设置 cookie 中，保存 session 的字段名称，默认为 connect.sid 。
 -  **store** : session 的存储方式，默认存放在内存中，也可以使用 redis，mongodb 等。express 生态中都有相应模块的支持。
@@ -156,6 +189,7 @@ session相当于程序在服务器上建立的一份客户档案，客户来访�
 -  **genid** : 产生一个新的 session_id 时，所使用的函数， 默认使用 uid2 这个 npm 包。
 -  **rolling** : 每个请求都重新设置一个 cookie，默认为 false。
 -  **resave** : 即使 session 没有被修改，也保存 session 值，默认为 true。
+
 
 #####  **示例** ：
 
@@ -181,10 +215,12 @@ res.send('欢迎登陆！');
 app.listen(80);
 ```
 
+
 >
 
 - 首先 *清空app.js* 中的代码。如果文件中的代码需要保留，可以存到个人笔记中
 - 再按照上面的示例验证一下express中的session。
+
 
 <kbd>PS：不要忘记引用模块。</kbd>
 
@@ -229,6 +265,8 @@ mongooseConnection: mongoose.connection //使用已有的数据库连接
 app.listen(80);
 ```
 
+
+
 ## 2.2 存储到redis数据库（一）
 ### 依赖模块及参数
 
@@ -236,23 +274,34 @@ Redis是一个非常适合用于Session管理的数据库。第一，它的结�
 
 Express已经将Session管理的整个实现过程简化到仅仅几行代码的配置的地步了，你完全不用理解整个session产生、存储、返回、过期、再颁发的结构，使用Express和Redis实现Session管理，只要两个中间件就足够了：
 
+
+
 -  *express-session*
 -  *connect-redis*
 
+
 #####  **参数**
+
+
 
 -  **client**  你可以复用现有的redis客户端对象， 由 redis.createClient() 创建
 -  **host**    Redis服务器名
 -  **port**    Redis服务器端口
 -  **socket**  Redis服务器的unix_socket
 
+
 #####  **可选参数**
+
+
 
 -  **ttl**         Redis session TTL 过期时间 （秒）
 -  **disableTTL**  禁用设置的 TTL
 -  **db**          使用第几个数据库
 -  **pass**        Redis数据库的密码
 -  **prefix**      数据表前辍即schema, 默认为 "sess:"
+
+
+
 
 ## 2.3 存储到redis数据库（二）
 ### 简单应用
@@ -287,6 +336,7 @@ app.listen(80);
 
 </blockquote>
 
+
 # 3 项目实践
 
 ## 3.1 页面设计
@@ -296,8 +346,11 @@ express为session应用提供了简单的实现方式，为了方便理解，我
 
 首先我们来设计简单页面：
 
+
+
 - index - 主页，用来展示登录表单
 - home - 用户页，登录成功展示的页面
+
 
 #####  **index.ejs:**
 
@@ -306,6 +359,7 @@ express为session应用提供了简单的实现方式，为了方便理解，我
 <fieldset>
 <legend>Please sign in</legend>
 <p>User: <input type="text" name="user"/>
+
 
 <p>Pass: <input type="text" name="password"/>
 
@@ -330,11 +384,14 @@ express为session应用提供了简单的实现方式，为了方便理解，我
 </html>
 ```
 
+
 >
 
 - 首先创建views文件夹，并在文件夹中创建两个ejs文件分别为：index.ejs 和 sign.ejs
 - 然后把上述中的代码写到文件中
 - 最后保存文件。
+
+
 
 ## 3.2 用户凭证
 ### 用户凭证
@@ -374,13 +431,18 @@ saveUninitialized: false, //
 }));
 ```
 
+
 >
+
+
 
 - 创建user.json文件，然后按照上述中的格式添加信息，然后保存。
 
 - 然后参照上述代码在app.js文件中添加代码。
 
 - 最后保存文件。
+
+
 
 <div>
 
@@ -408,11 +470,16 @@ res.render('index', {title: 'index'});
 });
 ```
 
+
 >
+
+
 
 - 参照上述代码在app.js文件中添加代码。
 
 - 最后保存文件。
+
+
 
 <div>
 
@@ -437,13 +504,18 @@ res.send('welecome <strong>' + req.session.name + '</strong>，<a href="/out">�
 
 截止到现在我们就把一个简单的session登录完成了。
 
+
 >
+
+
 
 - 首先把上述中的路由添加到app.js文件中。
 
 - 然后点击 <kbd>提交运行</kbd> 启动我们的nodejs应用。再点击访问测试
 
 - 之后在表单中输入用户凭证信息，登录成功，在返回主页面验证session。
+
+
 
 <div>
 
@@ -463,10 +535,15 @@ res.redirect('/');
 
 这样我们的session课程就到此结束了。
 
+
 >
+
+
 
 - 参照上述代码在app.js文件中添加代码。
 
 - 最后保存文件。点击<kbd>访问测试</kbd>
+
+
 
 <div>

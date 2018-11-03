@@ -62,6 +62,8 @@ Underscore 提供了100多个函数，包括常用的each、filter、sortBy等�
 当然JavaScript原生的函数也可以实现，但是比较麻烦，我们在学习 **Underscore** 的过程中我们会看它是如何实现的。
 这样可以让我们更好的理解和学习  **Underscore**
 
+
+
 ## 1.2 安装
 ### 安装
 
@@ -81,6 +83,8 @@ Underscore 提供了100多个函数，包括常用的each、filter、sortBy等�
 
  **使用** ：> var _ = require('underscore');
 
+
+
 ## 1.3 课程简述
 ### 课程简述
 
@@ -88,17 +92,29 @@ underscore有近100的函数，本课程只介绍一些，比较常见的，实�
 
 ### 主要的内容有：
 
+
+
 - 集合部分:数组或对象
+
 
 - 数组部分
 
+
 - 函数部分
+
 
 - 对象部分
 
+
 - 实用功能
 
+
 - 链式语法
+
+
+
+
+
 
 # 2  集合部分（数组或对象）
 
@@ -150,6 +166,7 @@ iteratee传递三个参数：value，然后是迭代 index，最后一个是引�
 > PS：后文中的练习将不会预知代码。
 </div>
 
+
 ## 2.2  元素合并
 ### 元素合并
 
@@ -169,6 +186,7 @@ reduce方法把list中元素归结为一个单独的数值。
 <div class='cw-test'>
 将上文中的示例，在右侧javascript代码框中实现。
 </div>
+
 
 ## 2.3  查找和过滤
 ### 查找和过滤
@@ -197,6 +215,7 @@ reduce方法把list中元素归结为一个单独的数值。
 将上文中的示例，在右侧javascript代码框中实现。
 </div>
 
+
 ## 2.4  过滤
 ### 过滤
 
@@ -219,6 +238,7 @@ reduce方法把list中元素归结为一个单独的数值。
 <div class='cw-test'>
 将上文中的示例，在右侧javascript代码框中实现。
 </div>
+
 
 ## 2.5  判断和提取
 ### 判断和提取
@@ -245,6 +265,7 @@ reduce方法把list中元素归结为一个单独的数值。
 <div class='cw-test'>
 将上文中的示例，在右侧javascript代码框中实现。
 </div>
+
 
 ## 2.6  判断最大最小值
 ### 判断最大最小值
@@ -273,6 +294,7 @@ reduce方法把list中元素归结为一个单独的数值。
 将上文中的示例，在右侧javascript代码框中实现。
 </div>
 
+
 ## 2.7  排序
 ### sortBy 排序
 
@@ -288,6 +310,8 @@ reduce方法把list中元素归结为一个单独的数值。
     _.sortBy(stooges, 'name');
     => [{name: 'curly', age: 60}, {name: 'larry', age: 50}, {name: 'moe', age: 40}];
 ```
+
+
 
 ## 2.8  转换和获取个数
 ### 转换和获取个数
@@ -309,6 +333,8 @@ reduce方法把list中元素归结为一个单独的数值。
     _.size({one: 1, two: 2, three: 3});
     => 3
 ```
+
+
 
 # 3  数组部分
 
@@ -350,6 +376,8 @@ reduce方法把list中元素归结为一个单独的数值。
     _.rest([5, 4, 3, 2, 1]);
     => [4, 3, 2, 1]
 ```
+
+
 
 ## 3.2  获取索引位置
 ### 获取索引位置
@@ -395,6 +423,7 @@ reduce方法把list中元素归结为一个单独的数值。
 将上文中的示例，在右侧javascript代码框中实现。
 </div>
 
+
 ## 3.3  去除空值和去处嵌套
 ### 去除空值和嵌套
 
@@ -423,6 +452,7 @@ _.compact([0, 1, false, 2, '', 3]);
 将上文中的示例，在右侧javascript代码框中实现。
 </div>
 
+
 ## 3.4  范围整数数组
 ### 元素位置操作
 
@@ -447,6 +477,8 @@ _.compact([0, 1, false, 2, '', 3]);
     => []
 ```
 
+
+
 ## 3.5  合并和转换
 ### 元素位置操作
 
@@ -470,6 +502,8 @@ _.compact([0, 1, false, 2, '', 3]);
     _.object([['moe', 30], ['larry', 40], ['curly', 50]]);
     => {moe: 30, larry: 40, curly: 50}
 ```
+
+
 
 # 4  函数部分
 
@@ -502,6 +536,8 @@ _.compact([0, 1, false, 2, '', 3]);
     => clicked: underscore
 ```
 
+
+
 ## 4.2  填充数据
 ### 填充数据
 
@@ -519,6 +555,7 @@ _.compact([0, 1, false, 2, '', 3]);
 <div class='cw-test'>
 将上文中的示例，在右侧javascript代码框中实现。
 </div>
+
 
 ## 4.3  记忆函数
 ### 绑定函数
@@ -540,6 +577,7 @@ Memoizes方法可以缓存某函数的计算结果。对于耗时较长的计算
 <div class='cw-test'>
 将上文中的示例，在右侧javascript代码框中实现。
 </div>
+
 
 ## 4.4  delay 和 defer
 ### delay 和 defer
@@ -568,6 +606,7 @@ Memoizes方法可以缓存某函数的计算结果。对于耗时较长的计算
 <div class='cw-test'>
 将上文中的示例，在右侧javascript代码框中实现。
 </div>
+
 
 ## 4.5  after 和 before
 ### after 和 before
@@ -603,6 +642,8 @@ Memoizes方法可以缓存某函数的计算结果。对于耗时较长的计算
     monthlyMeeting();
 ```
 
+
+
 ## 4.6  函数传递
 ### 函数传递
 
@@ -622,6 +663,7 @@ Memoizes方法可以缓存某函数的计算结果。对于耗时较长的计算
 <div class='cw-test'>
 将上文中的示例，在右侧javascript代码框中实现。
 </div>
+
 
 # 5  对象部分
 
@@ -659,6 +701,8 @@ Memoizes方法可以缓存某函数的计算结果。对于耗时较长的计算
   => [1, 2, 3]
 ```
 
+
+
 ## 5.2  对象遍历
 ### 对象遍历
 
@@ -676,6 +720,7 @@ Memoizes方法可以缓存某函数的计算结果。对于耗时较长的计算
 <div class='cw-test'>
 将上文中的示例，在右侧javascript代码框中实现。
 </div>
+
 
 ## 5.3  转换和对调
 ### 转换和对调
@@ -701,6 +746,7 @@ _.invert(object)
 <div class='cw-test'>
 将上文中的示例，在右侧javascript代码框中实现。
 </div>
+
 
 ## 5.4  复制
 ### 复制
@@ -732,6 +778,7 @@ _.invert(object)
 将上文中的示例，在右侧javascript代码框中实现。
 </div>
 
+
 ## 5.5  clone
 ### clone
 
@@ -749,6 +796,7 @@ clone:
 <div class='cw-test'>
 将上文中的示例，在右侧javascript代码框中实现。
 </div>
+
 
 ## 5.6  tag
 ### tag
@@ -773,6 +821,7 @@ clone:
 将上文中的示例，在右侧javascript代码框中实现。
 </div>
 
+
 ## 5.7  比较
 ### 比较
 
@@ -792,6 +841,7 @@ clone:
 <div class='cw-test'>
 将上文中的示例，在右侧javascript代码框中实现。
 </div>
+
 
 # 6  实用功能
 
@@ -815,6 +865,7 @@ clone:
 将上文中的示例，在右侧javascript代码框中实现。
 </div>
 
+
 ## 6.2  随机数
 ### 随机数
 
@@ -831,6 +882,7 @@ clone:
 将上文中的示例，在右侧javascript代码框中实现。
 </div>
 
+
 ## 6.3  唯一ID
 ### 唯一ID
 
@@ -846,6 +898,7 @@ clone:
 <div class='cw-test'>
 将上文中的示例，在右侧javascript代码框中实现。
 </div>
+
 
 ## 6.4  扩展
 ### 扩展
@@ -865,6 +918,7 @@ clone:
 <div class='cw-test'>
 将上文中的示例，在右侧javascript代码框中实现。
 </div>
+
 
 ## 6.5  返回属性值
 ### 返回属性值
@@ -889,6 +943,7 @@ clone:
 将上文中的示例，在右侧javascript代码框中实现。
 </div>
 
+
 # 7  链式语法
 
 ## 7.1  chain
@@ -912,6 +967,7 @@ clone:
 将上文中的示例，在右侧javascript代码框中实现。
 </div>
 
+
 ## 7.2  value
 ### value
 
@@ -929,3 +985,4 @@ clone:
 <div class='cw-test'>
 将上文中的示例，在右侧javascript代码框中实现。
 </div>
+

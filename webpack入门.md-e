@@ -33,6 +33,8 @@
 
 <img src="images/5670d0a77e7d40946afc5e65/1-1-1/what-is-webpack0.png" alt="webpack">
 
+
+
 ## 1.2 为什么重复造轮子
 ### 为什么重复造轮子
 
@@ -40,12 +42,17 @@
 
 这些已有的模块化工具并不能很好的完成如下的目标：
 
+
+
 - 将依赖树拆分成按需加载的块
 - 初始化加载的耗时尽量少
 - 各种静态资源都可以视作模块
 - 将第三方库整合成模块的能力
 - 可以自定义打包逻辑的能力
 - 适合大项目，无论是单页还是多页的 Web 应用
+
+
+
 
 ## 1.3 为什么使用Webpack
 ### Webpack的特点和优势
@@ -71,6 +78,8 @@
 ### 快速运行
 
  *Webpack*  使用异步  *I/O*  和多级缓存提高运行效率，这使得 Webpack 能够以令人难以置信的速度快速增量编译。
+
+
 
 ## 1.4 环境了解
 ### 环境了解
@@ -100,6 +109,8 @@ index.html页面中预置
 ```javascript
 <h1>欢迎学习Webpack课程！</h1>
 ```
+
+
 
 # 2 安装使用和Loader
 
@@ -134,6 +145,8 @@ $ npm info webpack
 # 安装指定版本的 webpack
 $ npm install webpack@1.12.x --save-dev
 ```
+
+
 
 ## 2.2 使用
 ### 使用
@@ -183,6 +196,8 @@ bundle.js  1.48 kB       0  [emitted]  main
 
  *注意* ：下面的课程中创建编辑文件都是用 *pico 文件名* 。
 
+
+
 ## 2.3 两个文件
 ### 两个文件
 
@@ -223,6 +238,8 @@ bundle.js  1.7 kB       0  [emitted]  main
 
  *Webpack*  会分析入口文件，解析包含依赖关系的各个文件。这些文件（模块）都打包到  *bundle.js*  。 *Webpack*  会给每个模块分配一个唯一的  *id*  并通过这个  *id*  索引和访问模块。在页面启动时，会先执行  *entry.js*  中的代码，其它模块会在运行  *require*  的时候再执行。
 
+
+
 ## 2.4 Loader介绍
 ### Loader介绍
 
@@ -231,6 +248,8 @@ bundle.js  1.7 kB       0  [emitted]  main
  *Loader*  可以理解为是模块和资源的转换器，它本身是一个函数，接受源文件作为参数，返回转换的结果。这样，我们就可以通过  *require*  来加载任何类型的模块或文件，比如  *CoffeeScript* 、  *JSX* 、  *LESS*  或 *图片* 。
 
 先来看看  *loader*  有哪些特性？
+
+
 
 - Loader 可以通过管道方式链式调用，每个 loader 可以把资源转换成任意格式并传递给下一个 loader ，但是最后一个 loader 必须返回 JavaScript。
 - Loader 可以同步或异步执行。
@@ -242,6 +261,9 @@ bundle.js  1.7 kB       0  [emitted]  main
 - Loader 可以访问配置。
 - 插件可以让 loader 拥有更多特性。
 - Loader 可以分发出附加的任意文件。
+
+
+
 
 ## 2.5 加载 CSS 文件
 ### 加载 CSS 文件
@@ -277,6 +299,8 @@ body {
 
 重新 *编译* 并更新您的浏览器看到红色背景。
 
+
+
 ## 2.6 扩展名自动绑定loader
 ### 扩展名自动绑定loader
 
@@ -307,6 +331,8 @@ webpack ./entry.js bundle.js --module-bind "css=style!css"
 ```
 
 显然，这两种使用 loader 的方式，效果是一样的。
+
+
 
 # 3 配置文件及其他
 
@@ -342,9 +368,12 @@ webpack
 
 这里对Webpack的打包行为做了配置，主要分为几个部分：
 
+
+
 - entry：指定打包的入口文件，每有一个键值对，就是一个入口文件
 - output：配置打包结果，path定义了输出的文件夹，filename则定义了打包结果文件的名称
 - module：定义了对模块的处理逻辑，这里可以用loaders定义了一系列的加载器，以及一些正则。当需要加载的文件匹配test的正则时，就会调用后面的loader对文件进行处理，这正是webpack强大的原因。
+
 
 ### 漂亮的输出
 
@@ -355,6 +384,8 @@ webpack
 ```javascript
 webpack --progress --colors
 ```
+
+
 
 ## 3.2 插件
 ### 插件
@@ -397,6 +428,8 @@ module.exports = {
 /******/     var installedModules = {};
 // 后面代码省略......
 ```
+
+
 
 ## 3.3 加载图片
 ### 加载图片
@@ -444,6 +477,8 @@ webpack
 
 将会看到背景图片已设置成功。
 
+
+
 ## 3.4 使用别名
 ### 在 Webpack 中使用别名
 
@@ -473,6 +508,8 @@ require('jquery');
 
 这样待打包的脚本中的 require('jquery'); 其实就等价于 require('./scripts/jquery.min.js'); 。通过别名的使用在本例中可以减少几乎一半的时间。
 
+
+
 ## 3.5 expose
 ### expose暴露
 
@@ -497,3 +534,5 @@ require('expose?$!jquery');
 ```javascript
 $('h1').text();
 ```
+
+

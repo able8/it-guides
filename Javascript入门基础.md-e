@@ -18,6 +18,8 @@ JavaScript是一种可以用来给网页增加交互性的编程语言。也常�
 
 本课程是入门课程，内容主要是*基础的语法*和*DOM的简单操作*。
 
+
+
 ## 1.2 如何插入js代码
 ##### js代码的位置
 
@@ -50,8 +52,11 @@ document.write("hello world!");
 </ul>
 PS: 那些老旧的实例可能会在 script 标签中使用* type="text/javascript"*。现在已经不必这样做了。JavaScript 是所有现代浏览器以及 html5 中的默认脚本语言。
 
+
 >
 在右侧html代码框中第九行试试上述hello world的例子。
+
+
 
 ## 1.3 引入外部js
 ##### 外部js的引用
@@ -83,8 +88,11 @@ document.write("我是一个外部的JavaScript文件");
 
 提示：外部JavaScript文件中不用`<script>`标签
 
+
 >
 在右侧html代码框中第六行中引入上述中hello.js文件。
+
+
 
 ## 1.4 变量
 ##### 什么是变量？
@@ -109,8 +117,11 @@ var x = 2015; //声明变量的同时初始化变量
 var MyName = "hubwiz"; //在为变量赋文本值时，为该值加引号
 ```
 
+
 >
 在右侧html代码框中的script标签中声明 x 和 y 变量 并分别赋值（任意赋值），然后利用document.write(x)和document.write(y)进行输出。
+
+
 
 ## 1.5 语句
 ##### 语句
@@ -125,6 +136,8 @@ var dif = a - b; // 有效的语句——推荐
 ```
 
 然语句结尾的分号不是必需的，但我们建议任何时候都不要省略它。另外，加上分号也会在某些情况下增进代码的性能，因为这样解析器就不必再花时间推测应该在哪里插入分号了。
+
+
 
 ## 1.6 数据类型
 ##### 数据类型
@@ -183,8 +196,10 @@ var a = 6; //a 为数字
 var a = "Jason"; // a 为字符串
 ```
 
+
 >
 声明一个数字类型和字符串类型的，并利用document.write()进行输出。
+
 
 # 2 开始互动
 
@@ -215,8 +230,11 @@ document.write("my name is huizhiwang"); //我是注释，该语句用于输出
 document.write("多行注释");
 ```
 
+
 >
 在右侧html代码框第六行单行注释掉，把七、八、九行进行多行注释。
+
+
 
 ## 2.2 关于函数(function)
 ##### 什么是函数？
@@ -253,6 +271,7 @@ document.write(x + y);  //document.write 输出 x 加 y 之后的值
 add();
 ```
 
+
 > 在JavaScript代码框中编写一个函数名是*doc*，功能是输出文本是*"你是一个好人"*的警告框。最后调用这个函数。</div>
 
 ## 2.3 发出警报(alert)
@@ -272,8 +291,11 @@ alert(myName);
 
 PS: 弹出警告的警告窗口有一个确定按钮，点击确定会继续执行后面的代码。
 
+
 >
 在script标签中定义一个变量名为myName赋值，并使用alert弹出变量myName的内容。
+
+
 
 ## 2.4 确认选择(confirm)
 ##### 确认选择
@@ -296,7 +318,11 @@ document.write("努力吧，少年");
 }
 ```
 
+
 > 询问用户“你喜欢学习JavaScript吗？”，当为true时返回“让我们一起共同进步”    当为false时返回“你可能需要进一步了解JavaScript”。
+
+
+
 
 ## 2.5 提示(prompt)
 ##### 提示
@@ -323,6 +349,7 @@ document.write("welcome to " + myName);
 document.write("welcome to my friend.");
 }
 ```
+
 
 > 练习一下上面中的示例，不要复制哦。</div>
 
@@ -355,6 +382,7 @@ open_win();
 ```
 
 示例功能：跳转到"<a href="http://www.baidu.com",以新的窗口打开。">http://www.baidu.com",以新的窗口打开。</a>
+
 
 > 以新的窗口打开"<a href="http://www.hubwiz.com"首页。">http://www.hubwiz.com"首页。</a></div>
 # 3 流程控制
@@ -408,8 +436,11 @@ if (条件 1) {
 }
 ```
 
+
 >
 在javascript代码框中，定义一个分数的变量，当分数大于90 输出优秀，大于60小于90输出及格，小于60输出不及格
+
+
 
 ## 3.2 switch 语句
 ##### switch 语句
@@ -436,6 +467,8 @@ n 与 case 1 和 case 2 不同时执行的代码
 ##### default 关键词
 
 default 关键词来规定匹配不存在时做的事情
+
+
 
 ## 3.3 for 循环
 ##### for 循环
@@ -465,8 +498,11 @@ document.write("我是第" + i + "循环");
 }
 ```
 
+
 >
 试试上述中的示例
+
+
 
 ## 3.4 while 循环
 ##### while 循环
@@ -516,8 +552,11 @@ i++;
 }while(i < 5);
 ```
 
+
 >
 试试上述中的示例
+
+
 
 ## 3.5 break 和 continue 语句
 ##### break 和 continue 语句
@@ -556,8 +595,11 @@ document.write("i等于：" + i + "
 }
 ```
 
+
 >
 上述中的两个示例，在右边代码框中复现。
+
+
 
 ## 3.6 throw、try 和 catch(错误处理)
 ##### try...catch...语句
@@ -628,8 +670,10 @@ alert("错误：" + err + "。");
 }
 ```
 
+
 >
 仿照上面中的示例，功能是当输入的值小于60的时候抛出异常信息。
+
 
 # 4 DOM操作
 
@@ -680,6 +724,7 @@ HTML文档可以说由节点构成的集合，三种常见的DOM节点:
 </li>
 </ul>
 
+
 ## 4.2 查找HTML元素
 ##### 查找HTML元素
 
@@ -717,6 +762,8 @@ var y=x.getElementsByTagName("a");
 
 示例描述：
 
+
+
 ## 4.3 改变 HTML 元素的内容
 ##### 改变 HTML
 
@@ -724,6 +771,7 @@ var y=x.getElementsByTagName("a");
 ##### 改变 HTML 内容
 
 修改 HTML 内容的最简单的方法时使用* innerHTML *属性。
+
 
 ##### 语法：*document.getElementById(id).innerHTML=new HTML*
 
@@ -734,6 +782,7 @@ var y=x.getElementsByTagName("a");
 <body>
 
 <p id="p1">Hello World!
+
 
 <script>
 document.getElementById("p1").innerHTML="New text!";
@@ -766,8 +815,11 @@ document.getElementById("changes").type="button";
 </html>
 ```
 
+
 >
 在右边代码框中试试上述中的示例。
+
+
 
 ## 4.4 改变 CSS
 ##### 改变 HTML 样式
@@ -820,5 +872,8 @@ document.getElementById("p2").style.color="red";
 </script>
 ```
 
+
 >
 试试上述中的示例
+
+

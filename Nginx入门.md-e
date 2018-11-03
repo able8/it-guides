@@ -30,12 +30,18 @@
 ## 1.1 nginx概述
 ### nginx概述
 
+
+
 　　Nginx ("engine x") 是一个高性能的 HTTP 和  *反向代理*  服务器，也是一个 IMAP/POP3/SMTP  *代理服务器* 。 Nginx 是由 Igor Sysoev 为 *俄罗斯* 访问量第二的 Rambler.ru 站点开发的，第一个公开版本0.1.0发布于2004年10月4日。其将源代码以类BSD许可证的形式发布，因它的稳定性、丰富的功能集、示例配置文件和低系统资源的消耗而闻名。2011年6月1日，nginx 1.0.4发布。
 
 　　Nginx是一款轻量级的Web 服务器/反向代理服务器及电子邮件（IMAP/POP3）代理服务器，并在一个BSD-like 协议下发行。由俄罗斯的程序设计师Igor Sysoev所开发，供俄国大型的入口网站及搜索引擎Rambler（俄文：Рамблер）使用。其特点是占有内存少，并发能力强，事实上nginx的并发能力确实在同类型的网页服务器中表现较好，中国大陆使用nginx网站用户有：新浪、网易、腾讯等。
 
+
+
 ## 1.2 常用命令
 ### nginx常用命令
+
+
 
 1.nginx启动
 
@@ -71,10 +77,13 @@ nginx -s reload
 nginx -t
 ```
 
+
 > 在编辑器中去练一练上面的命令吧！
 
 ## 1.3 nginx初体验
 ### nginx初体验
+
+
 
 　　当我们安装完nginx后，我们首先进入nginx的安装目录，启动nginx的服务，然后在地址中输入 <a href="http://127.0.0.1/">http://127.0.0.1/</a> ，
 然后我们就会看到" *welcome to nginx* "。如下图所示
@@ -102,12 +111,15 @@ nginx -t
 }
 ```
 
+
 > 下面就在我们的编辑环境中去试一试吧，首先启动nginx服务，然后点击【访问测试】，看看会出现什么呢？
 
 # 2 nginx配置
 
 ## 2.1 nginx的配置系统
 ### nginx配置系统
+
+
 
 　　nginx的配置系统由一个主配置文件和其他一些辅助的配置文件构成。这些配置文件均是纯文本文件，全部位于nginx安装目录下的conf目录下。
 
@@ -121,8 +133,12 @@ nginx -t
 
 　　指令的参数使用一个或者多个空格或者TAB字符与指令分开。指令的参数有一个或者多个TOKEN串组成。TOKEN串之间由空格或者TAB键分隔。
 
+
+
 ## 2.2 nginx.conf的文件结构
 ### 配置文件结构
+
+
 
 　　Nginx的核心模块为 *Main* 和 *Events* ，此外还包括标准 *HTTP模块* 、可选 *HTTP模块* 和 *邮件模块* ，其还可以支持诸多第三方模块。Main用于配置错误日志、进程及权限等相关的参数，Events用于配置IO模型，如epoll、kqueue、select或poll等，它们是必备模块，HTTP模块用于控制Nginx的HTTP进程。
 
@@ -162,8 +178,12 @@ http {
  }
 ```
 
+
+
 ## 2.3 main段配置指令
 ### 配置指令
+
+
 
 　　定义Nginx运行的用户和用户组用 *user* 指令。
 
@@ -195,8 +215,12 @@ pid /var/run/nginx.pid;
      worker_rlimit_nofile 65535;
 ```
 
+
+
 ## 2.4 event段配置指令
 ### 配置指令
+
+
 
 　　参考事件模型指令： *use [ kqueue | rtsig | epoll | /dev/poll | select | poll ];*
 
@@ -212,8 +236,12 @@ use epoll;
 worker_connections 65535;
 ```
 
+
+
 ## 2.5 http段配置指令
 ### 配置指令
+
+
 
 　　设定mime类型,类型由mime.type文件定义 用 *include* 指令.
 
@@ -274,8 +302,12 @@ server {
 proxy_pass http://www.hubwiz.com;
 ```
 
+
+
 ## 2.6 负载均衡
 ### 负载均衡
+
+
 
 　　 *负载均衡* （又称为负载分担），英文名称为Load Balance，其意思就是将负载（工作任务）进行平衡、分摊到多个操作单元上进行执行，例如Web服务器、FTP服务器、企业关键应用服务器和其它关键任务服务器等，从而共同完成工作任务。
 
@@ -301,8 +333,12 @@ upstream ixdba.net{
 
 　　 *upstream* 是Nginx的HTTP Upstream模块，这个模块通过一个简单的调度算法来实现客户端IP到后端服务器的负载均衡。在上面的设定中，通过upstream指令指定了一个负载均衡器的名称ixdba.net。这个名称可以任意指定，在后面需要的地方直接调用即可。
 
+
+
 ## 2.7 location配置
 ### Location配置
+
+
 
 语法规则：  *location [=|~|~*|^~] /uri/ { … }*
 
@@ -383,8 +419,12 @@ location ~ \.(gif|jpg|png|js|css)$ {
 访问 <a href="http://localhost/static/a.html">http://localhost/static/a.html</a> 将匹配规则C；
 访问 <a href="http://localhost/a.gif">http://localhost/a.gif</a>, <a href="http://localhost/b.jpg">http://localhost/b.jpg</a> 将匹配规则D。
 
+
+
 ## 2.8 Rewrite配置
 ### Rewrite规则
+
+
 
 　　Nginx Rewrite 规则相关指令有if,rewrite,set,return,break等，其中最关键的就是rewrite。一个简单的Nginx Rewrite规则语法如下：
 
@@ -392,11 +432,16 @@ location ~ \.(gif|jpg|png|js|css)$ {
 
 <b>正则表达式匹配，</b>其中：
 
+
+
 - ~ 为区分大小写匹配；<br>
 - ~* 为不区分大小写匹配；<br>
 - !~和!~*分别为区分大小写不匹配及不区分大小写不匹配。
 
+
 <b>文件及目录匹配，</b>其中：
+
+
 
 - -f和!-f用来判断是否存在文件；<br>
 - -d和!-d用来判断是否存在目录；<br>
@@ -404,17 +449,25 @@ location ~ \.(gif|jpg|png|js|css)$ {
 - -x和!-x用来判断文件是否可执行。<br>
 </div>
 
+
 <b>flag标记有：</b>
+
+
 
 - last 相当于Apache里的[L]标记，表示完成rewrite；
 - break 终止匹配, 不再匹配后面的规则；
 - redirect 返回302临时重定向 地址栏会显示跳转后的地址；
 - permanent 返回301永久重定向 地址栏会显示跳转后的地址。
 
+
 当然除了这些以外，Rewrite规则中还会用到一些相应的全局变量，如$args，$url等等
+
+
 
 ## 2.9 写自己的配置文件
 ### 写自己的nginx配置文件
+
+
 
 　　前面几节中我们已经学过了nginx配置文件中的各个段的配置指令，下面我们就来写一个自己配置文件。如下代码：
 
@@ -451,10 +504,13 @@ nginx -c /etc/nginx/Mynginx.conf
 
 <img src="images/54f031e2f8638715e4cb8e0c/1-2-9/mynginx.JPG" alt="">
 
+
 > 在编辑器中去练一练吧，把上面的转移地址改为百度试试。
 
 ## 2.10 反向代理示例
 ### 反向代理示例
+
+
 
 　　 *反向代理（Reverse Proxy）* 是指代理服务器来接收来自Internet上的连接请求，并将请求转发给内部网络上的服务器，并从服务器上得到的结果返回给Internet上请求连接的客户端。
 
@@ -482,8 +538,12 @@ nginx -c /etc/nginx/Mynginx.conf
 }
 ```
 
+
+
 ## 2.11 虚拟主机示例
 ### 虚拟主机示例
+
+
 
 　　Nginx做虚拟主机，尤其是仅仅支持纯静态-html，这是最简单的应用了，可以理解为一个仅支持静态页面的最简单的Web服务器。
 
@@ -522,8 +582,12 @@ server {
 }
 ```
 
+
+
 ## 2.12 正向代理示例
 ### 正向代理示例
+
+
 
 nginx正向代理配置如下：
 
@@ -553,8 +617,12 @@ server
 
 　　检测配置文件无误后，重启nginx，在浏览器中添加代理服务器的IP地址，就可以使用该Nginx正向代理了。
 
+
+
 ## 2.13 负载均衡示例
 ### 负载均衡示例
+
+
 
 ```bash
 upstream backend{
@@ -587,8 +655,12 @@ server{
 
 <span>e)  *backup* ： 其它所有的非backup机器down或者忙的时候，请求backup机器。所以这台机器压力会最轻。</span>
 
+
+
 ## 2.14 Rewritef示例
 ### Rewrite简单示例
+
+
 
 ```bash
 worker_processes  1;
@@ -614,5 +686,6 @@ http {
 　　按照前面讲的内容以及上面的代码，修改我们自己的配置文件，保存，重新加载nginx，然后点击【访问测试】，在地址栏给出的地址后面分别输入“ */hubwiz* ”、“ */baidu* ”，是不是会和我的结果一样呢？
 
 输入“/hubwiz”转到汇智网，输入“/baidu”是不是转到百度了呢？
+
 
 > 下面就在我们的编辑环境中去试一试吧。

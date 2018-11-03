@@ -109,20 +109,33 @@
 ## 1.1 简介
 ### 介绍
 
+
+
 　　属性选择器早在CSS2中就被引入了，其主要作用就是为带有 *指定属性* 的HTML 元素 *设置样式* 。使用CSS3属性选择器，你可以只指定元素的某个属性，或者你还可以同时指定元素的某个属性和其对应的属性值。
 
 　　在CSS2中引入了一些属性选择器，而CSS3在CSS2的基础上对属性选择器进行了扩展，新增了 *3* 个属性选择器，使得属性选择器有了通配符的概念，这三个属性选择器与CSS2的属性选择器共同构成了CSS功能强大的属性选择器。
 
 CSS3的属性选择器主要包括以下几种：
 
+
+
 -  **E[attr^="value"]** ：指定了属性名，并且有属性值，属性值是以value *开头* 的；
+
 
 -  **E[attr$="value"]** ：指定了属性名，并且有属性值，而且属性值是以value *结束* 的；
 
+
 -  **E[attr*="value"]** ：指定了属性名，并且有属性值，而且属值中 *包含* 了value；
+
+
+
+
+
 
 ## 1.2 匹配属性值——开始值
 ### 匹配开始值
+
+
 
  **E[attr^="value"]** 属性选择器，指的是选择 *attr* 属性值以 *“value”开头* 的所有元素，也就是说，所选择的属性其对应的属性值是以“ *value* ”开始的。
 
@@ -136,8 +149,12 @@ CSS3的属性选择器主要包括以下几种：
 
 上面代码选择了a标签的href属性，并且选取属性值为 *"http://"* 和 *"mailto:"* 开头的所有a标签，改变其颜色。
 
+
+
 ## 1.3 匹配属性值——包含值
 ### 匹配包含值
+
+
 
  **E[attr*="value"]** 属性选择器表示的是选择attr属性值中包含子串"value"的所有元素。
 
@@ -151,8 +168,12 @@ CSS3的属性选择器主要包括以下几种：
 
 上面代码表示的是，选择 *.demo* 中元素有title属性并对应属性值 *包含hubwiz* 值的a元素。
 
+
+
 ## 1.4 匹配属性值——结尾值
 ### 匹配结尾值
+
+
 
  **E[attr$="value"]** 属性选择器刚好与 **E[attr^="value"]** 选择器 *相反* ，E[attr$="value"]表示的是选择attr属性值以"value"结尾的所有元素。
 
@@ -166,12 +187,18 @@ CSS3的属性选择器主要包括以下几种：
 
 上面代码表示的是，选择 *.wrap* 中元素有href属性并以 *png值结尾* 的a元素。
 
+
+
 # 2 新增结构伪类选择器
 
 ## 2.1 简介
 ### 介绍
 
+
+
 　　这节内容是 *CSS3* 选择器最新部分，有人也称这种选择器为 *CSS3* 结构类，下面我们通过实际的应用来具体了解他们的 *使用和区别* ，首先列出他具有的选择方法：
+
+
 
 - : **first-child** 选择某个元素的第一个子元素；
 - : **last-child** 选择某个元素的最后一个子元素；
@@ -185,8 +212,13 @@ CSS3的属性选择器主要包括以下几种：
 - : **only-of-type** 选择一个元素是它的上级元素的唯一一个相同类型的子元素；
 - : **empty** 选择的元素里面没有任何内容。
 
+
+
+
 ## 2.2 选择首个子元素
 ### 选择某个元素的第一个子元素<:first-child>
+
+
 
  **:first-child** 是用来选择某个元素的第一个子元素，比如我们这里的这个demo，你想让列表中的"1"具有与从不同的样式，按照之前的写法，我们需在要第一个li上加上一个相应的class名，比如说“ *first* ”，然后我们在给予对应的样式，如下：
 
@@ -202,10 +234,13 @@ CSS3的属性选择器主要包括以下几种：
 
 两种方法最终效果是一样的，只是后者对我来说在操作上会更显得简单、方便、快捷。
 
+
 > 请亲自把右侧的第一个背景变为红色，边框为1像素、蓝色、虚线。
 
 ## 2.3 选择末尾子元素
 ### 选择某个元素的最后一个子元素<:last-child>
+
+
 
  *:last-child* 选择器与 *:first-child* 选择器的作用 *类似* ，不同的是它选择是的元素的最后一个子元素。
 
@@ -217,8 +252,12 @@ CSS3的属性选择器主要包括以下几种：
 
  *:last-child* 选择器与 *:first-child* 选择器使用方法是不是很类似，亲身感受一下效果吧！
 
+
+
 ## 2.4 选择首个类型子元素
 ### 选择某元素下的第一个同类子元素<:first-of-type>
+
+
 
 “ *:first-of-type* ”选择器类似于“ *:first-child* ”选择器，但不同的是 *:first-of-type* ”选择器还额外指定了元素的 *类型* ，主要用定位匹配属于其父元素的特定类型的首个子元素。
 
@@ -233,8 +272,12 @@ CSS3的属性选择器主要包括以下几种：
 }
 ```
 
+
+
 ## 2.5 选择末尾类型子元素
 ### 选择某元素的最后一个同类子元素<:last-of-type>
+
+
 
 和:first-of-type选择器相反，:last-of-type选择器选择的是父元素下的某个类型的最后一个子元素。
 
@@ -251,6 +294,8 @@ CSS3的属性选择器主要包括以下几种：
 
 ## 2.6 选择一或多个子元素
 ### 选择某元素的一或多个特定的子元素<:nth-child()>
+
+
 
  *:nth-child()* 可以选择元素的一个或多个特定的子元素，可以定义他的值(值可以是整数也可以是表达式)。
 
@@ -299,8 +344,12 @@ p:nth-child(even)
 }
 ```
 
+
+
 ## 2.7 选择类型子元素(倒序)
 ### 选择元素并倒序计算<:nth-last-child()>
+
+
 
 ":nth-last-child()"选择器和前面的":nth-child()"很相似，只是这里多了一个 *last* ，所以他起的作用就和前面的":nth-child"不一样了，它是从 *最后一个* 元素开始算，来选择特定元素。
 
@@ -312,8 +361,12 @@ p:nth-child(even)
 
 如上我们设置p元素的倒数第四个元素，我们也可以像":nth-child(2)"一样，使用表达式来选择特定元素。
 
+
+
 ## 2.8 选择指定类型元素
 ### 选择指定的元素<:nth-of-type()>
+
+
 
  *:nth-of-type* 类似于 *:nth-child* ，不同的是他只计算选择器中指定的那个元素，其实我们前面的实例都是指定了具体的元素，这个选择器主要对用来定位元素中包含了好多 *不同类型* 的元素是很有用处。
 
@@ -330,8 +383,12 @@ p:nth-of-type(even)
 }
 ```
 
+
+
 ## 2.9 选择父元素的特定子元素(倒序)
 ### 匹配特定类型的元素并倒数计算<:nth-last-of-type()>
+
+
 
 :nth-last-of-type(n)选择器匹配属于父元素的特定类型的第N个子元素的每个元素，从最后一个子元素开始计数(n可以是数字或公式)。
 
@@ -343,8 +400,12 @@ p:nth-last-of-type(3){
 }
 ```
 
+
+
 ## 2.10 选择有唯一子元素的元素
 ### 匹配其父元素中有唯一子元素的元素<:only-child>
+
+
 
 E:only-child，匹配那些是其父元素唯一子元素的E元素。简单来说就是匹配父元素中 *只有一个* 子元素的类型元素。
 
@@ -357,8 +418,12 @@ p:only-child
 }
 ```
 
+
+
 ## 2.11 选择元素的子元素并类型是唯一的子元素
 ### 选择元素的特定类型并唯一的子元素<:only-of-type>
+
+
 
 :only-of-type是表示一个元素他有很多个子元素，而其中只有一个子元素是 *唯一* 的。
 
@@ -372,8 +437,12 @@ div :only-of-type{
 }
 ```
 
+
+
 ## 2.12 选择内容为空的元素
 ### 选择没有任何内容的元素<:empty>
+
+
 
  *:empty* 是用来选择没有任何内容的元素，这里没有内容指的是 *一点内容都没有* ，哪怕是一个空格。
 
@@ -387,10 +456,14 @@ p:empty {
 
 :empty选择器对于没有任何内容的元素 *判断* 是非常有用的。
 
+
+
 # 3 CSS3 圆角边框
 
 ## 3.1 简介
 ### 介绍
+
+
 
 本节介绍如何使用CSS3的样式进行圆角边框的绘制。圆角边框的绘制也是Web网站或Web应用程序中经常用来美化页面的效果的手法之一。
 
@@ -398,8 +471,12 @@ p:empty {
 
 到目前为止，Safari浏览器、Firefox浏览器、Opera浏览器及Chrome浏览器都 *支持* 这种绘制圆角边框的样式。
 
+
+
 ## 3.2 border-radius属性
 ### border-radius属性
+
+
 
 在CSS3中，只要使用border-radius属性指定好圆角的半径，就可以绘制圆角边框了。
 
@@ -422,8 +499,12 @@ p:empty {
 
 在示例中具有一个div元素，使用border-radius属性将其边框绘制为 *圆角边框* ，圆角半径为20像素，边框颜色为蓝色，div元素背景色为浅蓝色。
 
+
+
 ## 3.3 border-radius中指定两个半径
 ### border-radius中指定两个半径
+
+
 
 在border-radius属性中，可以指定两个半径。指定方法如下所示。
 
@@ -450,8 +531,12 @@ border-radius: 40px 20px;
 }
 ```
 
+
+
 ## 3.4 不显示边框
 ### 不显示边框
+
+
 
 在CSS3中，如果使用了border-radius属性但是把边框设定为不显示的时候，浏览器将把背景的四个角绘制为 *圆角* 。
 
@@ -470,8 +555,12 @@ border-radius: 40px 20px;
 }
 ```
 
+
+
 ## 3.5 修改边框种类
 ### 修改边框种类
+
+
 
 使用了border-radius属性后，不管边框是什么种类，都会将边框沿着圆角曲线进行绘制。
 
@@ -490,17 +579,23 @@ border-radius: 40px 20px;
 }
 ```
 
+
 > 请亲自将边框修改为虚线，颜色修改为红色，并指定边框宽度为10px，然后重新运行该示例，提交运行看看效果。
 
 ## 3.6 绘制四个角不同半径的圆角边框
 
 ### 绘制四个角不同半径的圆角边框
 
+
+
 如果要绘制的圆角边框四个角半径各不相同，可以将border-top-left-radius属性、border-top-right-radius属性、border-bottom-right-radius属性、border-bottom-left-radius属性结合起来使用。
+
 
 其中border-top-left-radius属性指定 *左上角* 半径，border-top-right-radius属性指定 *右上角* 半径，border-bottom-right-radius属性指定 *右下角* 半径，border-bottom-left-radius属性指定 *左下角* 半径。
 
+
 如下样式代码。
+
 
 ```javascript
 .wrap {
@@ -527,17 +622,26 @@ border-radius: 40px 20px;
 }
 ```
 
+
+
 ## 3.7 CSS3 圆角边框练习
 
 ### CSS3 圆角边框练习
 
+
+
 在 CSS2 中添加圆角矩形需要技巧。我们必须为每个圆角使用不同的图片。
+
 
 在 CSS3 中，创建圆角是非常容易的。
 
+
 在 CSS3 中，border-radius 属性用于创建圆角`border-radius:25px;`
 
+
+
 > 按照下面的样式代码，亲自在右侧创建圆角为10像素。
+
 
 ```javascript
 .wrap {
@@ -551,32 +655,54 @@ border-radius: 40px 20px;
 }
 ```
 
+
+
 # 4 CSS3 图像边框
 
 ## 4.1 简介
 
 ### 介绍
 
+
+
+
 本节介绍如何使用CSS3的样式进行图像边框的绘制。
+
+
 
 在CSS3之前，如果要使用图像边框，若元素的长或宽是随时可变的，页面制作通常采用的做法是让元素的每条边单独使用一幅图像文件。
 
+
 但是，这种做法也有缺点：
+
+
 
 - 一方面是比较麻烦；
 - 另一方面是页面上使用的元素也就变得比较多了。
+
+
+
+
+
 
 ## 4.2 border-image属性
 
 ###  border-image属性
 
+
+
 针对上面情况，CSS3中增加了一个border-image属性，可以让处于随时变化状态的元素的长或宽的边框统一使用一个 *图像文件* 来绘制。
+
 
 使用border-image属性，会让浏览器在显示图像边框时，自动将所使用到的图像分割为9部分进行处理，这样就不需要页面制作者再另外进行 *人工处理* 了。另外，页面中也不需要因此而使用 *较多的元素* 了。关于浏览器对于边框所用到的图像的自动分割内容，会在下面内容进行详细介绍。
 
+
+
 使用border-image属性的时候，如果使用的是Firefox浏览器，需要在样式代码中将其书写成 *"-moz-border-image"* 的形式；如果使用的是Safari浏览器或Chrome浏览器，需要书写成 *"-webkit-border-image"* 的形式；如果使用的是Opera浏览器，需要写成 *"border-image"* 的形式。
 
+
 看下border-image属性使用示例，该示例中有一个div元素，使用border-image属性为该div元素添加了一个图像边框。
+
 
 ```javascript
 .wrap {
@@ -587,35 +713,62 @@ border-radius: 40px 20px;
 }
 ```
 
+
+
 ## 4.3 border-image属性最简单的使用方法
 ### border-image属性最简单的使用方法
 
+
+
 border-image属性最简单的使用方法如下所示。
+
+
 
 border-image:url(图像文件的路径) A B C D
 
+
+
 -webkit-border-image：url(图像文件的路径) A B C D
+
+
+
 
 -moz-border-image：url(图像文件的路径) A B C D
 
+
+
+
 border-image属性值中至少必须指定五个参数，其中第一个参数为边框所使用的图像文件的 *路径* ，A、B、C、D四个参数表示当浏览器自动把边框所使用到的图像进行分隔时的 *上边距* 、 *右边距* 、 *下边距* 及 *左边距* 。如下图1图示的方法对这四个参数进行了说明。
+
+
 
 图1：
 <img src="images/54d1cae088dba03f2cd1fec1/1-4-3/borderimage.png" />
 图2：
 <img src="images/54d1cae088dba03f2cd1fec1/1-4-3/borderimage_1.png" />
 
+
 接下来，让我们看一下如果在border-image属性值中指定了这四个参数，浏览器对于边框所使用的图像是如何进行 *分割* 的。
+
+
+
 
 首先，当在样式代码中书写如下所示的代码时，浏览器对于边框所使用的图像分割方法如图2所示。
 
+
 border-image：url(borderimage_1.png) 18 18 18 18
+
 
 -webkit-border-image:url(borderimage_1.png) 18 18 18 18
 
+
 border-image:url(borderimage_1.png) 18 18 18 18
 
+
 如图中所示，图像被自动分割为9部分。分割后的图像在CSS3中的名称如表所示
+
+
+
 
 - border-top-left-image  /  border-top-image       /  border-top-right
 
@@ -623,7 +776,10 @@ border-image:url(borderimage_1.png) 18 18 18 18
 
 - border-bottom-left-image  /  border-bottom-image  /  border-bottom-right-image
 
+
+
 下面示例代码，可以看出浏览器是如何将分割图像显示在一个边框宽度为5px的div元素中。
+
 
 ```javascript
 .wrap{
@@ -635,9 +791,13 @@ border-image:url(borderimage_1.png) 18 18 18 18
 }
 ```
 
+
+
 ## 4.4 使用border-image属性来指定边框宽度
 
 ### 使用border-image属性来指定边框宽度
+
+
 
 在CSS3中，除了可以使用border或border-width属性指定边框的宽度外，使用border-image属性同样可以指定边框的宽度，方法如下：
 
@@ -656,13 +816,19 @@ border-image:url(borderimage_1.png) 18 18 18 18
 
  * border-image:url(images/54d1cae088dba03f2cd1fec1/1-4-4/border.png) 18/5px 10px 15px 20px ;*
 
+
+
 ## 4.5 中央图像自动拉伸
 
 ### 中央图像自动拉伸
 
+
+
 浏览器将边框所用图像自动分割为9部分后，除了将border-top-image、border-left-image、border-right-image、border-bottom-image这4部分自动分配为 *四条边* 所用的图像之外，将位于中间部分的图像分配给元素边框包围的中间区域，随着div元素的内容变化的同时，或者在样式代码中修改div元素的宽度或高度的同时，中间部分的图像也会 *自动进行伸缩* ，以填满该中间区域。
 
+
 #### 样式代码如下：
+
 
 ```javascript
 .wrap {
@@ -674,14 +840,19 @@ border-image:url(borderimage_1.png) 18 18 18 18
 }
 ```
 
+
+
 ## 4.6 指定四条边中图像的显示方法
 
 ### 绘制四个角不同半径的圆角边框
+
+
 
 可以在border-image属性中指定元素四条边中的图像是以拉伸的方式显示，还是以平铺的方式显示，指定方法如下所示。
 
 `border-image: url(文件路径) A B C D/border-width topbottom leftright`
 其中,topbottom表示元素的上下两条边中图像的显示方法，leftright表示元素的左右两条边中的显示方法。在显示方法中可以指定的值为 *repeat* 、 *stretch* 、 *round* 三种。
+
 
 <canvas  width="15" height="15" style="border:1px solid #000000; box-shadow: 1px 1px 5px rgba(0,0,0,0.8); margin-right:5px;"></canvas> *repeat*
 
@@ -697,6 +868,7 @@ border-image:url(borderimage_1.png) 18 18 18 18
 
 将显示方法指定为stretch时，图像将以拉伸的方式进行显示。
 
+
 <canvas  width="15" height="15" style="border:1px solid #000000; box-shadow: 1px 1px 5px rgba(0,0,0,0.8); margin-right:5px;"></canvas> *repeat+stretch*
 
 将显示方法指定为repeat+stretch时，图像将以平铺方式和拉伸方式结合使用。示例如下：
@@ -711,11 +883,20 @@ border-image:url(borderimage_1.png) 18 18 18 18
 
 将显示方法指定为round时与将显示指定为repeat类似。
 
+
+
+
 ## 4.7 使用背景图像
 
 ###  使用背景图像
 
+
+
 在使用border-image属性的时候，仍然可以正常使用背景图像，但是为了不让边框图像挡住背景图像，需要使用中间为透明的边框图像，否则背景图像就有可能被边框图像的中央部分挡住部分或全体了。
+
+
+
+
 
 ```javascript
 .wrap {
@@ -728,19 +909,26 @@ border-image:url(borderimage_1.png) 18 18 18 18
 }
 ```
 
+
+
 # 5 CSS3 背景
 
 ## 5.1 简介
 
 ### CSS3 背景介绍
 
+
+
 CSS3中包含几个新的背景属性，提供更大背景元素控制。
 
+
 在本章您将了解以下背景属性：
+
 
 - 1. background-size
 - 2. background-origin
 - 3. background-clip
+
 
 您还可以学习如何使用多重背景图像。
 
@@ -750,17 +938,28 @@ CSS3中包含几个新的背景属性，提供更大背景元素控制。
 
 Internet Explorer 9+、Firefox、Chrome、Safari 以及 Opera  *支持* 新的背景属性。
 
+
+
+
+
 ## 5.2 background-size 属性（调整图片大小）
 
 ### border-image属性
 
+
+
+
 background-size指定背景图像的大小。CSS3以前，背景图像大小由图像的 *实际大小* 决定。
+
 
 CSS3中可以指定背景图片，让我们重新在不同的环境中指定背景图片的大小。您可以指定 *像素或百分比大小* 。
 
+
 你指定的大小是相对于? *父元素* 的宽度和高度的百分比的大小。
 
+
 调整背景图片的大小：
+
 
 ```javascript
 div
@@ -772,11 +971,18 @@ div
 }
 ```
 
+
+
 ## 5.3 background-size 属性（背景图片拉伸）
 
 ### 背景图片进行拉伸
 
+
+
+
 对背景图片进行拉伸，使其完成填充内容区域：
+
+
 
 ```javascript
 div
@@ -788,19 +994,30 @@ div
 }
 ```
 
+
+
 ## 5.4 background-origin 属性
 
 ### background-origin 属性
 
+
+
 background-origin 属性规定背景图片的定位区域。
+
 
 背景图片可以放置于 content-box、padding-box 或 border-box 区域。
 
+
+
 <img src="images/54d1cae088dba03f2cd1fec1/1-5-4/background-origin.gif" />
+
+
 
 #### 实例
 
+
 在 content-box 中定位背景图片：
+
 
 ```javascript
 .wrap {
@@ -812,15 +1029,22 @@ background-origin 属性规定背景图片的定位区域。
 }
 ```
 
+
+
 ## 5.5 多重背景图片
 
 ### 多重背景图片
 
+
+
 CSS3 允许您为元素使用多个背景图像。
+
 
 #### 实例：
 
+
 为 body 元素设置两幅背景图片：
+
 
 ```javascript
 body
@@ -829,11 +1053,16 @@ body
 }
 ```
 
+
+
 ## 5.6 background-clip 属性
 
 ###  background-clip 属性
 
+
+
 ### 标签定义及使用说明
+
 
 JavaScript 语法:
 
@@ -875,7 +1104,9 @@ background-clip: border-box|padding-box|content-box;
 
 ### 实例
 
+
 规定背景的绘制区域：
+
 
 ```javascript
 .wrap
@@ -885,9 +1116,13 @@ background-clip: border-box|padding-box|content-box;
 }
 ```
 
+
+
 ## 5.7 新的背景属性
 
 ###  新的背景属性
+
+
 
 <table class="table table-bordered" align="center" border="2" style="line-height:22.399999618530273px;">
 <tbody>
@@ -922,12 +1157,18 @@ background-clip: border-box|padding-box|content-box;
 
 ### CSS3 文本效果
 
+
+
 CSS3 包含多个新的文本特性。
+
 
 在本章中，您将学到如下文本属性：
 
+
 - 1. text-shadow
 - 2. word-wrap
+
+
 
 ### 浏览器支持
 
@@ -939,9 +1180,15 @@ Internet Explorer 10、Firefox、Chrome、Safari 以及 Opera 支持 text-shadow
 
  *注释：* Internet Explorer 9 以及更早的版本，不支持 text-shadow 属性。
 
+
+
+
+
 ## 6.2 text-shadow属性使用方法
 
 ### text-shadow属性使用方法
+
+
 
 text-shadow属性使用方法如下所示。
 
@@ -949,7 +1196,9 @@ text-shadow属性使用方法如下所示。
 
 其中，前面三个length分别指阴影离开文字的横方向距离、阴影离开文字的纵方向距离和阴影的模糊半径，color指阴影的颜色。
 
+
 下面是一个 *text-shadow* 属性的使用示例。在该示例中给一段红色文字绘制灰色阴影。其中阴影离开文字的横方向距离和纵方向距离均为5个像素。
+
 
 ```javascript
 .wrap
@@ -961,17 +1210,27 @@ text-shadow属性使用方法如下所示。
 }
 ```
 
+
 > 请亲自在右侧把纵方向投影距离变为10px。
+
+
 
 ## 6.3 位移距离
 
 ### 位移距离
 
+
+
+
 text-shadow属性所使用的参数中，前两个参数为阴影离开文字的横方向位移距离与纵方向位移距离。
+
+
 
 使用text-shadow属性时 *必须* 要指定这两个参数，可以对这两个参数指定 *负数值* 。
 
+
 #### 示例：
+
 
 ```javascript
 .wrap
@@ -983,15 +1242,21 @@ text-shadow属性所使用的参数中，前两个参数为阴影离开文字的
 }
 ```
 
+
+
 ## 6.4 阴影的模糊半径
 
 ### 阴影的模糊半径
+
+
 
 text-shadow 属性所使用的参数中第三个参数是阴影的模糊半径，代表阴影向外模糊时的模糊范围。这个半径的值越大，则阴影向外模糊的范围也就越大。
 
 背景图片可以放置于 content-box、padding-box 或 border-box 区域。
 
+
 将阴影的模糊半径从5个像素修改为20像素，示例代码：
+
 
 `.wrap {
    text-shadow:5px 5px 20px gray;
@@ -1001,13 +1266,18 @@ text-shadow 属性所使用的参数中第三个参数是阴影的模糊半径�
 }`
  *注意：* 模糊半径参数为可选参数，省略这个参数时，该参数默认为0，代表阴影不向外模糊。
 
+
 ## 6.5 阴影的颜色
 
 ### 阴影的颜色
 
+
+
 text-shadow属性所使用的参数中第四个参数是绘制阴影时所使用的颜色，该参数可以放在其他三个参数 *之后* ，也可放其他三个参数 *之前* ，成为第一个参数。该参数为可选参数，如果不指定，则使用浏览器指定的默认颜色。
 
+
 #### 示例代码：
+
 
 ```javascript
 .wrap {
@@ -1018,17 +1288,25 @@ text-shadow属性所使用的参数中第四个参数是绘制阴影时所使用
 }
 ```
 
+
+
 ## 6.6 指定多个阴影
 
 ###  指定多个阴影
 
+
+
 可以使用text-shadow属性来给文字指定多个阴影，并且针对每个阴影使用不同颜色。
+
 
 指定多个阴影时使用 *逗号* 将多个阴影进行分隔。到目前为止，只有Firefox浏览器、Chrome浏览器及Opera浏览器对这个功能提供支持。
 
+
 #### 示例代码
 
+
 为文字依次指定了桔色、黄色及绿色阴影，同时也为这些阴影指定了适当的位置。
+
 
 ```javascript
 .wrap {
@@ -1041,23 +1319,35 @@ text-shadow属性所使用的参数中第四个参数是绘制阴影时所使用
 }
 ```
 
+
+
 ## 6.7 自动换行
 
 ###  自动换行
 
+
+
 单词太长的话就可能无法超出某个区域：
+
 
 <p style="width: 11em;border: 1px solid #000000;word-wrap:normal; "> This paragraph contains a very long word: thisisaveryveryveryveryveryverylongword. The long word will break and wrap to the next line.
 
+
 在 CSS3 中，word-wrap 属性允许您允许文本强制文本进行换行 - 即使这意味着会对单词进行拆分：
+
 
 <p style="width: 11em;border: 1px solid #000000;word-wrap:break-word;">This paragraph contains a very long word : this is a very very very very very very long word. The long word will break and wrap to the next line.
 
+
+
 #### CSS实例代码：
+
 
 允许对长单词进行拆分，并换行到下一行：
 
 `p {word-wrap:break-word;}`
+
+
 
 # 7 CSS3 字体
 
@@ -1065,11 +1355,16 @@ text-shadow属性所使用的参数中第四个参数是绘制阴影时所使用
 
 ### 使用您需要的字体
 
+
+
 在新的 @font-face 规则中，您必须首先定义字体的名称（比如 myFirstFont），然后指向该字体文件。
+
 
 如需为 HTML 元素使用字体，请通过 font-family 属性来引用字体的名称 (myFirstFont)：
 
+
 #### 实例
+
 
 ```javascript
 <style>
@@ -1087,13 +1382,21 @@ div
 </style>
 ```
 
+
+
 ## 7.2 使用粗体文本
 
 ### 使用粗体字体
 
+
+
+
 您必须为粗体文本添加另一个包含描述符的  *@font-face：*
 
+
+
 #### 示例：
+
 
 ```javascript
 @font-face
@@ -1111,11 +1414,16 @@ div
 
 通过这种方式，我们可以为相同的字体设置许多 @font-face 规则。
 
+
 ## 7.3 CSS3 字体描述符
 
 ###  字体描述符
 
+
+
 下面的表格列出了能够在 @font-face 规则中定义的所有字体描述符：
+
+
 
 <table  class="table table-bordered" align="center" border="2" style="line-height:22.399999618530273px;">
 <tbody>
@@ -1141,6 +1449,7 @@ div
 <td>font-stretch</td>
 <td>
 
+
 - normal
 - condensed
 - ultra-condensed
@@ -1151,6 +1460,7 @@ div
 - extra-expanded
 - ultra-expanded
 
+
 </td>
 <td>可选。定义如何拉伸字体。默认是 "normal"。</td>
 </tr>
@@ -1159,9 +1469,11 @@ div
 <td>font-style</td>
 <td>
 
+
 - ormal
 - italic
 - oblique
+
 
 </td>
 <td>可选。定义字体的样式。默认是 "normal"。</td>
@@ -1170,6 +1482,7 @@ div
 <tr>
 <td>font-weight</td>
 <td>
+
 
 - normal
 - bold
@@ -1182,6 +1495,7 @@ div
 - 700
 - 800
 - 900
+
 
 </td>
 <td>可选。定义字体的粗细。默认是 "normal"。</td>
@@ -1200,6 +1514,8 @@ div
 
 ### CSS3 转换
 
+
+
 通过 CSS3 转换，我们能够对元素进行移动、缩放、转动、拉长或拉伸。
 
 ### 它如何工作？
@@ -1208,7 +1524,9 @@ div
 
 您可以使用 2D 或 3D 转换来转换您的元素。
 
+
 ### 浏览器支持
+
 
 <img src="images/54d1cae088dba03f2cd1fec1/1-8-1/transform.png" />
 
@@ -1218,11 +1536,20 @@ Chrome 和 Safari 需要前缀 -webkit-。
 
  *注释：* Internet Explorer 9 需要前缀 -ms-。
 
+
+
+
+
 ## 8.2 2D 转换
 
 ### 2D 转换
 
+
+
 在本章中，您将学到如下 2D 转换方法：
+
+
+
 
 - 1. translate()
 
@@ -1234,9 +1561,13 @@ Chrome 和 Safari 需要前缀 -webkit-。
 
 - 5. matrix()
 
+
+
 您将在下一章学习 3D 转换。
 
+
 #### 实例
+
 
 ```javascript
 <style>
@@ -1251,13 +1582,21 @@ div
 </style>
 ```
 
+
+
 ## 8.3 translate() 方法
 
 ### translate() 方法
 
+
+
+
 通过 translate() 方法，元素从其 *当前* 位置移动，根据给定的  *left* （x 坐标） 和  *top* （y 坐标） 位置参数：
 
+
+
 #### 示例：
+
 
 ```javascript
 div
@@ -1272,9 +1611,17 @@ div
 
 值 translate(50px,100px) 把元素从 *左侧* 移动 50 像素，从 *顶端* 移动 100 像素。
 
+
+
+
+
+
+
 ## 8.4 rotate() 方法
 
 ###  rotate() 方法
+
+
 
 通过 rotate() 方法，元素 *顺时针* 旋转给定的角度。允许 *负值* ，元素将 *逆时针* 旋转。
 
@@ -1290,9 +1637,12 @@ div
 }`
 值 rotate(30deg) 把元素顺时针旋转 30 度。
 
+
 ## 8.5 scale() 方法
 
 ### scale() 方法
+
+
 
 通过 scale() 方法，元素的尺寸会增加或减少，根据给定的宽度（X 轴）和高度（Y 轴）参数：
 
@@ -1308,13 +1658,20 @@ div
 }`
 值 scale(2,4) 把宽度转换为原始尺寸的  *2 倍* ，把高度转换为原始高度的 * 4 倍* 。
 
+
+
+
+
 ## 8.6 skew() 方法
 
 ###  skew() 方法
 
+
+
 通过 skew() 方法，元素翻转给定的角度，根据给定的水平线（X 轴）和垂直线（Y 轴）参数：
 
 #### 示例代码
+
 
 `div
 {
@@ -1326,17 +1683,26 @@ div
 }`
 值 skew(30deg,20deg) 围绕 X 轴把元素翻转 30 度，围绕 Y 轴翻转 20 度。
 
+
+
+
 ## 8.7 matrix() 方法
 
 ###  matrix() 方法
 
+
+
 matrix() 方法把所有 2D 转换方法组合在一起。
+
 
 matrix() 方法需要六个参数，包含数学函数，允许您：旋转、缩放、移动以及倾斜元素。
 
+
 #### 示例代码
 
+
 如何使用 matrix 方法将 div 元素旋转 30 度：
+
 
 ```javascript
 div
@@ -1349,9 +1715,13 @@ div
 }
 ```
 
+
+
 ## 8.8 新的转换属性
 
 ###  新的转换属性
+
+
 
 下面的表格列出了所有的转换属性：
 
@@ -1415,9 +1785,13 @@ div#div2\n
 '
 });
 
+
+
 ## 8.9 2D Transform 方法
 
 ###  2D Transform 方法
+
+
 
 <table class="table table-bordered" align="center" border="2" style="line-height:22.399999618530273px;">
 
@@ -1524,27 +1898,40 @@ div#div2\n
 '
 });
 
+
+
 # 9 CSS3 3D 转换
 
 ## 9.1 简介
 
 ### 3D 转换
 
+
+
 CSS3 允许您使用 3D 转换来对元素进行格式化。
 
 在本章中，您将学到其中的一些 3D 转换方法：
 
+
 - 1. rotateX()
 - 2. rotateY()
 
+
 点击右侧的元素，来查看 2D 转换与 3D 转换之间的不同之处：
+
+
+
+
+
 
 ## 9.2 如何工作与浏览器支持
 ### 它如何工作？
 
+
 转换是使元素改变形状、尺寸和位置的一种效果。
 
 您可以使用 2D 或 3D 转换来转换您的元素。
+
 
 ### 浏览器支持
 
@@ -1556,13 +1943,19 @@ Chrome 和 Safari 需要前缀 -webkit-。
 
 Opera 仍然不支持 3D 转换（它只支持  *2D 转换* ）。
 
+
+
 ## 9.3 rotateX() 方法
 
 ### rotateX() 方法
 
+
+
 通过 rotateX() 方法，元素围绕其 X 轴以给定的度数进行旋转。
 
+
 #### 示例：
+
 
 ```javascript
 div
@@ -1573,13 +1966,19 @@ div
 }
 ```
 
+
+
 ## 9.4 rotateY() 旋转
 
 ### rotateY() 旋转
 
+
+
 通过 rotateY() 方法，元素围绕其 Y 轴以给定的度数进行旋转。
 
+
 #### 实例
+
 
 ```javascript
 div
@@ -1590,11 +1989,16 @@ div
 }
 ```
 
+
+
 ## 9.5 转换属性
 
 ### 转换属性
 
+
+
 下面的表格列出了所有的转换属性：
+
 
 <table  class="table table-bordered" align="center" border="2" style="line-height:22.399999618530273px;">
 <tbody>
@@ -1642,9 +2046,13 @@ div
 
 </tbody></table>
 
+
+
 ## 9.6 2D Transform 方法
 
 ### 2D Transform 方法
+
+
 
 <table  class="table table-bordered" align="center" border="2" style="line-height:22.399999618530273px;">
 <tbody>
@@ -1724,17 +2132,23 @@ div
 </tr>
 </tbody></table>
 
+
+
 # 10 CSS3 过渡
 
 ## 10.1 简介
 
 ### CSS3 过渡
 
+
+
 通过 CSS3，我们可以在不使用 Flash 动画或 JavaScript 的情况下，当元素从一种样式变换为另一种样式时为元素添加效果。
 
 请把鼠标移动到 *右侧* 的元素上：
 
+
 ### 浏览器支持
+
 
 <img src="images/54d1cae088dba03f2cd1fec1/1-10-1/transition.png" />
 
@@ -1746,19 +2160,32 @@ Safari 需要前缀  *-webkit-* 。
 
  *注释：* Chrome 25 以及更早的版本，需要前缀 -webkit-。
 
+
+
+
+
+
+
 ## 10.2 如何工作
 
+
 ### 它如何工作？
+
+
 
 CSS3 过渡是元素从一种样式逐渐改变为另一种的效果。
 
 要实现这一点，必须规定两项内容：
 
+
 - 1. 规定您希望把效果添加到哪个 CSS 属性上
 
 - 2. 规定效果的时长
 
+
+
 实例
+
 
 应用于宽度属性的过渡效果，时长为 2 秒：
 
@@ -1783,15 +2210,24 @@ CSS3 过渡是元素从一种样式逐渐改变为另一种的效果。
 }`
  *注释：* 当指针移出元素时，它会逐渐变回原来的样式。
 
+
+
+
+
 ## 10.3 多项改变
 
 ### 多项改变
 
+
+
 如需向多个样式添加过渡效果，请添加多个属性，由逗号隔开：
+
 
 #### 示例：
 
+
 向宽度、高度和转换添加过渡效果：
+
 
 ```javascript
 div
@@ -1803,9 +2239,13 @@ div
 }
 ```
 
+
+
 ## 10.4 过渡属性
 
 ### 过渡属性
+
+
 
 <table class="table table-bordered" align="center" border="2" style="line-height:22.399999618530273px;">
 
@@ -1854,9 +2294,12 @@ div
 
 下面的两个例子设置所有过渡属性：
 
+
 #### 实例
 
+
 在一个例子中使用所有过渡属性：
+
 
 ```javascript
 div
@@ -1883,13 +2326,19 @@ div
 }
 ```
 
+
+
 ## 10.5 使用了简写的 transition 属性
 
 ### 简写的 transition 实例
 
+
+
 #### 实例
 
+
 与上面的例子相同的过渡效果，但是使用了简写的 transition 属性：
+
 
 ```javascript
 div
@@ -1904,21 +2353,29 @@ div
 }
 ```
 
+
+
 # 11 CSS3 动画
 
 ## 11.1 简介
 
 ### CSS3 动画
 
+
+
 通过 CSS3，我们能够创建动画，这可以在许多网页中 *取代* 动画图片、Flash 动画以及 JavaScript。
 
+
 ### CSS3 @keyframes 规则
+
 
 如需在 CSS3 中创建动画，您需要学习  *@keyframes*  规则。
 
 @keyframes 规则用于创建动画。在 @keyframes 中规定某项 CSS 样式，就能创建由 *当前样式* 逐渐改为新样式的动画效果。
 
+
 ### 浏览器支持
+
 
 <img src="images/54d1cae088dba03f2cd1fec1/1-11-1/animation.png" />
 
@@ -1928,9 +2385,19 @@ Chrome 和 Safari 需要前缀 -webkit-。
 
  *注释：* Internet Explorer 9，以及更早的版本，不支持 @keyframe 规则或 animation 属性。
 
+
+
+
+
+
+
+
 ## 11.2 实例
 
+
 ### 实例
+
+
 
 ```javascript
 @keyframes myfirst
@@ -1958,16 +2425,23 @@ to {background: yellow;}
 }
 ```
 
+
+
 ## 11.3 CSS3 动画
 
 ### CSS3 动画
+
+
 
 当您在 @keyframes 中创建动画时，请把它捆绑到某个选择器，否则不会产生动画效果。
 
 通过规定至少以下两项 CSS3 动画属性，即可将动画绑定到选择器：
 
+
 - 1. 规定动画的名称
 - 2. 规定动画的时长
+
+
 
 #### 示例：
 
@@ -1982,21 +2456,34 @@ to {background: yellow;}
 }`
  *注释：* 您必须定义动画的名称和时长。如果忽略时长，则动画不会允许，因为默认值是 0。
 
+
+
+
+
+
 ## 11.4 什么是 CSS3 中的动画？
 
 ### 什么是 CSS3 中的动画？
 
+
+
 动画是使元素从一种样式 *逐渐变化* 为另一种样式的效果。
+
 
 您可以改变任意多的样式任意多的次数。
 
+
 请用 *百分比* 来规定变化发生的时间，或用关键词  *"from"*  和  *"to"* ，等同于 0% 和 100%。
+
 
 0% 是动画的开始，100% 是动画的完成。
 
+
 为了得到最佳的浏览器支持，您应该 *始终定义*  0% 和 100% 选择器。
 
+
 #### 实例
+
 
 当动画为 25% 及 50% 时改变背景色，然后当动画 100% 完成时再次改变：
 
@@ -2034,11 +2521,16 @@ to {background: yellow;}
 }
 ```
 
+
+
 ## 11.5 实例改变背景色和位置
 
 ### 实例
 
+
+
 实例改变背景色和位置
+
 
 ```javascript
 @keyframes myfirst
@@ -2078,11 +2570,16 @@ to {background: yellow;}
 }
 ```
 
+
+
 ## 11.6 CSS3 动画属性
 
 ### CSS3 动画属性
 
+
+
 下面的表格列出了 @keyframes 规则和所有动画属性：
+
 
 <table class="table table-bordered" align="center" border="2" style="line-height:22.399999618530273px;">
 <tbody><tr style="background-color: #555555;color: #ffffff;">
@@ -2156,7 +2653,10 @@ to {background: yellow;}
 
 ### 实例
 
+
+
 运行名为 myfirst 的动画，其中设置了所有动画属性：
+
 
 ```javascript
 div
@@ -2195,11 +2695,16 @@ animation-play-state: running;
 }
 ```
 
+
+
 ## 11.8 使用了简写的动画 animation 属性
 
 ### 实例 使用了简写的动画 animation 属性
 
+
+
 与前面的动画相同，但是使用了简写的动画 animation 属性：
+
 
 ```javascript
 div
@@ -2220,13 +2725,18 @@ animation: myfirst 5s linear 2s infinite alternate;
 
 ### CSS3 多列
 
+
+
 通过 CSS3，您能够创建多个列来对文本进行布局 - 就像报纸那样！
 
 在本章中，您将学习如下多列属性：
 
+
 - 1. column-count
 - 2. column-gap
 - 3. column-rule
+
+
 
 ### 浏览器支持
 
@@ -2240,15 +2750,28 @@ Chrome 和 Safari 需要前缀  *-webkit-* 。
 
  *注释：* Internet Explorer 9 以及更早的版本不支持多列属性。
 
+
+
+
+
+
+
+
 ## 12.2 CSS3 创建多列
+
 
 ### CSS3 创建多列
 
+
+
 column-count 属性规定元素应该被分隔的列数：
+
 
 #### 实例
 
+
 把 div 元素中的文本分隔为三列：
+
 
 ```javascript
 div
@@ -2259,17 +2782,24 @@ column-count:3;
 }
 ```
 
+
+
 ## 12.3 CSS3 规定列之间的间隔
 
 ### CSS3 规定列之间的间隔
+
+
 
 column-gap 属性规定列之间的间隔：
 
 通过规定至少以下两项 CSS3 动画属性，即可将动画绑定到选择器：
 
+
 #### 实例
 
+
 规定列之间 40 像素的间隔：
+
 
 ```javascript
 div
@@ -2280,13 +2810,19 @@ div
 }
 ```
 
+
+
 ## 12.4 CSS3 列规则
 
 ### CSS3 列规则
 
+
+
 column-rule 属性设置列之间的宽度、样式和颜色规则。
 
+
 #### 实例
+
 
 规定列之间的宽度、样式和颜色规则：
 
@@ -2299,11 +2835,16 @@ div
 }
 ```
 
+
+
 ## 12.5 新的多列属性
 
 ### 新的多列属性
 
+
+
 下面的表格列出了所有的转换属性：
+
 
 <table class="table table-bordered" align="center" border="2" style="line-height:22.399999618530273px;">
 <tbody><tr style="background-color: #555555;color: #ffffff;">
@@ -2379,13 +2920,18 @@ div
 
 ### CSS3 用户界面
 
+
+
 在 CSS3 中，新的用户界面特性包括重设元素尺寸、盒尺寸以及轮廓等。
 
 在本章中，您将学到以下用户界面属性：
 
+
 - 1. resize
 - 2. box-sizing
 - 3. outline-offset
+
+
 
 ### 浏览器支持
 
@@ -2397,20 +2943,37 @@ Internet Explorer、Chrome、Safari 以及 Opera 支持 box-sizing 属性。Fire
 
 所有主流浏览器都支持 outline-offset 属性，除了 Internet Explorer。
 
+
+
+
+
+
+
+
+
 ## 13.2 CSS3 Resizing
+
 
 ### CSS3 Resizing
 
+
+
 在 CSS3，resize 属性规定是否可由用户调整元素尺寸。
+
 
 <p id="resize" style="border: 2px solid;padding: 10px 40px;width: 400px;resize: both;overflow: auto;">
 这个 div 元素可由用户调整尺寸（在 Firefox 4+、Chrome 以及 Safari 中）。
 
+
+
 #### CSS 代码如下：
+
 
 #### 实例
 
+
 规定 div 元素可由用户调整大小：
+
 
 ```javascript
 div
@@ -2420,15 +2983,22 @@ div
 }
 ```
 
+
+
 ## 13.3 CSS3 Box Sizing
 
 ### CSS3 Box Sizing
 
+
+
 box-sizing 属性允许您以确切的方式定义适应某个区域的具体内容。
+
 
 #### 实例
 
+
 规定两个并排的带边框方框：
+
 
 ```javascript
 div
@@ -2441,24 +3011,33 @@ div
 }
 ```
 
+
+
 ## 13.4 CSS3 Outline Offset
 
 ### CSS3 Outline Offset
+
+
 
 outline-offset 属性对轮廓进行偏移，并在超出边框边缘的位置绘制轮廓。
 
 轮廓与边框有两点不同：
 
+
 - 1. 轮廓不占用空间
 -  2. 轮廓可能是非矩形
+
 
 <p id="outlineoffset" style="margin: 40px 0 40px 20px;width: 150px;
 padding: 10px;height: 70px;border: 2px solid black;outline: 2px solid red;outline-offset: 15px;">
 这个 div 在边框之外 15 像素处有一个轮廓。
 
+
 CSS 代码如下：
 
+
 #### 实例
+
 
 规定边框边缘之外 15 像素处的轮廓：
 
@@ -2471,11 +3050,16 @@ div
 }
 ```
 
+
+
 ## 13.5 新的用户界面属性
 
 ### 新的用户界面属性
 
+
+
 下面的表格列出了所有的转换属性：
+
 
 <table class="table table-bordered" align="center" border="2" style="line-height:22.399999618530273px;">
 <tbody><tr style="background-color: #555555;color: #ffffff;">

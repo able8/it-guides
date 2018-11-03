@@ -69,16 +69,24 @@ Meteor和那些名声如雷贯耳的前端框架，比如Angular, React等都不
 Meteor提供了一个 **横跨** 前端和后端的 **中间层** 平台，预置封装了很多功能库，简化了
 Web应用的开发：使用 *单一* 语言 *快速* 开发Web应用，这是Meteor的最重要诉求。
 
+
+
 ## 1.2 初识Meteor
 ### 初识Meteor
 
 从构成来讲，可以认为Meteor开发平台由两部分构成：
 
+
+
 -  *Meteor库*  - 以功能包的形式存在，封装了诸如实时通信、反应式编程之类的核心功能。当
 一个Meteor应用启动时，Meteor会自动加载这些库，为应用提供了一个基础环境。
 
+
 -  *Meteor工具*  - 可以理解为命令行方式的开发环境，它使我们可以轻松地管理整个应用
 开发流程：从创建应用、调试应用、自动化测试到打包、部署、热升级。
+
+
+
 
 现在，让我们让我们使用Meteor命令行工具 **meteor** 创建并启动第一个Meteor应用吧。
 
@@ -100,10 +108,13 @@ Web应用的开发：使用 *单一* 语言 *快速* 开发Web应用，这是Met
 
 你可以看到Meteor创建了3个文件和1个目录。
 
+
+
 -  *test.css*  - 前端的样式表文件
 -  *test.html*  -前端的HTML文件
 -  *test.js*  - 前端/后端共用的JavaScript文件。 *全栈* ，对吧O(∩_∩)O~
 -  *.meteor*  - 这个子目录是Meteor应用必须的特殊子目录，由Meteor平台维护，我们不要动
+
 
 先略过3个文件的具体内容，我们运行起来看看。
 
@@ -145,13 +156,22 @@ Meteor应用运行时会生成打包文件、创建应用数据库。可以使�
 
  *meteor reset* 命令不影响你的源代码文件。
 
+
 > 这节课让我们熟悉一下学习环境中终端的使用方法，以及运行结果的查看。
+
+
 
 - 使用 *meter create test* 命令， *创建* 一个新的应用 *test*
 - 使用 *cd test* 命令，进入test目录， *运行* 新创建的test应用
 - 点击<span style="margin:0px 5px;padding:5px;background:#333;color:white;border-radius:3px;">访问测试</span> 按钮，
     在新打开的浏览器窗口内，查看运行结果
 - 按 *Ctrl+C* ， *停止* test应用的运行
+
+
+
+
+
+
 
 ## 1.3 模板文件 - test.html
 ### 模板文件 - test.html
@@ -192,7 +212,10 @@ Meteor的模板使用的语言是私有的 *spacebars* 语言，它基于流行�
  **{{counter}}** 模板标签执行插值工作，Meteror将在最终呈现给用户的HTML文档中，使用
 标识符 *counter* 对应的值进行原地替换。
 
+
 > 这节课我们熟悉一下学习环境中的文件编辑操作：
+
+
 
 - 鼠标左键单击 <span style="margin:0px 5px;padding:5px;background:#333;color:white;border-radius:3px;">文件管理</span>
     按钮打开 *文件管理面板*
@@ -200,7 +223,11 @@ Meteor的模板使用的语言是私有的 *spacebars* 语言，它基于流行�
 - 在 *文件编辑器* 中修改test.html, 将 *Welcome to Meteor!* 修改为 *欢迎使用Meteor*
 - 鼠标左键单击 <span style="margin:0px 5px;padding:5px;background:#333;color:white;border-radius:3px;">保存文件</span>按钮
 
+
 现在，重新运行应用，并查看运行结果。
+
+
+
 
 ## 1.4 样式文件 - test.css
 ### 样式文件 - test.css
@@ -213,21 +240,28 @@ Meteor的模板使用的语言是私有的 *spacebars* 语言，它基于流行�
 上图中，a.css和b.css的内容将被合并为一个文件，并在最终呈现给用户的HTML文档中，
 使用link标签引用这个文件。
 
+
 > 现在，我们练习使用 *样式/CSS* 将模板中的 *h1* 元素字体颜色设置为红色（在练习
 之前请确保已经 *停止* 了之前启动的Meteor应用）
+
+
 
 - 修改并保存 *test.css* 文件，在其中添加样式定义： *h1{color:red}*
 - 重新运行test应用，并在浏览器中查看运行结果
 
 <br>
 
+
 ## 1.5 代码文件 - test.js
 ### 代码文件 - test.js
 
  *test.js* 是最有趣的文件，Meteor将在前端和后端同时运行这个文件。可以这样理解：
 
+
+
 - 前端 - Meteor将在最终呈现给用户的HTML文档中使用script标签引用test.js
 - 后端 - Meteor将通过NodeJS读入并运行test.js
+
 
 毫无疑问，如果不做任何处理，谁也没法保证一段JS代码既可以在前端浏览器环境中运行，
 也可以在后端NodeJS中运行。在test.js中，我们需要判断当前的具体运行环境，以便
@@ -239,8 +273,11 @@ Meteor的模板使用的语言是私有的 *spacebars* 语言，它基于流行�
 应用了，只需要判断下在某个特定环境才存在的变量就可以了（比如，NodeJS有global，而
 浏览器有window）。Meteor提供了一组更加清晰的API来实现这个判断：
 
+
+
 - Meteor.isClient - 为真时，表示当前运行环境为前端
 - Meteor.isServer - 为真时，表示当前运行环境为后端
+
 
 你可以看到，在test.js中也是这么做的：
 
@@ -268,12 +305,19 @@ if(Meteor.isServer){...}
 运行应用后，你将在后台的终端中看到 *Hello,Meteor!* ，也将在前台的调试台
 中看到相同的输出。
 
+
 > 这节课我们练习在同一个文件中如何编写分别应用于前端和后端的代码。请修改
 test.js文件，达成如下目标：
+
+
 
 - 在服务端启动后，在终端打印输出： *server starting...*
 - 在使用<span style="margin:0px 5px;padding:5px;background:#333;color:white;border-radius:3px;">访问测试</span>按钮
   打开前端页面时，前端弹窗显示信息： *client starting...*
+
+
+
+
 
 ## 1.6 前端代码 - 模板实例对象
 ### 前端代码 - 模板实例对象
@@ -301,6 +345,8 @@ test.js文件，达成如下目标：
 
 而通过模板实例对象的events方法，则为模板中的button元素挂接了click事件监听处理
 函数。
+
+
 
 ## 1.7 前端代码 - 模板标签标识符解析/helper
 ### 前端代码 - 模板标签标识符解析/helper
@@ -363,7 +409,10 @@ Template.test.helpers({
 
 这时，模板标签{{displayName}}将永远地被设定为固定的值了。
 
+
 > 修改test.js，使hello模板的counter helper返回值为实际点击量的10倍。
+
+
 
 ## 1.8 前端代码 - 模板事件绑定
 ### 前端代码 - 模板事件绑定
@@ -407,7 +456,11 @@ Template.hello.events({
 });
 ```
 
+
 > 修改test.js，实现以下功能：点击hello模板中的按钮时，弹窗提示： *clicked*
+
+
+
 
 ## 1.9 前端代码 - 全局字典/Session
 ### 前端代码 - 全局字典/Session
@@ -463,7 +516,10 @@ helper *依赖于* Session对象。图中的实线表示的是反向的 *变换�
 这意味着，一旦声明了对象间的依赖关系，下游对象的变化将自动地沿着依赖关系链
  *反向传播* 给上游对象。这就是 *反应式/Reactive* 的核心理念。
 
+
 > 修改test.js，设置Session中counter的初始值为1000.
+
+
 
 ## 1.10 后端代码
 ### 后端代码
@@ -497,7 +553,11 @@ Meteor.startup(function(){
 });
 ```
 
+
 > 修改test.js中服务端代码，在平台就绪时打印： *server is ready.*
+
+
+
 
 ## 1.11 应用目录结构
 ### 应用目录结构
@@ -546,15 +606,20 @@ robots.txt，或者一些静态的HTM文件。
 
 任何名为 *test* 的目录内的文件仅用于测试，前端和后端都不会使用。
 
+
+
 ## 1.12 内容小结
 ### 内容小结
 
 让我们简单回顾这个示例Meteor应用的开发过程（假装没有使用meteor工具）：
 
+
+
 - 创建模板文件test.html，定义文档结构
 - 创建样式文件test.css，定义文档样式
 - 编写前端脚本test.js，实现模板、数据、事件的绑定
 - 在这个示例中，我们基本不需要编写后端脚本
+
 
 这些就绪后，扔给Meteor运行就可以了。
 
@@ -577,7 +642,9 @@ Meteor.isServer判断代码运行环境，可以使用同样的Meteor.startup()�
  *基础环境* 。不得不提的是，Meteor平台在前端基础环境和后端基础环境之间，甚至已经基于
 websocket建立了一个 *双向实时* 的通道！
 
+
 > 在进入后续内容之前，让我们先在终端中执行以下命令下载课程示例代码：
+
 
 `~/test$ cd↵
 ~$ git clone https&amp;#58;//github.com/hubwiz/meteor-lesson.git demos↵`
@@ -586,6 +653,9 @@ websocket建立了一个 *双向实时* 的通道！
 
 `...
 Checking connectivity... done.`
+
+
+
 
 # 2 实时通信平台
 
@@ -629,6 +699,8 @@ Meteor平台基于websocket，在前端和后端之间建立了一条双向的�
 上图中，客户端利用DDP协议的 *sub* 报文订阅了服务端的 *news* 主题。服务端将初始的数据通过 *added*
 报文发送给客户端后，使用 *ready* 报文通知客户端初始数据发送完毕。在随后的某个时刻，服务端添加
 /修改/删除的数据，分别通过 *added* / *changed* / *removed* 报文发送给客户端。
+
+
 
 ## 2.2 远程过程调用 - RPC
 ### 远程过程调用 - RPC
@@ -674,18 +746,25 @@ Meteor.call("calcSalary","Mary",function(error,result){
 用法差不多，只是参数需要以数组形式传入，并且有一些附加的调用选项。有兴趣的话可以
 查阅<a href="http://docs.meteor.com/#/full/meteor_apply" target="_blank">文档</a>
 
+
 >
 执行以下命令复位test应用、删除源文件:
+
 
 `~/test$ meteor reset↵
 ~/test$ rm -rf \*↵`
 
 拷贝rpc示例代码，运行并查看运行结果：
 
+
 `~/test$ cp ~/demos/rpc/* .↵
 ~/test$ meteor↵`
 
 理解并修改rpc示例代码，通过练习掌握Meteor平台下RPC的使用方法。
+
+
+
+
 
 ## 2.3 RPC - 前端stub
 ### RPC - 前端stub
@@ -716,18 +795,25 @@ if(Meteor.isServer){
 在Meteor中，本地 *存根/stub* 方法的最大的用途是进行网络调用的
  *延迟补偿/Latency Compensation* 。
 
+
 > 执行以下命令复位test应用、删除源文件：
+
 
 `~/test$ meteor reset↵
 ~/test$ rm -rf \*↵`
 
 执行以下命令拷贝rpcstub示例代码，运行并查看运行结果：
 
+
 `~/test$ cp ~/demos/rpcstub/* .↵
 ~/test$ meteor↵`
 
 理解并修改rpcstub示例代码，通过练习掌握在Meteor应用中为远程过程添加
 本地stub方法
+
+
+
+
 
 ## 2.4 数据发布/订阅 - Pub/Sub
 ### 数据发布/订阅 - Pub/Sub
@@ -745,9 +831,12 @@ if(Meteor.isServer){
 在 *func* 函数体内， *this* 指向 *发布句柄/Publish Handle* 对象，需要使用这个对象
 的以下方面在数据集发生变化时通知客户端：
 
+
+
 -  *added(c,id,data)*  - 通知客户端向名称为 *c* 的 *集合* 中插入编号为 *id* 的新数据 *data*
 -  *changed(c,id,data)*  - 通知客户端使用 *data* 更新名称为 *c* 的 *集合* 中指定 *id* 的数据记录
 -  *removed(c,id)*  - 通知客户端删除名称为 *c* 的 *集合* 中指定 *id* 的数据记录。
+
 
 下面的代码发布了一个名为 *messages* 的数据集，初始为空，每隔两秒钟模拟一条新的消息：
 
@@ -789,8 +878,10 @@ Meteor.subscribe("messages");
 var localMsg = new Mongo.Collection("msg",{connection:null});
 ```
 
+
 >
 执行以下命令复位test应用、删除源文件:
+
 
 ```javascript
 ~/test$ meteor reset↵
@@ -799,6 +890,7 @@ var localMsg = new Mongo.Collection("msg",{connection:null});
 
 执行以下命令拷贝pubsub示例代码，运行并查看运行结果：
 
+
 ```javascript
 ~/test$ cp ~/demos/pubsub/* .↵
 ~/test$ meteor↵
@@ -806,6 +898,9 @@ var localMsg = new Mongo.Collection("msg",{connection:null});
 
 理解并修改pubsub示例代码，通过练习掌握在Meteor应用中，服务端发布数据集的方法，
 以及在客户端订阅、显示数据集的方法
+
+
+
 
 # 3 反应式编程
 
@@ -847,6 +942,8 @@ var C = A + B;
 <img src="images/55b87a7b3ad79a1b05dcc339/1-3-1/changedetect.jpg" alt="changedetect">
 
 BINGO！这就是实现反应式编程的核心原理，说穿了一点也不神秘。
+
+
 
 ## 3.2 函数反应式编程 - FRP
 ### 函数反应式编程 - FRP
@@ -963,17 +1060,23 @@ SetInterval(function(){
 },1000)
 ```
 
+
 > 执行以下命令复位test应用、删除源文件:
+
 
 `~/test$ meteor reset↵
 ~/test$ rm -rf \*↵`
 
 执行以下命令拷贝frp示例代码，运行并查看运行结果：
 
+
 `~/test$ cp ~/demos/frp/* .↵
 ~/test$ meteor↵`
 
 阅读frp示例代码，理解反应式计算的实现原理
+
+
+
 
 ## 3.3 Meteor的FRP实现 - Tracker模块
 ### Meteor的FRP实现 - Tracker模块
@@ -981,9 +1084,12 @@ SetInterval(function(){
 Meteor平台的FRP实现是通过内置的 *Tracker* 包完成的。在Meteor平台上实现反应式
 计算可分为三个步骤：
 
+
+
 - 将原始数据使用getter/setter进行封装
 - 编写依赖于反应式数据的计算过程
 - 启动反应式计算过程
+
 
 可以认为Meteor的FPR实现，一半是Tracker包中的代码，一半是对开发者编写代码的要求。
 需要提醒的是， *Tracker* 包只可以用在 *前端* 。
@@ -1058,18 +1164,24 @@ setInterval(function(){
 },1000);
 ```
 
+
 > 执行以下命令复位test应用、删除源文件:
+
 
 `~/test$ meteor reset↵
 ~/test$ rm -rf \*↵`
 
 执行以下命令拷贝frp-tracker示例代码，运行并查看运行结果：
 
+
 `~/test$ cp ~/demos/frp-tracker/* .↵
 ~/test$ meteor↵`
 
 理解并修改frp-tracker示例代码，通过练习掌握在Meteor应用中如何使用Tracker
 实现反应式计算。
+
+
+
 
 ## 3.4 反应式变量 - ReactiveVar
 ### 反应式变量 - ReactiveVar
@@ -1115,7 +1227,9 @@ var a = a.get();
 A.set(Math.random());
 ```
 
+
 > 执行以下命令复位test应用、删除源文件：
+
 
 `~/test$ meteor reset↵
 ~/test$ rm -rf \*↵`
@@ -1123,12 +1237,16 @@ A.set(Math.random());
 执行以下命令拷贝frp-reactivevar示例代码、添加reactive-bar包、运行并
 查看运行结果：
 
+
 `~/test$ cp ~/demos/frp-reactivevar/* .↵
 ~/test$ meteor add reactive-var↵
 ~/test$ meteor↵`
 
 理解并修改frp-reactivevar示例代码，通过练习掌握在Meteor应用中如何使用Tracker
 和ReactiveVar来实现反应式计算。
+
+
+
 
 ## 3.5 反应式字典 - ReactiveDict
 ### 反应式字典 - ReactiveDict
@@ -1186,7 +1304,9 @@ dict.setDefault("Konka","18622222222");
 var tel = dict.get("Konka");
 ```
 
+
 > 执行以下命令复位test应用、删除源文件：
+
 
 `~/test$ meteor reset↵
 ~/test$ rm -rf \*↵`
@@ -1194,12 +1314,16 @@ var tel = dict.get("Konka");
 执行以下命令拷贝frp-reactivedict示例代码、添加reactive-dict包、
 运行并查看运行结果：
 
+
 `~/test$ cp ~/demos/frp-reactivedict/* .↵
 ~/test$ meteor add reactive-dict↵
 ~/test$ meteor↵`
 
 理解并修改frp-reactivedict示例代码，通过练习掌握在Meteor应用中如何使用
 Tracker和ReactiveDict实现反应式计算。
+
+
+
 
 ## 3.6 发应式数据集 - LocalCollection
 ### 反应式数据集 - LocalCollection
@@ -1245,7 +1369,9 @@ Tracker.autorun(function(){
 });
 ```
 
+
 > 执行以下命令复位test应用、删除源文件:
+
 
 `~/test$ meteor reset↵
 ~/test$ rm -rf \*↵`
@@ -1253,12 +1379,16 @@ Tracker.autorun(function(){
 执行以下命令拷贝frp-minimongo示例代码、添加minimongo包、
 运行并查看运行结果：
 
+
 `~/test$ cp ~/demos/frp-minimongo/* .↵
 ~/test$ meteor add monimongo↵
 ~/test$ meteor↵`
 
 理解并修改frp-minimongo示例代码，通过练习掌握在Meteor应用中如何使用
 Tracker和LocalCollection来建立反应式计算。
+
+
+
 
 ## 3.7 反应式UI引擎 - Blaze
 ### 反应式UI引擎 - Blaze
@@ -1280,6 +1410,8 @@ Tracker和LocalCollection来建立反应式计算。
 
 你看到，我们并不需要 *手写* UI计算过程，Meteor的编译器自动地将 *模板* 转化为
 对应的 *计算过程*  - 当我们了解手写一个UI计算的繁琐以后，就知道写模板有多幸福了。
+
+
 
 ## 3.8 UI计算过程
 ### UI计算过程
@@ -1316,17 +1448,23 @@ Meteor.render(Template.demo,document.body);
 在Meteor.render()内部，会通过 *Tracker* 来启动反应式计算。这样，当数据变化
 时，UI就将自动得到更新。
 
+
 > 执行以下命令复位test应用、删除源文件：
+
 
 `~/test$ meteor reset↵
 ~/test$ rm -rf \*↵`
 
 执行以下命令拷贝frp-blaze示例代码、运行并查看运行结果：
 
+
 `~/test$ cp ~/demos/frp-blaze/* .↵
 ~/test$ meteor↵`
 
 阅读frp-blaze示例代码，理解Meteor的反应式UI渲染原理。
+
+
+
 
 # 4 模板开发
 
@@ -1354,6 +1492,8 @@ Meteor.render(Template.demo,document.body);
 <template name="footer">...</template>
 <template name="fab">...</template>
 ```
+
+
 
 ## 4.2 数据上下文
 ### 数据上下文
@@ -1390,19 +1530,27 @@ Meteor.render(Template.demo,document.body);
 </template>
 ```
 
+
 >
 执行以下命令复位test应用、删除源文件：
+
 
 `~/test$ meteor reset↵
 ~/test$ rm -rf \*↵`
 
 执行以下命令拷贝tpl-datacontext示例代码、运行并查看运行结果：
 
+
 `~/test$ cp ~/demos/tpl-datacontext/* .↵
 ~/test$ meteor↵`
 
 理解并修改tpl-datacontext示例代码，通过练习掌握在Meteor应用中如何为一个
 模板设置数据上下文。
+
+
+
+
+
 
 ## 4.3 模板helper
 ### 模板helper
@@ -1458,19 +1606,26 @@ Template.hello.helpers({
 });
 ```
 
+
 >
 执行以下命令复位test应用、删除源文件：
+
 
 `~/test$ meteor reset↵
 ~/test$ rm -rf \*↵`
 
 执行以下命令拷贝tpl-helpers示例代码、运行并查看运行结果：
 
+
 `~/test$ cp ~/demos/tpl-hepers/* .↵
 ~/test$ meteor↵`
 
 理解并修改tpl-helpers示例代码，通过练习掌握在Meteor应用中如何为模板中
 的标识符定义helper函数。
+
+
+
+
 
 ## 4.4 在模板中使用helper参数
 ### 在模板使用helper参数
@@ -1524,18 +1679,25 @@ Template.demo.helpers({
 });
 ```
 
+
 > 执行以下命令复位test应用、删除源文件：
+
 
 `~/test$ meteor reset↵
 ~/test$ rm -rf \*↵`
 
 执行以下命令拷贝tpl-helper-args示例代码、运行并查看运行结果：
 
+
 `~/test$ cp ~/demos/tpl-heper-args/* .↵
 ~/test$ meteor↵`
 
 理解并修改tpl-helper-args示例代码，通过练习掌握在Meteor应用中如何定义
 并使用有参数的helper函数。
+
+
+
+
 
 ## 4.5 模板中的路径解析
 ### 模板中的路径解析
@@ -1572,22 +1734,32 @@ helper，就使用当前 *数据上下文* 对象的title属性。对标识符ti
 
 Spacesbars支持在模板标签中使用以下 *特殊标识符* ：
 
+
+
 -  *this* 或 *.*  - 表示当前的数据上下文对象。例如下面的两个模板标签都将最终被
 替换为当前数据上下文的name属性值： *{{this.name}}* ,  *{{./name}}*
 -  *..*  - 表示 *外层/父* 模板的数据上下文对象。例如下面模板标签将最终被
 替换为父模板的数据上下文的name属性值： *{{../name}}*
 
+
+
 > 执行以下命令复位test应用、删除源文件：
+
 
 `~/test$ meteor reset↵
 ~/test$ rm -rf \*↵`
 
 执行以下命令拷贝tpl-path-resovle示例代码、运行并查看运行结果：
 
+
 `~/test$ cp ~/demos/tpl-path-resolve/* .↵
 ~/test$ meteor↵`
 
 理解并修改tpl-path-resolve示例代码，通过练习理解模板中的特殊标识符和路径解析过程。
+
+
+
+
 
 ## 4.6 模板事件处理
 ### 模板事件处理
@@ -1661,6 +1833,8 @@ Template.hello.events({
 
 常见的DOM事件如下：
 
+
+
 - click - 点击事件
 - dblclick - 双击事件
 - focus/blue - 元素在获得/失去焦点时将触发该事件
@@ -1670,18 +1844,25 @@ Template.hello.events({
 - keydown/keyup - 按下/松开键盘某键时触发
 - keypress - 击键时触发
 
+
+
 > 执行以下命令复位test应用、删除源文件：
+
 
 `~/test$ meteor reset↵
 ~/test$ rm -rf \*↵`
 
 执行以下命令拷贝tpl-events示例代码、运行并查看运行结果：
 
+
 `~/test$ cp ~/demos/tpl-events/* .↵
 ~/test$ meteor↵`
 
 理解并修改tpl-events示例代码，通过练习掌握在Meteor应用中如何为模板中DOM对象
 声明事件绑定。
+
+
+
 
 ## 4.7 模板逻辑控制 - 条件
 ### 模板逻辑控制 - 条件
@@ -1713,17 +1894,23 @@ Template.hello.events({
 </template>
 ```
 
+
 > 执行以下命令复位test应用、删除源文件：
+
 
 `~/test$ meteor reset↵
 ~/test$ rm -rf \*↵`
 
 执行以下命令拷贝tpl-if示例代码、运行并查看运行结果：
 
+
 `~/test$ cp ~/demos/tpl-if/* .↵
 ~/test$ meteor↵`
 
 理解并修改tpl-if示例代码，通过练习掌握模板标签{{#if}}和{{#unless}}的用法与用途。
+
+
+
 
 ## 4.8 模板逻辑控制 - 循环
 ### 模板逻辑控制 - 循环
@@ -1738,7 +1925,9 @@ Template.hello.events({
 用来解析参数 *friends* ，这是一个对象数组。Meteor将为数组中的每一个数据应用 *{{#each}}*
 和 *{{/each}}* 所包含的模板块，并分别设置其 *数据上下文* 。
 
+
 > 执行以下命令复位test应用、删除源文件：
+
 
 `~/test$ meteor reset↵
 ~/test$ rm -rf \*↵`
@@ -1749,6 +1938,9 @@ Template.hello.events({
 ~/test$ meteor↵`
 
 理解并修改tpl-each示例代码，通过练习掌握模板标签{{#each}}的用法和用途。
+
+
+
 
 ## 4.9 动态调用模板
 ### 动态调用模板
@@ -1791,17 +1983,23 @@ Template.body.helpers({
 
 当然，你可以使用helper函数来作为data参数的值。
 
+
 > 执行以下命令复位test应用、删除源文件：
+
 
 `~/test$ meteor reset↵
 ~/test$ rm -rf \*↵`
 
 执行以下命令拷贝tpl-dynamic示例代码、运行并查看运行结果：
 
+
 `~/test$ cp ~/demos/tpl-dynamic/* .↵
 ~/test$ meteor↵`
 
 理解并修改tpl-dynamic示例代码，通过练习掌握动态模板的用法和用途。
+
+
+
 
 ## 4.10 模板中的注释
 ### 模板中的注释
@@ -1845,17 +2043,23 @@ Template.body.helpers({
 <template name="demo">...</template>
 ```
 
+
 > 执行以下命令复位test应用、删除源文件：
+
 
 `~/test$ meteor reset↵
 ~/test$ rm -rf \*↵`
 
 执行以下命令拷贝tpl-comments示例代码、运行并查看运行结果：
 
+
 `~/test$ cp ~/demos/tpl-comments/* .↵
 ~/test$ meteor↵`
 
 理解并修改tpl-comments示例代码，通过练习掌握模板标签{{!}}的用法。
+
+
+
 
 ## 4.11 模板标签的位置限制
 ### 模板标签的位置限制
@@ -1912,17 +2116,24 @@ Template.body.helpers({
 <div class="ezcls" id="abc">...
 ```
 
+
 > 执行以下命令复位test应用、删除源文件：
+
 
 `~/test$ meteor reset↵
 ~/test$ rm -rf \*↵`
 
 执行以下命令拷贝tpl-attrs示例代码、运行并查看运行结果：
 
+
 `~/test$ cp ~/demos/tpl-attrs/* .↵
 ~/test$ meteor↵`
 
 理解并修改tpl-attrs示例代码，通过练习掌握在模板中模板标签的合法作用点。
+
+
+
+
 
 # 5 数据存储管理
 
@@ -1978,6 +2189,8 @@ if(Meteor.isClient){
 }
 ```
 
+
+
 ## 5.2 插入文档 - Collection.insert
 ### 插入文档 - Collection.insert
 
@@ -1993,9 +2206,12 @@ demo.insert({name:"Jason",age:28});
 
  *insert()* 方法的主要参数如下：
 
+
+
 - doc - 用来指定作为数据的JSON对象
 - callback - 用来指定一个回调函数 *function(error,result){...}* ，当插入完成时
 callback参数指定的回调函数将被调用
+
 
 在 *后端* 调用该方法时，如果不指定 *callback* 参数，将阻塞执行直至插入完成，或者在发生
 错误时抛出异常； *前端* 不支持同步阻塞方式的执行，因此如果不设置 *callback* 参数，将
@@ -2014,18 +2230,24 @@ RPC机制），而后端执行的 *insert()* 会自动同步到前端（通过pu
 
 <img src="images/55b87a7b3ad79a1b05dcc339/1-5-2/insert-scenario.jpg" alt="insert-scenario">
 
+
 > 执行以下命令复位test应用、删除源文件：
+
 
 `~/test$ meteor reset↵
 ~/test$ rm -rf \*↵`
 
 执行以下命令拷贝col-insert示例代码、运行并查看运行结果：
 
+
 `~/test$ cp ~/demos/col-insert/* .↵
 ~/test$ meteor↵`
 
 理解并修改col-insert示例代码，通过练习掌握Collection对象的insert方法在
 前端和后端的差异之处。
+
+
+
 
 ## 5.3 更新文档 - Collection.update
 ### 更新文档 - Collection.update
@@ -2044,10 +2266,13 @@ demo.update({name:"Jason"},{$set:{score:100}})
 
  *update()* 方法的参数如下：
 
+
+
 - selector - 文档选择符，可以是文档id或合法的MongoDB选择符
 - modifier - 文档修改指令对象，update方法将根据这个指令修改匹配的数据
 - options - 可选参数是一个JSON对象，影响update操作的行为
 - callback - 指定回调函数 *function(error,nums){...}* ，在更新完成后被调用。
+
 
 在 *后端* 调用该方法时，如果不指定 *callback* 参数，将阻塞执行直至更新完成，或者在发生
 错误时抛出异常； *前端* 不支持同步阻塞方式的执行，因此如果不设置 *callback* 参数，将
@@ -2086,18 +2311,24 @@ demo.update({name:"Jason"},{name:"Jason",tel:"114"},{upsert:true});
 设置的allow和deny规则检查。此外，非受信代码中调用的 *update()* 方法，也不能执行通过
 设置 *options* 参数的 *upsert* 属性来执行无匹配时的插入操作 —— 除非在应用中添加了 *insecure* 包。
 
+
 > 执行以下命令复位test应用、删除源文件：
+
 
 `~/test$ meteor reset↵
 ~/test$ rm -rf \*↵`
 
 执行以下方法拷贝col-update示例代码、运行并查看运行结果：
 
+
 `~/test$ cp ~/demos/col-update/* .↵
 ~/test$ meteor↵`
 
 理解并修改col-update示例代码，通过练习掌握Collection对象在前端和后端执行
 的差异。
+
+
+
 
 ## 5.4 删除文档 - Collection.remove
 ### 删除文档 - Collection.remove
@@ -2114,8 +2345,11 @@ demo.remove({name:"Jason"});
 
  *remove()* 方法的参数如下：
 
+
+
 - selector - 文档选择符，可以是文档id或合法的MongoDB选择符
 - callback - 指定回调函数 *function(error){...}* ，在更新完成后被调用
+
 
 在 *后端* 调用该方法时，如果不指定 *callback* 参数，将阻塞执行直至删除完成，或者在发生
 错误时抛出异常； *前端* 不支持同步阻塞方式的执行，因此如果不设置 *callback* 参数，将
@@ -2130,18 +2364,25 @@ demo.remove({name:"Jason"});
 代码中，只能使用文档的 *_id* 作为选择符，一次删除一个文档，而且还必须通过应用层
 设置的allow和deny规则检查。
 
+
 > 执行以下命令复位test应用、删除源文件：
+
 
 `~/test$ meteor reset↵
 ~/test$ rm -rf \*↵`
 
 执行以下命令拷贝col-remove示例代码、运行并查看运行结果：
 
+
 `~/test$ cp ~/demos/col-remove/* .↵
 ~/test$ meteor↵`
 
 理解并修改col-remove示例代码，通过练习掌握Collection对象的remove方法在前端
 和后端的使用差异。
+
+
+
+
 
 ## 5.5 查找文档 - Collection.find
 ### 查找文档 - Collection.find
@@ -2158,8 +2399,11 @@ var cursor = demo.find({name:"Jason"});
 
  *find()* 方法的参数如下：
 
+
+
 -  *selector*  - 指定文档选择符，当不指定该参数或传入空对象 *{}* 时，匹配所有文档
 -  *options*  - 查找选项参数，是一个JSON对象，用来定制查找行为，比如排序、限制返回数量、选择字段等。
+
 
  *find()* 方法返回一个 *游标/Cursor* 对象，它仅仅 *登记* 了要进行的查询 *上下文* ，并不马上
  *物理地* 访问数据库以返回文档。
@@ -2214,18 +2458,24 @@ var demo = new Mongo.Collection("persons");
 var cursor = demo.find({},{fields:{name:1,tel:1}});
 ```
 
+
 > 执行以下命令复位test应用、删除源文件
+
 
 `~/test$ meteor reset↵
 ~/test$ rm -rf \*↵`
 
 执行以下命令拷贝col-find示例代码、运行并查看运行结果：
 
+
 `~/test$ cp ~/demos/col-find/* .↵
 ~/test$ meteor↵`
 
 理解并修改col-find示例代码，通过练习掌握Collection的find方法在前端
 和后端的使用差异。
+
+
+
 
 ## 5.6 查询结果 - 游标/Cursor
 ### 查询结果 - 游标/Cursor
@@ -2277,14 +2527,18 @@ var persons =demo.find().fetch();
 
  *count()* 方法返回游标匹配的文档数量。
 
+
 > 执行以下命令复位test应用、删除源文件：
+
 
 `~/test$ meteor reset↵
 ~/test$ rm -rf \*↵`
 
 执行以下命令拷贝col-cursor示例代码、运行并查看运行结果：
 
+
 `~/test$ cp ~/demos/col-cursor/* .↵
 ~/test$ meteor↵`
 
 理解并修改col-cursor示例代码，通过练习掌握游标对象的使用方法。
+

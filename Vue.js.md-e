@@ -77,6 +77,8 @@
 
 <img src="images/566e67417e7d40946afc5ddc/1-1-1/mvvm.png" alt="">
 
+
+
 ## 1.2 安装方式：直接引入、CDN、NPM
 ### 安装
 
@@ -112,6 +114,8 @@ $ npm install vue@csp
 $ npm install yyx990803/vue#dev
 ```
 
+
+
 ## 1.3 第一个vue.js实例 Hello World
 ### Hello World
 
@@ -138,8 +142,10 @@ new Vue({
 
 上面代码中 *div* 中的部分  *{{ message }}* 为数据绑定，我们将会在后面的学习中讲到。而vue.js代码是实例化一个 *Vue* 对象。在使用 *vue* 之前必须要实例化。
 
+
 > 按上面的代码去试试吧！
 </div>
+
 
 ## 1.4 通过构造器函数创建实例
 ### 构造器
@@ -153,6 +159,8 @@ var vm = new Vue({
 ```
 
 一个 *Vue* 实例其实正是一个 *MVVM* 模式中所描述的  *ViewModel*  - 因此在文档中经常会使用 *vm* 这个变量名。
+
+
 
 ## 1.5 响应式的数据(Data)属性与方法
 ### 属性与方法
@@ -195,6 +203,8 @@ vm.$watch('a', function (newVal, oldVal) {
 
 同学们可以参考<a href='http://cn.vuejs.org/api/#实例属性' target="_Blank">这里</a>来进行学习。
 
+
+
 # 2 数据绑定模版语法
 
 ## 2.1 模版中文本插值的“Mustache”语法
@@ -225,6 +235,7 @@ new Vue({
 data.msg="Hello World!";
 ```
 
+
 > 练一练单次插值绑定。
 
 ## 2.2 模版语法如何处理原始 HTML
@@ -246,6 +257,7 @@ new Vue({
     data: data
    })
 ```
+
 
 > 输出一个span元素。
 
@@ -270,6 +282,7 @@ new Vue({
 
 我们去查看HTML源码，是不是id已经变成我们设置的id了。
 
+
 > 试着加入一个name属性。
 
 ## 2.4 JavaScript表达式
@@ -282,6 +295,7 @@ new Vue({
 {{ ok ? 'YES' : 'NO' }}
 {{ message.split('').reverse().join('') }}
 ```
+
 
 > 练习{{ ok ? 'YES' : 'NO' }}.
 
@@ -322,6 +336,7 @@ javaScript代码：
 
 运行结果为：Hello
 
+
 > 练习字符串小写（lowercase）的过滤器。
 
 ## 2.6 指令(Directives)
@@ -347,6 +362,7 @@ javascript代码：
   data: data
  })
 ```
+
 
 > 当msg的值为false时，看看HTML有什么变化呢？
 
@@ -380,6 +396,7 @@ var vm = new Vue({
 ```
 
 运行结果为：a=1,b=2
+
 
 > 写一个字符串求长度的计算属性。
 
@@ -417,6 +434,7 @@ var vm = new Vue({
 
 当 isA 和 isB 变化时，class 列表将相应地更新。例如，如果 isB 变为 true，class 列表将变为 "static　class-a class-b"。
 
+
 > 将上面的代码练一练。
 
 ## 3.2 绑定Html Class数组语法
@@ -448,6 +466,7 @@ var vm = new Vue({
 <div class="class-a class-b"></div>
 ```
 
+
 > 去掉一个样式看看是什么情况？
 
 ## 3.3 绑定内联样式Style对象语法
@@ -478,6 +497,7 @@ var vm = new Vue({
 ```javascript
 <div style="color: red; font-size: 30px;">Style 对象语法</div>
 ```
+
 
 > 再绑定一个字体属性试试。
 
@@ -512,6 +532,7 @@ var vm = new Vue({
 <div style="color: red; font-size: 30px;">Style 数组语法</div>
 ```
 
+
 > 自己去试试绑定三个元素的数组！
 
 # 4 渲染指令
@@ -541,6 +562,7 @@ var vm = new Vue({
 <h1 v-else>No</h1>
 ```
 
+
 > 练习一下v-else指令吧。
 
 ## 4.2 template元素条件渲染 v-if
@@ -568,6 +590,7 @@ var vm = new Vue({
 
 ```
 
+
 > 与v-else指令配合练习一下吧。
 
 ## 4.3 条件渲染 v-show
@@ -580,6 +603,8 @@ var vm = new Vue({
 ```
 
 　　不同的是有  *v-show*  的元素会始终渲染并保持在 DOM 中。 *v-show*  是简单的切换元素的  *CSS*  属性  *display* 。
+
+
 
 ## 4.4 条件渲染 v-else
 ### v-else
@@ -596,6 +621,8 @@ var vm = new Vue({
 ```
 
  *v-else*  元素必须立即跟在  *v-if*  或  *v-show* 元素的后面，否则它不能被识别。
+
+
 
 ## 4.5 列表渲染指令 v-for
 ### v-for
@@ -649,6 +676,7 @@ var example2 = new Vue({
 })
 ```
 
+
 > 练习一下v-for指令的特殊变量$index吧。
 
 ## 4.6 template元素列表渲染 v-for
@@ -664,6 +692,8 @@ var example2 = new Vue({
   </template>
 </ul>
 ```
+
+
 
 # 5 表单控件输入绑定
 
@@ -689,6 +719,7 @@ var vm = new Vue({
 ```
 
 其中 *placeholder* 为默认显示提示。
+
 
 > 自己写一个placeholder="emal address"的输入框。
 
@@ -722,6 +753,7 @@ var vm = new Vue({
 
 当checkbox为true时，值为a；当为fals时，值为b。
 
+
 > 绑定checkbox为true时，值为T;否则为F。
 
 ## 5.3 单选按钮 Radio
@@ -742,6 +774,7 @@ var vm = new Vue({
 ```javascript
 <input type="radio" v-model="pick" v-bind:value="a">
 ```
+
 
 > 绑定值为"T"的单选按钮。
 
@@ -809,6 +842,7 @@ new Vue({
 </select>
 ```
 
+
 > 练一练动态选择！
 
 ## 5.5 修饰符参数特性 lazy、number、trim
@@ -847,6 +881,7 @@ new Vue({
 ```
 
 注意  *debounce*  参数不会延迟  *input*  事件：它延迟“写入”底层数据。
+
 
 > debounce参数，延时10秒去试试看！
 
@@ -913,6 +948,7 @@ var demo = new Vue({
 })
 ```
 
+
 > 自定义一个helloworld的指令。
 
 ## 6.2 指令实例属性
@@ -956,6 +992,7 @@ var demo = new Vue({
 })
 ```
 
+
 > 去查看descriptor的结果是什么？
 
 ## 6.3 指令对象字面量
@@ -975,6 +1012,7 @@ Vue.directive('demo', function (value) {
 })
 ```
 
+
 > 将 4+6 这个表达式传入指令。
 
 ## 6.4 指令对象字面修饰符
@@ -993,6 +1031,7 @@ Vue.directive('demo', function (value) {
   document.write(value) // "foo bar baz"
 })
 ```
+
 
 > 将上面代码到练习环境中去练一练。
 
@@ -1015,6 +1054,7 @@ Vue.elementDirective('my-directive', {
 ```javascript
 <my-directive></my-directive>
 ```
+
 
 > 自己定义一个< hello-vue >的元素指令。
 
@@ -1063,6 +1103,7 @@ Vue.filter('wrap', function (value, begin, end) {
 <span>{{msg | wrap 'before' 'after'}}</span>
 ```
 
+
 > 自己去练一练多参数的过滤器吧！
 
 ## 7.2 双向自定义过滤器
@@ -1095,6 +1136,8 @@ html代码如下：
 </div>
 ```
 
+
+
 ## 7.3 过滤器的动态参数
 ### 动态参数
 
@@ -1113,6 +1156,7 @@ Vue.filter('concat', function (value, input) {
   return value + input
 })
 ```
+
 
 > 写一个字符串求长度的过滤器。
 
@@ -1148,6 +1192,7 @@ var vm = new Vue({
   }
 })
 ```
+
 
 > 自己去练一练吧！
 
@@ -1196,6 +1241,7 @@ new Vue({
 })
 ```
 
+
 > 直接绑定一个mouseover事件去练一练吧！
 
 ## 8.3 事件处理的修饰符
@@ -1213,6 +1259,8 @@ new Vue({
 <!-- 只有修饰符 -->
 <form v-on:submit.prevent></form>
 ```
+
+
 
 ## 8.4 按键处理的修饰符
 ### 按键修饰符
@@ -1232,6 +1280,7 @@ new Vue({
 ```
 
 常用按键别名： *enter、tab、delete、esc、space、up、down、left、right* 。
+
 
 > 当按delete时，提示不允许删除。
 
@@ -1255,6 +1304,8 @@ new Vue({
 ```
 
 所有的  *Vue.js*  过渡效果只有在该  *DOM*  操作是通过  *Vue.js*  触发时才会生效。触发的方式可以是通过内置指令，比如  *v-if* ，或是通过  *Vue*  实例的方法，比如  *vm.$appendTo()* 。
+
+
 
 ## 9.2 CSS 过渡动画
 ### CSS 过渡
@@ -1318,6 +1369,8 @@ Vue.transition('expand', {
 
 说简单点就是我们在操作某个元素时，当 *v-if* 的值为发生变化时，就会引起 *transition* 的变化，从而使的CSS样式改变。如果还是不明白，请同学们看第四节《过渡流程详解》。
 
+
+
 ## 9.3 过渡的CSS类名
 ### 过渡的CSS类名
 
@@ -1331,6 +1384,8 @@ Vue.transition('expand', {
 
 　　如果  *transition*  特性没有值，类名默认是  *.v-transition* ,  *.v-enter*  和  *.v-leave* 。
 
+
+
 ## 9.4 过渡流程详解示例
 ### 过渡流程详解
 
@@ -1340,6 +1395,8 @@ Vue.transition('expand', {
 
 如果  *show*  变为  *false* ， *Vue.js*  将：
 
+
+
 - 用  *beforeLeave*  钩子；
 - 添加  *v-leave*  类名到元素上以触发过渡；
 - 调用  *leave*  钩子；
@@ -1347,7 +1404,10 @@ Vue.transition('expand', {
 - 从  *DOM*  中删除元素并删除  *v-leave*  类名；
 - 调用  *afterLeave*  钩子。
 
+
+
 如果  *show*  变为  *true* ， *Vue.js*  将：
+
 
 <br>- 调用  *beforeEnter*  钩子；
 - 添加  *v-enter*  类名到元素上；
@@ -1356,6 +1416,9 @@ Vue.transition('expand', {
 - 强制一次 *CSS*  布局，让  *v-enter*  确实生效。然后删除  *v-enter*  类名，以触发过渡，回到元素的原始状态；
 - 等待过渡结束；
 - 调用 *afterEnter* 钩子。
+
+
+
 
 ## 9.5 渐近的动态过渡
 ### 渐近过渡
@@ -1432,6 +1495,7 @@ ul {
 
 以上代码的效果为:当我们在文本框中输入值时，会看到列表逐渐消失，删除内容时，会看到列表显示。
 
+
 > 我们改变一下stagger值为1000，看看会有什么效果呢?
 
 # 10 组件
@@ -1485,6 +1549,7 @@ new Vue({
 </div>
 ```
 
+
 > 自己去建立一个名字为child的组件吧。
 
 ## 10.2 Props传递数据给子组件
@@ -1509,6 +1574,7 @@ Vue.component('child', {
 ```javascript
 <child msg="hello!"></child>
 ```
+
 
 > 自己去建立一个名字为child的组件，然后用props传值。
 
@@ -1540,6 +1606,7 @@ Vue.component('child', {
 </div>
 ```
 
+
 > 自己去建立一个名字为child的组件，然后用props传值。
 
 ## 10.4 通过 Props 绑定类型实现单双向绑定
@@ -1558,6 +1625,7 @@ Props 绑定类型
 
 双向绑定会把子组件的  *my-message*  属性同步回父组件的  *parentMsg*  属性。单次绑定在建立之后不会同步之后的变化。
 
+
 > 练一下双向绑定，看看会有什么效果呢。
 
 ## 10.5 自定义通信事件示例
@@ -1567,10 +1635,14 @@ Props 绑定类型
 
 每个  *Vue*  实例都是一个事件触发器：
 
+
+
 - 使用  *$on()*  监听事件；
 - 使用  *$emit()*  在它上面触发事件；
 - 使用  *$dispatch()*  派发事件，事件沿着父链冒泡；
 - 使用  *$broadcast()*  广播事件，事件向下传导给所有的后代。
+
+
 
 子组件可以用 this.$parent 访问它的父组件,而父组件有一个数组 this.$children，包含它所有的子元素。
 
@@ -1623,5 +1695,6 @@ var parent = new Vue({
 ```
 
 关于组件的介绍我们就先讲到这里，更多介绍在请参考<a href="http://cn.vuejs.org/guide/components.html" target="_Blank">这里</a>。
+
 
 > 将上面的代码，在练习环境中去练一练。

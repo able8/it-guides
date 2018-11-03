@@ -33,9 +33,12 @@
 ## 1.1 什么是MongoDB？
 ### 简介
 
+
+
 MongoDB是一个基于分布式文件存储的数据库，由C++语言编写，旨在为WEB应用提供可扩展的高性能数据存储解决方案。
 
 MongoDB是一个高性能，开源，无模式的文档型数据库，官方给自己的定义是Key-value存储(高性能和高扩展)和传统RDBMS(丰富的查询和功能)之间的一座桥梁。
+
 
 ## 1.2 MongoDB 数据之Document和BSON
 ### Document和BSON
@@ -72,11 +75,14 @@ db.users.insert(user);
 如果collection存在，document会添加到collection目录下，
 如果collection不存在，数据库会先创建collection，然后再保存document。
 
+
 > 练习一下：把自己的姓名(name)和年龄(age)保存到person集合中！
+
 
 如果想要查看已插入的person文档，可以使用：db.person.find()查看当前库中person集合里的数据。
 
 如果想要查看当前数据库中的集合列表，可以使用：show collections。
+
 
 > `db.person.insert({name:'阿牛', age:28});`
 
@@ -93,6 +99,7 @@ insert语句不但可以插入单个文档，还可以一次性插入多个文�
 
 文档批量插入非常方便，但是使用批量插入时也有一些问题需要注意，因为BSON格式的限制，一次插入的数据量不能超过16M，在一个insert命令中插入多条数据时，MongoDB不保证完全成功或完全失败。
 
+
 > 使用insert命令将以下数据一次性插入person集合中。
 <table border="1" width="350px;">
 <thead>
@@ -105,6 +112,8 @@ insert语句不但可以插入单个文档，还可以一次性插入多个文�
 </tbody>
 </table>
 
+
+
  ```
 db.person.insert([
  {name:"Mary",  age:21, status:"A"},
@@ -113,8 +122,13 @@ db.person.insert([
 ]);
 ```
 
+
+
+
 ## 2.3 MongoDB 查询与投影
 ### 查询文档
+
+
 
 在MongoDB中，查询指向特定的文档集合，查询设定条件，指明MongoDB需要返回的文档；查询也可以包含一个投影，指定返回的字段。
 
@@ -124,10 +138,16 @@ db.person.insert([
 
 在关系型数据库中，投影指的是对列的筛选，类似的，在MongoDB中，投影指的是对出现在结果集中的对象属性的筛选。
 
+
+
 ## 2.4 MongoDB 的find()方法
 ### 文档查询 - find方法
 
+
+
 MongoDB中查询检索数据时使用find命令，使用方法如下：
+
+
 
 - 语法：
 
@@ -135,7 +155,11 @@ MongoDB中查询检索数据时使用find命令，使用方法如下：
 db.collection.find(criteria,projection);
 ```
 
+
 - 参数：
+
+
+
 
 criteria – 查询条件，文档类型，可选。
 
@@ -149,19 +173,28 @@ find命令两个可选参数，criteria为查询条件，projection为返回的�
 
 <img src="images/54bdfcb188dba012b4b95c9c/1-2-4/find.jpg" alt="">
 
+
 > 请检索出person集合中所有的数据？
+
+
 
 > `db.person.find();`
 
 ## 2.5 MongoDB 修改文档 - update命令
 ### update命令
 
+
+
 update命令可以更新指定文档的特定字段值，也可以替换整个文档，如果更新操作会增加文档大小，MongoDB将重新分配空间并重新定位。
+
+
 
 - 语法：
 ```sh
 db.collection.update(query,update,{upsert:boolean,multi:boolean});
 ```
+
+
 
 - 参数：
 
@@ -179,6 +212,7 @@ multi(可选)：如果值为true，那么将更新全部符合条件的文档，
 
 <img src="images/54bdfcb188dba012b4b95c9c/1-2-5/update.jpg" alt="">
 
+
 > 试一试：请将person集合中所有年龄小于30岁的数据，更新其状态为'X'(提示:小于的操作符是$lt)。
 
 `db.person.update({age:{$lt:30}},{$set:{"status":"X"}},{multi:true});`
@@ -186,24 +220,39 @@ multi(可选)：如果值为true，那么将更新全部符合条件的文档，
 ## 2.6 MongoDB 修改文档 -  save命令
 ### save命令
 
+
+
 save命令可以更新或插入一个新文档，与update命令不同的是，save只能对一个文档进行操作。
+
+
 
 - 语法：
 
 `db.collection.save();`
 
+
 - 参数：
+
+
+
 
 document：新的文档；
 
+
 > 考考你：请使用save命令将文档{name:"Tony",age:12,gender:"man"}保存到person集合中。
+
+
 
 > `db.person.save({name:"Tony",age:12,gender:"man"});`
 
 ## 2.7 MongoDB 删除文档 - remove命令
 ### remove命令
 
+
+
 需要删除文档时使用remove命令，删除文档可以清理掉不需要的数据，释放存储空间，提升检索效率，但是错误的删除会是一场灾难，因此在执行数据删除操作时需要非常的谨慎！
+
+
 
 - 语法：
 
@@ -214,7 +263,11 @@ db.collection.remove(
  )
 ```
 
+
 - 参数：
+
+
+
 
 query：BSON类型，删除文档的条件。
 
@@ -226,20 +279,32 @@ justOne：布尔类型，true：只删除一个文档，false：默认值，删�
 
 与传统SQL比较 - 删除文档
 
+
+
 - MongoDB
 
 <img src="images/54bdfcb188dba012b4b95c9c/1-2-7/remove.jpg" alt="">
 
+
 - 传统SQL
 
+
+
+
 <img src="images/54bdfcb188dba012b4b95c9c/1-2-7/remove-sql.jpg" alt="">
+
+
 
 # 3 MongoDB 单字段查询
 
 ## 3.1 MongoDB 相等条件
 ### 相等条件
 
+
+
 相等条件是最简单常用的的查询操作，查询条件是{ field:value }格式的BSON对象。
+
+
 
 - 语法：
 
@@ -247,28 +312,43 @@ justOne：布尔类型，true：只删除一个文档，false：默认值，删�
 { field: value }
 ```
 
+
 - 示例：查询"inventory集合中所有type字段为snacks的文档";
 
 ```bash
 db.inventory.find({ type: "snacks" })
 ```
 
+
+
+
+
 > 试一试：请在终端中输入命令，查找person集合中所有状态（status）为"X"的数据。
+
+
 
 > `db.person.find({status:"X"});`
 
 ## 3.2 MongoDB 比较条件
 ### 比较条件
 
+
+
 比较条件也是最基本的查询条件之一，通过运算符的比较运算来筛选或排除文档，从而获取到我们想要的文档数据。
 
+
+
 - 语法：
+
 
 ```bash
 { field: { op: value }}
 ```
 
+
+
 - 示例：查询"inventory集合中包含quantity字段并且值大于1000的文档"。
+
 
 ```bash
 db.inventory.find({ quantity: { $gt: 1000}});
@@ -280,12 +360,17 @@ db.inventory.find({ quantity: { $gt: 1000}});
 
 通过MongoDB中提供的丰富运算符，可以帮助你精确的来检索数据，比如数值型的字段可以使用$gt、$gte、$lt、$ne等运算符来比较，数组条件的可以使用$in、$nin来实现。
 
+
 > 试一试：从person集合中找出所有年龄（age）大于40岁的记录？
+
+
 
 > `db.person.find({age:{$gt:40}});`
 
 ## 3.3 MongoDB 数组条件
 ### 数组条件
+
+
 
 当字段包含数组，可以进行数组完全匹配或匹配特定的值。
 
@@ -303,8 +388,12 @@ db.inventory.find({ quantity: { $gt: 1000}});
 
 `db.inventory.find( { 'tags.0' : 'fruit' } );`
 
+
+
 ## 3.4 MongoDB 子文档字段条件
 ### 子文档条件
+
+
 
 查询数据时，我们可能会遇到包含嵌入的子文档数据，如：
 
@@ -314,10 +403,14 @@ db.inventory.find({ quantity: { $gt: 1000}});
 
 `db.mycol.find({"access.level":5});`
 
+
+
 # 4 MongoDB 复合查询
 
 ## 4.1 MongoDB AND 复合查询
 ### 复合查询 - AND
+
+
 
 当查询条件为多个字段时，需要使用多字段复合条件查询，下面我们来学习一下，如何实现多字段复合查询。
 
@@ -327,12 +420,17 @@ db.inventory.find({ quantity: { $gt: 1000}});
 
 `db.inventory.find({$and:[{type: "food"},{ price: { $lt: 95 }}]});`
 
+
 > 练习：请查询person集合中年龄(age)大于30岁，并且名字(name)为"Lucy"的数据。
+
+
 
 > `db.person.find({$and:[{age:{$gt:30}},{name:"Lucy"}]});`
 
 ## 4.2 MongoDB OR 复合查询
 ### 复合查询 - OR
+
+
 
 当有多个查询条件但只需满足其中一个条件就可时，我们就可以使用$or运算符。
 
@@ -352,6 +450,8 @@ db.inventory.find( {
 <div class='cw-test'>
 练习：在person集合中查一下，状态(status)为"A"或年龄(age)为30的数据。
 
+
+
 > `db.person.find({$or:[{status:"A"},{age:30}]});`
 
 # 5 MongoDB 游标与结果集
@@ -359,11 +459,19 @@ db.inventory.find( {
 ## 5.1 MongoDB cursor 游标
 ### cursor游标
 
+
+
+
+
 - 什么是游标(cursor)？
+
 
 find命令并不直接返回结果，而是返回一个结果集的迭代器，即游标。
 
+
+
 - 想要获取数据，我们可以使用next方法来遍历游标，如下：
+
 
 ```bash
 var myCursor = db.inventory.find( { type: "food" } );
@@ -375,29 +483,45 @@ if (myDocument) {
 }
 ```
 
+
+
 - 使用forEach方法也能实现游标的遍历，如下：
+
 
 ```bash
 var myCursor =  db.inventory.find( { type: "food" } );
 myCursor.forEach(printjson);
 ```
 
+
+
 ## 5.2 MongoDB 文档数量 - 结果集
 ### 限制条件 - 结果集
+
+
 
 很多时候查询返回的结果集并不完全是你想要的，或许你只需要它们中间的一部分，这个时候我们可以通过条件来限制结果集返回的内容。
 
 limit方法：设定返回结果集中的最大文档数量。
 
+
+
 - 语法：
 
 `db.collection.find().limit(Num)`
 
+
 - 参数：
+
+
+
 
 Num:Number类型，大于0。
 
+
+
 - 示例：
+
 
 db.testData.find().limit(3)，返回如下结果：
 
@@ -412,25 +536,39 @@ db.testData.find().limit(3)，返回如下结果：
 <div class='cw-test'>
 练习一下，查找person集合中的前3个文档。
 
+
+
 > `db.person.find().limit(3);`
 
 ## 5.3 MongoDB 字段条件 - 结果集
 ### 限制条件 - 结果集
 
+
+
 有的时候只需要返回结果集中的部分字段，这个时候我们可以通过传入字段条件的方式来实现。
+
+
 
 - 语法：
 
+
 `db.collection.find( 查询条件,字体条件 )`
+
+
 
 - 参数：
 
+
 字段条件：JSON对象，格式=>{字段：值},值等于1时表示需要返回,0时表示不需要返回。
 
+
+
 - 示例：返回person的"status"和"age"字段。
+
 
 `db.person.find({}, {status:1,age:1})`
 
 你知道怎么列出person集合中名字(name)吗，试一下？
+
 
 > `db.person.find({},{name:1});`

@@ -40,9 +40,12 @@ mocha 是一个功能丰富的 *javascript测试框架* ，可以运行在nodejs
 
 ### 特点
 
+
+
 -  **简单**
 -  **灵活**
 -  **有趣**
+
 
 ### 安装
 
@@ -50,6 +53,8 @@ mocha 是一个功能丰富的 *javascript测试框架* ，可以运行在nodejs
  *npm install -g mocha*
 
 <img src="images/562085141bc20c980538e25a/1-1-1/mocha001.png" alt="introduce">
+
+
 
 ## 1.2  第一个测试用例
 ### 第一个测试用例
@@ -77,16 +82,22 @@ describe('Array', function(){
 
 运行 Mocha： *$ mocha*
 
+
 > 这节课让我们熟悉一下学习环境中终端的使用方法，以及运行结果的查看。
+
+
 
 - 点击<span style="margin:0px 5px;padding:5px;background:#333;color:white;border-radius:3px;">文件管理</span>按钮，鼠标点击project文件夹右键 *创建* 一个新的文件夹 *tests* （点击创建之后，弹出框中的类别选择 **目录** ）
 - 然后点击新创建的tests文件夹右键，点击 **创建** 一个test.js文件，然后双击文件。
 - 再把上述中的示例写入到我们新创建的test.js文件当中，然后点击> 保存文件。（不建议拷贝）
 - 最后在右边linux环境中输入 *cd project/tests* 命令回车，再输入命令 * mocha * , 运行我们的示例。(mocha默认识别test.js文件)
 
+
 </div>
 
 > PS：为什么要使用assert模块我们将在下节中讲解，至于describe、it 函数我们将在 **第二章mocha接口的方法解析** 中详细讲解。
+
+
 
 ## 1.3  assert断言
 ### 断言
@@ -105,13 +116,18 @@ describe('Array', function(){
 
 mocha 允许开发者使用 *任意的断言库* ，当这些断言库抛出了一个错误异常时，mocha将会捕获并进行相应处理。这意味着你可以利用如 * should.js断言库* 、 Node.js 常规的 assert 模块或其它类似的断言代码库。以下是众所周知的适用于Node.js或浏览器的断言库：
 
+
+
 - should.js
 - expect.js
 - chai.js
 - better-assert
 - assert：nodejs原生模块，在前文示例中我们有应用到。
 
+
 > PS:由于Mocha自身不带断言库，所以我们需要引入一个断言库。本课程中使用的是chai.js，为什么会选这个断言库呢？
+
+
 
 ## 1.4  chai.js断言库
 ### 断言库
@@ -138,10 +154,14 @@ Chai 是一个非常灵活的断言库，它可以让你使用如下三种主要
 
 > PS:在本课程中我们将使用expect的断言方式。
 
+
+
 ## 1.5  expect 的语法
 ### expect 的语法
 
 expect 库应用是 *非常广泛* 的，它拥有很好的链式结构和仿自然语言的方法。通常写同一个断言会有几个方法，比如expect(response).to.be(true) 和 expect(response).equal(true)。以下列举了 expect 常用的主要方法：
+
+
 
 -  **ok**  ：检查是否为真
 -  **true** ：检查对象是否为真
@@ -151,11 +171,14 @@ expect 库应用是 *非常广泛* 的，它拥有很好的链式结构和仿自
 -  **include/contain** ：检查数组或字符串是否包含某个元素
 -  **below/above** ：检查是否大于或者小于某个限定值
 
+
 在课程开始讲解什么是mocha的时说：mocha支持 *TDD/BDD*  的 开发方式，结合  *should.js、expect、chai、better-assert*  断言库，能轻松构建各种风格的 *测试用例* 。这里面有两个知识点，一个是断言库，另一个是  *TDD/BDD*  。
 
 断言库我们已经在前文中讲解了，那下一章我们就开始讲解 *TDD/BDD*  。
 
 > PS: 更多的文档可以看 <a href="http://chaijs.com/api/bdd/">http://chaijs.com/api/bdd/</a>
+
+
 
 # 2  mocha 接口
 
@@ -170,6 +193,8 @@ BDD认为，不应该针对代码的实现细节写测试，而是要针对行�
 
 BDD接口提供以下方法：
 
+
+
 -  **describe()** ：测试套件
 -  **it()** ：测试用例
 -  **before()** ：所有测试用例的统一前置动作
@@ -177,9 +202,12 @@ BDD接口提供以下方法：
 -  **beforeEach()** ：每个测试用例的前置动作
 -  **afterEach()** ：每个测试用例的后置动作
 
+
 BDD的特征就是使用 *describe()和it()*  这两个方法。我们将在下节中详细讲解
 
  *before()、after()、beforeEach()和afterEach() * 是为测试做辅助的作用域，它们合起来组成了hook的概念。hook 我们将拿出来在下一章中进行讲解。
+
+
 
 ## 2.2  方法解析
 ### descript()和it()
@@ -223,13 +251,16 @@ describe('Array', function(){
 });
 ```
 
+
 >
 
 - 点击<span style="margin:0px 5px;padding:5px;background:#333;color:white;border-radius:3px;">文件管理</span>按钮，点击我们新创建的tests文件夹 **右键** ，再点击 **创建** 一个expect.js文件，然后双击文件。
 - 再把上述中的示例写入到我们新创建的expect.js文件当中，然后点击> 保存文件。（不建议拷贝）
 - 最后在右边linux环境中输入命令 * mocha expect.js * , 运行我们的示例。
 
+
 </div>
+
 
 ## 2.3  TDD 测试驱动开发
 ### TDD风格
@@ -240,12 +271,15 @@ TDD（测试驱动开发）组织方式是使用 *测试集（suite）和测试�
 
 TDD接口：
 
+
+
 -  **suite** ：类似BDD中 describe()
 -  **test** ：类似BDD中 it()
 -  **setup** ：类似BDD中 before()
 -  **teardown** ：类似BDD中 after()
 -  **suiteSetup** ：类似BDD中 beforeEach()
 -  **suiteTeardown** ：类似BDD中 afterEach()
+
 
 ### 示例
 
@@ -271,13 +305,17 @@ suite('Array', function(){
 
 > PS：mocha 默认是使用 bdd 的接口，所以在这里我们告诉mocha我们用的是tdd.
 
+
 >
 
 - 点击<span style="margin:0px 5px;padding:5px;background:#333;color:white;border-radius:3px;">文件管理</span>按钮，点击新创建的tests文件夹 **右键** ，再点击 **创建** 一个tdd.js文件，然后双击文件。
 - 再把上述中的示例写入到我们新创建的tdd.js文件当中，然后点击> 保存文件。（不建议拷贝）
 - 最后在右边linux环境中输入命令 * mocha --ui tdd tdd.js * , 运行我们的示例。
 
+
 </div>
+
+
 
 ## 2.4  exports 风格
 ### exports
@@ -306,6 +344,8 @@ module.exports = {
 
  *mocha --ui exports *.js*
 
+
+
 ## 2.5  总结
 ### 总结
 
@@ -314,6 +354,8 @@ module.exports = {
 但是比较常用就是  *BDD 和 TDD* ，mocha 默认的也是BDD，且 BDD 是 TDD 的一个专业版本，它指定了从业务需求的角度出发需要哪些单元测试。所以我们本课程中主要讲解的是 mocha BDD风格的接口。
 
 下一章我们将讲解 BDD 中的  *hook*  。
+
+
 
 # 3  hook 机制 和 测试技巧
 
@@ -328,10 +370,13 @@ hook也可以理解为是一些逻辑，通常表现为一个函数或者一些�
 
  **方法解析** ：
 
+
+
 -  **before()** ：所有测试用例的统一前置动作
 -  **after()** ：所有测试用例的统一后置动作
 -  **beforeEach()** ：每个测试用例的前置动作
 -  **afterEach()** ：每个测试用例的后置动作
+
 
 用法：
 
@@ -358,6 +403,8 @@ describe('hooks', function() {
 });
 ```
 
+
+
 ## 3.2  描述 hook
 ### 描述 hook
 
@@ -378,6 +425,8 @@ beforeEach('some description', function() {
 ```
 
  **补充** ：上述示例中 注释的内容就是对 hook 的描述。
+
+
 
 ## 3.3  测试占位
 ### 测试占位
@@ -406,13 +455,16 @@ describe('Array', function() {
 });
 ```
 
+
 >
 
 - 在tests文件夹中创建一个pending.js文件
 - 再把上述中的示例写入到我们新创建的pending.js文件当中，然后点击> 保存文件。（不建议拷贝）
 - 最后在右边linux环境中输入命令 * mocha pending.js* , 运行我们的示例。（要进入到tests文件夹中在运行命令）
 
+
 </div>
+
 
 ## 3.4  仅执行指定测试
 ### 仅执行指定测试
@@ -445,6 +497,8 @@ describe('Array', function(){
 
 > PS:注意只能出现一个 .only()
 
+
+
 ## 3.5  忽略指定测试
 ### 忽略指定测试
 
@@ -473,6 +527,8 @@ describe('Array', function(){
   })
 })
 ```
+
+
 
 ## 3.6  动态生成测试
 ### 动态生成测试
@@ -504,13 +560,16 @@ describe('add()', function() {
 });
 ```
 
+
 >
 
 - 在tests文件夹中创建一个dynamically.js文件
 - 再把上述中的示例写入到我们新创建的dynamically.js文件当中，然后点击> 保存文件。（不建议拷贝）
 - 最后在右边linux环境中输入命令 * mocha dynamically.js* , 运行我们的示例。（要进入到tests文件夹中在运行命令）
 
+
 </div>
+
 
 # 4 为项目开发一个BDD测试
 
@@ -545,6 +604,8 @@ chai 断言库支持BDD 的 expect/should 语法风格 和TDD的 assert 语法�
 }
 ```
 
+
+
 ## 4.2 项目描述
 ### 项目描述
 
@@ -569,12 +630,15 @@ server.listen(PORT);
 
 描述：为了让项目尽可能的简单，我们没有用到任何的框架。只是创建了一个http服务器监听了80端口。
 
+
 >
 
 - 在project文件夹中创建一个app.js文件
 - 再把上述中的内容写入到app.js文件中，然后点击> 保存文件。一定要保存！一定要保存！一定要保存！重要的事说要三遍（不建议拷贝）
 
+
 </div>
+
 
 ## 4.3 项目重构
 ### 项目重构
@@ -611,8 +675,10 @@ if (require.main === module) {
 
 重构描述：现在我们把启动服务和关闭服务分别进行了封装并且对外进行了暴露。
 
+
 > 按照上述中的描述改写 app.js 中的代码。
 </div>
+
 
 ## 4.4 测试用例
 ### 测试用例
@@ -649,8 +715,11 @@ describe('server', function () {
 
 运行命令： *mocha tests*
 
+
 >
 
 - 在tests文件夹中创建一个index.js文件
 - 再把上述中的内容写入到index.js文件中，然后点击> 保存文件。一定要保存！一定要保存！一定要保存！重要的事说要三遍（不建议拷贝）
 - 最后在linux环境中输入命令： **mocha tests** 。
+
+

@@ -32,6 +32,7 @@
 
 <!-- /TOC -->
 
+
 # 1  简介
 
 ## 1.1  认识cheerio
@@ -43,6 +44,7 @@ cheerio 是nodejs特别为 *服务端* 定制的，能够快速灵活的对JQuer
 
  *npm install cheerio*
 
+
 #### 特征
 
  **熟悉的语法** ：cheerio实现了jQuery核心的一个 *子集* 。 cheerio删除了从jQuery库中和不同浏览器不一致的东西，揭示其真正华丽的API。
@@ -50,6 +52,8 @@ cheerio 是nodejs特别为 *服务端* 定制的，能够快速灵活的对JQuer
  **极快** ：cheerio适用于一个非常简单的，一致的DOM模型。 这样解析，操作和呈现是令人难以置信的 *高效率* 。
 
  **灵活性** ：cheerio可以 *解析几乎所有* 的HTML或XML文档。
+
+
 
 ## 1.2  快速开始
 ### hello world
@@ -71,7 +75,9 @@ console.log($.html());
 
  **解析** ： *.load()*  引入我们要解析的html。text() 设置 h2 中的文本。addClass() 给 h2 添加新的class。
 
+
 > 在右侧代码框中第8行中输入  *console.log($.html());*  查看我们解析之后的html。
+
 
 ## 1.3  载入 html 方法
 ### 载入 html
@@ -111,6 +117,8 @@ $ = require('cheerio');
 $('li', 'ul', html);
 ```
 
+
+
 ## 1.4 小结
 ### 小结
 
@@ -118,10 +126,15 @@ $('li', 'ul', html);
 
 之后的章节内容：
 
+
+
 -  **cheerio API**
 -  **结合 node-crawler 完成一个爬虫**
 
+
 > PS:cheerio 的 API 和jQuery是非常相似的，可以说是服务器端的jQuery。
+
+
 
 # 2  cheerio API（一）
 
@@ -155,6 +168,8 @@ $('li[class=orange]')
 
 看到上述中的选择器的API是不是和jQuery中很相似。
 
+
+
 ## 2.2  属性操作（attr）
 ### attribute
 
@@ -181,6 +196,7 @@ $('.pear').removeAttr('class').html();
 //=> <li>Pear</li>
 ```
 
+
 >
 
 - 在右侧代码框中第8行中输入  *var id = $('ul').attr('id');*
@@ -188,7 +204,9 @@ $('.pear').removeAttr('class').html();
 - 点击<span style="margin:0px 5px;padding:5px;background:#333;color:white;border-
 radius:3px;">提交运行  按钮
 
+
 </div>
+
 
 ## 2.3  class操作
 ### class操作
@@ -229,6 +247,8 @@ $('.apple').addClass('red').removeClass().html();
 //=> <li class="">Apple</li>
 ```
 
+
+
 ## 2.4  添加 DOM（一）
 ### 添加 DOM
 
@@ -264,6 +284,7 @@ $.html();
 // </ul>
 ```
 
+
 >
 
 - 在右侧代码框中第8行中输入:<br/>  *$('ul').prepend('<li class = "plum">Plum');*
@@ -271,7 +292,9 @@ $.html();
 - 点击<span style="margin:0px 5px;padding:5px;background:#333;color:white;border-
 radius:3px;">提交运行  按钮
 
+
 </div>
+
 
 ## 2.5  添加 DOM（二）
 ### 添加 DOM
@@ -306,6 +329,8 @@ $.html();
 // </ul>
 ```
 
+
+
 ## 2.6  删除和替换
 ### 删除和替换
 
@@ -337,6 +362,7 @@ $.html();
 // </ul>
 ```
 
+
 >
 
 - 在右侧代码框中第8行中输入:<br/>  *var plum = $('<li class = "plum">Plum');*
@@ -345,7 +371,9 @@ $.html();
 - 点击<span style="margin:0px 5px;padding:5px;background:#333;color:white;border-
 radius:3px;">提交运行  按钮
 
+
 </div>
+
 
 ## 2.7  清空和获取
 ### 清空和获取 DOM
@@ -385,6 +413,8 @@ $('ul').text();
 //    Pear
 ```
 
+
+
 # 3  cheerio API（二）
 
 ## 3.1  过滤 DOM（一）
@@ -416,6 +446,7 @@ cheerio 亦可以同jQuery那样，通过某一个元素来 *查找* 它的父�
 
  *$('.orange').prev().hasClass('apple');*   //=> true
 
+
 >
 
 - 在右侧代码框中第8行中输入:<br/>  *var node = $('#fruits').find('li');*
@@ -423,7 +454,9 @@ cheerio 亦可以同jQuery那样，通过某一个元素来 *查找* 它的父�
 - 点击<span style="margin:0px 5px;padding:5px;background:#333;color:white;border-
 radius:3px;">提交运行  按钮
 
+
 </div>
+
 
 ## 3.2  过滤 DOM（二）
 ### 过滤
@@ -457,6 +490,8 @@ $('li').filter(function(i, el) {
 }).attr('class') //=> orange
 ```
 
+
+
 ## 3.3  过滤 DOM（三）
 ### 过滤
 
@@ -481,6 +516,8 @@ $('li').eq(0).text(); //=> Apple
 
 $('li').eq(-1).text(); //=> Pear
 ```
+
+
 
 ## 3.4  遍历 DOM
 ### 遍历
@@ -510,6 +547,7 @@ $('li').map(function(i, el) {
 }).get().join(', '); //=> apple, orange, pear
 ```
 
+
 >
 
 - 在右侧代码框中第8行创建一个空数组： *var fruits = [];*
@@ -524,7 +562,9 @@ $('li').map(function(i, el) {
 - 点击<span style="margin:0px 5px;padding:5px;background:#333;color:white;border-
 radius:3px;">提交运行  按钮
 
+
 </div>
+
 
 ## 3.5  .clone 和  $.root
 ### .clone 和  $.root
@@ -557,13 +597,16 @@ var ret = $.contains(c1, c2);
 console.log(ret); // => true
 ```
 
+
 >
 
 - 在右侧代码框中第8行开始练习一下上述中的示例
 - 点击<span style="margin:0px 5px;padding:5px;background:#333;color:white;border-
 radius:3px;">提交运行  按钮
 
+
 </div>
+
 
 # 4  利用 cheerio 做爬虫
 
@@ -604,10 +647,13 @@ http.get(url, function(res){
 
 解析：示例中首先引用了 nodejs 的核心模块 http 和提供了爬取路径，然后通过 http 中的 get 接口给 url 发送 get 请求，最回调函数中对请求回来的数据进行处理。
 
+
 > 在右侧代码框中第11行中输入  *console.log(html);*  查看我们需要爬取的页面。
 </div>
 
 完成示例后，可以看到我们把请求路径中的 html 代码全部输出了。这不是我们需要的效果，所以我们要对数据进行解析。那么如何解析呢？
+
+
 
 ## 4.2  引入 cheerio
 ### 引入 cheerio
@@ -622,8 +668,10 @@ http.get(url, function(res){
 
  **分析** ：上述代码中每一个章节都是被包含在 class 为 panel 的标签中。所以我们要对 class 为 panel 的标签进行遍历。
 
+
 > 在右侧代码框中第3行中输入  *var cheerio = require('cheerio');*  这样我们就可以应用cheerio模块了。
 </div>
+
 
 ## 4.3  分析 html
 ### 分析 html
@@ -637,6 +685,8 @@ http.get(url, function(res){
  **获取章标题** ： *$('.panel').find('h4').text()* ;
 
  **获取节标题** ： *$('.panel').find('li').text()* ;
+
+
 
 ## 4.4  爬取数据
 ### 爬取数据
@@ -674,8 +724,10 @@ function crawlerChapter(html) {
 
 输出数据之后，我们看到数据中除了第一章中有section有值，其他的章没有值，不要担心，就是这样的。因为我们汇智网对其进行了限制，所以只能爬取到第一章中的小节标题。
 
+
 > 在右侧代码框中第12行中调用  *crawlerChapter(html)*  方法，查看我们爬取出来的数据。
 </div>
+
 
 ## 4.5  处理数据
 ### 处理数据
@@ -700,6 +752,8 @@ data.filter(function(obj){
 
 PS:上面的方法我们将在下一小节中用到
 
+
+
 ## 4.6  输出数据
 ### 输出数据
 
@@ -722,12 +776,17 @@ function printInfo(data) {
 
 方法解析：在 printInfo 方法中的参数 data ，这个参数需要 crawlerChapter 方法 return 给printInfo。然后就是 data 参数调用 filter 方法把数据为空的去掉。最后就是把章节拼接字符串进行输出。
 
+
 > 在右侧代码框中第36行中把 *console.log(data)*  替换成  *return data* ，。
 </div>
 
 > 下面开始我们的任务：
 
+
+
 - 在右侧代码框中第37行中把 *console.log(data)*  替换成  *return data*
 - 在右侧代码框中第12行中把 *crawlerChapter(html)*  替换成  *var chapter = crawlerChapter(html);*
 - 在右侧代码框中第13行中输入 *printInfo(chapter);*
 - 最后在点击 提交运行 按钮
+
+

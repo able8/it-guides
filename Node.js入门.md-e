@@ -80,6 +80,7 @@
 
 欢迎学习node,node使用javascript作为开发语言。没错，就是通常我们在前端页面里使用的javascript！下面我们一起来编写经典的hello world。
 
+
 > 请在编辑器中输入以下内容,点击提交。
 `console.log('hello world');`
 
@@ -96,6 +97,7 @@ console.log('callback is called');
 
 我们传给setTimeout函数传入了一个匿名函数和一个调用时间2000(毫秒)，运行程序后等待2秒，可以看到输出了"callback is called"。
 
+
 > 如果你要为setTimeout编写一个回调函数，1秒后调用输出"hello world"，该怎么写呢，试一试?
 
 ## 1.3 标准的回调函数中参数err、data的含义
@@ -111,6 +113,7 @@ function(err,data){
 
 为了养成良好的编码习惯，在以后的课程示例或练习中，回调函数格式都将采用这样的格式。
 
+
 > 试一试，自己来编写一个回调函数吧！
 
 ## 1.4 通过require函数获取模块
@@ -124,6 +127,8 @@ require("模块");
 ```
 
 怎么样，是不是很简单很方便，通过require函数我们就可以获取相应模块进而使用它的任意功能了。
+
+
 
 ## 1.5 如何操作使用模块如OS模块
 ### 使用模块
@@ -140,6 +145,7 @@ var result = os.platform(); //查看操作系统平台
 
 console.log(result);
 ```
+
 
 > 看了上面的例子，试一试用console.log输出服务器操作系统的版本号。
 
@@ -161,6 +167,8 @@ process是一个全局内置对象，可以在代码中的任何位置访问此�
 
 下面我们一起来学习一下process对象的一些常用方法。
 
+
+
 ## 2.2 查看当前目录cwd函数用法
 ### cwd函数的基本用法
 
@@ -172,6 +180,8 @@ process.cwd();
 
 获取程序目录的方法就是这样简单，继续下一课时吧！。
 
+
+
 ## 2.3 改变应用程序目录chdir函数用法
 ### chdir函数的基本用法
 
@@ -182,6 +192,8 @@ process.chdir("目录");
 ```
 
 改变应用程序目录的方法就是这样简单，继续下一课时吧！
+
+
 
 ## 2.4 标准输出流stdout函数用法
 ### stdout的基本用法
@@ -196,6 +208,7 @@ process.stdout.write(d+'\n');
 
 没错，它的作用就是将内容打印到输出设备上，console.log就是封装了它。
 
+
 ## 2.5 标准错误流stderr函数用法
 ### stderr的基本用法
 
@@ -204,6 +217,7 @@ stderr是标准错误流，和stdout的作用差不多，不同的是它是用�
 ```javascript
 process.stderr.write(输入内容);
 ```
+
 
 ## 2.6 进程的输入流stdin函数用法
 ### stdin的基本用法
@@ -221,6 +235,8 @@ process.stdout.write('data: ' + chunk);
 
 示例中的chunk就是输入流中的内容。
 
+
+
 ## 2.7 退出程序或杀死进程exit函数用法
 ### exit函数的基本用法
 
@@ -231,6 +247,8 @@ process.exit(code);
 ```
 
 参数code为退出后返回的代码，如果省略则默认返回0；
+
+
 
 ## 2.8 使用process.on()监听进程事件
 ### 监听进程事件
@@ -265,6 +283,8 @@ console.log(err);
 throw new Error("我故意的...");
 ```
 
+
+
 ## 2.9 进程管理设置编码解决中文显示乱码
 ### 设置编码
 
@@ -278,6 +298,7 @@ process.stdout.setEncoding(编码);
 process.stderr.setEncoding(编码);
 ```
 
+
 ## 2.10 本节教程小结
 ### 课程小结
 
@@ -289,6 +310,8 @@ process的常用方法就讲到这里了，如果你想了解更多可以参考�
 ### 文件I/O <small> fs模块的基本用法 </small>
 
 开发中我们经常会有文件I/O的需求，node.js中提供一个名为fs的模块来支持I/O操作，fs模块的文件I/O是对标准POSIX函数的简单封装。
+
+
 
 ## 3.2 writeFile函数 写入文件
 ### writeFile函数的基本用法
@@ -307,6 +330,8 @@ console.log('Saved successfully'); //文件被保存
 ```
 
 数据参数可以是string或者是Buffer,编码格式参数可选，默认为"utf8"，回调函数只有一个参数err。
+
+
 
 ## 3.3 appendFile函数 追加写入
 ### appendFile函数的基本用法
@@ -328,6 +353,8 @@ console.log('The "data to append" was appended to file!');
 
 编码格式默认为"utf8"，
 
+
+
 ## 3.4 exists函数 文件是否存在
 ### exists函数的基本用法
 
@@ -345,6 +372,8 @@ console.log(exists ? "存在" : "不存在!");
 });
 ```
 
+
+
 ## 3.5 rename函数 修改文件名称
 ### rename函数的基本用法
 
@@ -359,6 +388,8 @@ console.log('Successful modification,');
 });
 ```
 
+
+
 ## 3.6 rename函数 移动文件
 ### rename函数的基本用法
 
@@ -372,6 +403,8 @@ if (err) throw err;
 console.log('renamed complete');
 });
 ```
+
+
 
 ## 3.7 readFile函数 读取文件
 ### readFile函数的基本用法
@@ -391,6 +424,8 @@ console.log(data);
 
 回调函数里面的data,就是读取的文件内容。
 
+
+
 ## 3.8 unlink函数 删除文件
 ### unlink函数的基本用法
 
@@ -409,6 +444,8 @@ console.log('successfully deleted');
 });
 ```
 
+
+
 ## 3.9 mkdir函数 创建文件目录
 ### mkdir函数的基本用法
 
@@ -426,6 +463,7 @@ fs.mkdir(路径，权限，回调函数(err));
 <li>回调函数：当发生错误时，错误信息会传递给回调函数的err参数。</li>
 </ol>
 
+
 ## 3.10 rmdir函数 删除文件目录
 ### rmdir函数的基本用法
 
@@ -442,6 +480,8 @@ console.log('ok');
 });
 ```
 
+
+
 ## 3.11 readdir函数 读取文件目录
 ### readdir函数的基本用法
 
@@ -455,6 +495,8 @@ fs.readdir(目录,回调函数(err,files));
 
 回调函数 (callback) 接受两个参数 (err, files) 其中 files 是一个存储目录中所包含的文件名称的数组，数组中不包括 '.' 和 '..'。
 
+
+
 ## 3.12 课程小结
 ### 课程小结
 
@@ -462,7 +504,9 @@ fs.readdir(目录,回调函数(err,files));
 
 fs模块不但提供异步的文件操作，还提供相应的同步操作方法，需要指出的是，nodejs采用异步I/O正是为了避免I/O时的等待时间，提高CPU的利用率，所以在选择使用异步或同步方法的时候需要权衡取舍。
 
+
 本节课程讲解了fs模块常用的一些功能，当然它还有更多强大的功能，如果你想了解更多，可以参考以下资料：http://nodejs.cn/api/fs.html
+
 
 # 4 Node.js url处理
 
@@ -470,6 +514,8 @@ fs模块不但提供异步的文件操作，还提供相应的同步操作方法
 ### url处理 <small> url模块的基本用法 </small>
 
 node.js为互联网而生，和url打交道是无法避免的了，url模块提供一些基础的url处理。
+
+
 
 ## 4.2 使用parse函数解析url
 ### parse函数的基础用法
@@ -498,6 +544,7 @@ path: 'www.baidu.com',
 href: 'http://www.baidu.com' }
 ```
 
+
 ## 4.3 parse函数之条件解析
 ### parse函数 —— 条件解析
 
@@ -524,6 +571,7 @@ pathname: '/',
 path: '/?page=1',
 href: 'http://www.baidu.com/?page=1' }
 ```
+
 
 ## 4.4 parse函数之解析主机
 ### parse函数 —— 解析主机
@@ -554,6 +602,7 @@ href: 'http://www.baidu.com/news' }
 
 较之前面的示例，host的内容不再是null了。
 
+
 ## 4.5 format函数url地址格式化
 ### format函数的基础用法
 
@@ -578,6 +627,7 @@ http://www.baidu.com/news?page=1
 
 参数JSON对象的字段跟parse函数解析后返回的JSON字段一一对应。
 
+
 ## 4.6 resolve函数url路径切换
 ### resolve函数的基础用法
 
@@ -589,6 +639,7 @@ var url = require('url');
 url.resolve('http://example.com/', '/one')  // 'http://example.com/one'
 url.resolve('http://example.com/one', '/two') // 'http://example.com/two'
 ```
+
 
 ## 4.7 课程小结
 ### 课程小结
@@ -603,6 +654,8 @@ http://nodejs.cn/api/url.html
 ### path优化 <small> path模块的基本用法 </small>
 
 本模块包含一套用于处理和转换文件路径的工具集,用于处理目录的对象，提高用户开发效率，让我们一起来快速的认识path对象的一些常用方法吧！
+
+
 
 ## 5.2 path模块normalize函数格式化路径
 ### normalize函数的基本用法
@@ -623,6 +676,7 @@ console.log(data);
 '/path/normalize/'
 ```
 
+
 ## 5.3 path模块join函数组合路径
 ### join函数的基本用法
 
@@ -640,6 +694,7 @@ console.log(data);
 '/you/are/beautiful'
 ```
 
+
 ## 5.4 dirname函数返回路径中目录名
 ### dirname函数的基本用法
 
@@ -656,6 +711,7 @@ console.log(data);
 ```javascript
 '/foo/strong/cool'
 ```
+
 
 ## 5.5 basename函数返回路径中最后部分
 ### basename函数的基本用法
@@ -679,6 +735,7 @@ console.log(data1 + ' "and" ' + data2);
 'index.html "and" index'
 ```
 
+
 ## 5.6 extname函数返回路径中文件扩展名
 <div class="page-header">
 
@@ -700,6 +757,7 @@ console.log(data);
 '.html'
 ```
 
+
 ## 5.7 课程小结
 
 ### 课程小结
@@ -713,6 +771,8 @@ http://nodejs.cn/api/path.html
 ### 字符串转换 <small> Query String模块的基本介绍 </small>
 
 Query String模块用于实现URL参数字符串与参数对象之间的互相转换，提供了"stringify"、"parse"等一些实用函数来针对字符串进行处理，通过序列化和反序列化，来更好的应对实际开发中的条件需求，对于逻辑的处理也提供了很好的帮助，下面就让我们一起来了解学习它吧！
+
+
 
 ## 6.2 stringify函数序列化node.js对象
 ### stringify函数的基本用法
@@ -734,6 +794,7 @@ foo=bar&amp;cool=xux&amp;cool=yys
 ```
 
 看了上面的介绍和示例，相信你对stringify函数也有了初步的了解，赶快趁热打铁，动手练一练！
+
 
 > "get=fire&amp;get=ice&amp;want=go"，用stringify序列化怎么实现呢？
 
@@ -758,6 +819,7 @@ console.log(result);
 
 看了上面的示例，相信你已经很清楚了，分隔符、分配符是可以根据不同情况而选择给定的，那下面就亲自试试吧！
 
+
 > "spr#sum@spr #aut@aut#win" 练一练！
 
 ## 6.4 parse函数反序列化node.js对象
@@ -779,6 +841,7 @@ console.log(result);
 { foo: 'bar', cool: ['xux', 'yys']}
 ```
 
+
 ## 6.5 反序列化&lt;多参数&gt;
 ### parse函数的多参数用法
 
@@ -798,6 +861,7 @@ console.log(result);
 { foo: '', bar: 'cool', xux: 'cool', yys: '' }
 ```
 
+
 > 看了上面的示例，相信你已经有点跃跃欲试了，赶快传个字符串parse下吧！
 
 ## 6.6 课程小结
@@ -813,6 +877,8 @@ http://nodejs.cn/api/querystring.html
 
 关于模块的如何访问前面已经讲述过了，相信大家已经完全掌握了，这节课我们来学习util模块。util模块呢，是一个Node.js核心模块，提供常用函数的集合，用于弥补核心JavaScript的一些功能过于精简的不足。并且还提供了一系列常用工具，用来对数据的输出和验证。
 
+
+
 ## 7.2 用inspect函数来转换字符串
 ### inspect函数的基本用法
 
@@ -823,6 +889,7 @@ var util = require('util');
 var result = util.inspect(object);
 console.log(result);
 ```
+
 
 > 试一试录入任意字符对象，查看结果如何？
 
@@ -875,6 +942,8 @@ console.log(result);
 
 看了上面的示例感觉怎么样，试试各种效果吧！
 
+
+
 ## 7.4 isArray函数来判断验证对象是否为数组
 ### isArray函数的基本用法
 
@@ -885,6 +954,7 @@ var util = require('util');
 var result = util.isArray(object);
 console.log(result);
 ```
+
 
 ## 7.5 isDate函数判断验证对象是否为日期
 ##### isDate函数的基本用法
@@ -897,6 +967,7 @@ var result = util.isDate(object);
 console.log(result);
 ```
 
+
 ## 7.6 isRegExp函数判断验证正则
 ### isRegExp函数的基本用法
 
@@ -907,6 +978,7 @@ var util = require('util');
 var result = util.isRegExp(object);
 console.log(result);
 ```
+
 
 ## 7.7 课程小结
 ### 课程小结
@@ -921,6 +993,8 @@ http://nodejs.cn/api/util.html
 
 众所周知node.js是基于单线程模型架构，这样的设计可以带来高效的CPU利用率，但是无法却利用多个核心的CPU，为了解决这个问题，node.js提供了child_process模块，通过多进程来实现对多核CPU的利用.
 child_process模块提供了四个创建子进程的函数，分别是spawn，exec，execFile和fork。
+
+
 
 ## 8.2 spawn函数创建子进程
 ### spawn函数的简单用法
@@ -937,6 +1011,8 @@ console.log(data);
 
 通过执行命令得到返回结果，我们就可以拿到标准输出流数据了。
 
+
+
 ## 8.3 exec函数创建子进程的回调参数
 ### exec函数的简单用法
 
@@ -950,6 +1026,8 @@ console.log( stdout );
 ```
 
 exec函数可以直接接受一个回调函数作为参数，回调函数有三个参数，分别是err, stdout,stderr，非常方便直接使用，
+
+
 
 ## 8.4 通过execFile函数创建子进程
 ### execFile函数的简单用法
@@ -965,6 +1043,8 @@ console.log( stdout );
 
 execFile与spawn的参数相似，也需要分别指定执行的命令和参数，但可以接受一个回调函数，与exec的回调函数相同。
 
+
+
 ## 8.5 通过fork函数运行Node.js模块
 ### fork函数的简单用法
 fork函数可直接运行Node.js模块，所以我们可以直接通过指定模块路径而直接进行操作。使用方法如下：
@@ -975,6 +1055,8 @@ child_process.fork( modulePath );
 ```
 
 该方法是spawn()的特殊情景，用于派生Node进程。除了普通ChildProcess实例所具有的所有方法，所返回的对象还具有内建的通讯通道。
+
+
 
 ## 8.6 课程小结
 ### 课程小结
