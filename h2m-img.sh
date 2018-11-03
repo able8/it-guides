@@ -1,8 +1,8 @@
 # !/bin/bash
 set -e
 
-Name='JavaScript面向对象开发'
-BookUrl='http://cw.hubwiz.com/card/c/574bac8cda97b6e9299d2f04/1/1/1/'
+Name='Shell教程1'
+BookUrl='http://cw.hubwiz.com/card/c/56d906a0ecba4b4d31cd28ef/1/1/1/'
 rm -rf tmp/${Name}
 mkdir -p tmp/${Name}
 cd tmp/${Name}
