@@ -1,4 +1,3 @@
-
 # Node.js 入门
 <!-- TOC -->
 
@@ -140,7 +139,6 @@ console.log(result);
 > 看了上面的例子，试一试用console.log输出服务器操作系统的版本号。
 
 ## 1.6 本节教程小结
-### 课程小结
 
 本节介绍了node.js一些最基本的用法,为以后课程的打下基础。
 
@@ -273,7 +271,7 @@ process.stderr.setEncoding(编码);
 ```
 
 ## 2.10 本节教程小结
-### 课程小结
+
 
 process的常用方法就讲到这里了，如果你想了解更多可以参考以下地址：http://nodejs.cn/api/process.html
 
@@ -449,7 +447,7 @@ fs.readdir(目录,回调函数(err,files));
 回调函数 (callback) 接受两个参数 (err, files) 其中 files 是一个存储目录中所包含的文件名称的数组，数组中不包括 '.' 和 '..'。
 
 ## 3.12 课程小结
-### 课程小结
+
 
 文件I/O是最基本的操作，应该熟悉掌握。
 
@@ -555,11 +553,11 @@ format函数的作用与parse相反，它的参数是一个JSON对象，返回�
 ```javascript
 var url = require('url');
 url.format({
-protocol: 'http:',
-hostname:'www.baidu.com',
-port:'80',
-pathname :'/news',
-query:{page:1}
+    protocol: 'http:',
+    hostname:'www.baidu.com',
+    port:'80',
+    pathname :'/news',
+    query:{page:1}
 });
 ```
 
@@ -584,7 +582,7 @@ url.resolve('http://example.com/one', '/two') // 'http://example.com/two'
 ```
 
 ## 4.7 课程小结
-### 课程小结
+
 
 本节课程讲解了url模块常用的一些功能，如果你想了解更多，可以参考以下资料：
 
@@ -694,7 +692,7 @@ console.log(data);
 
 ## 5.7 课程小结
 
-### 课程小结
+
 
 很高兴您学完了本节课程，关于path的一些常用方法就先讲到这里了，如果您还想了解更多的话,可以参考以下地址：
 http://nodejs.cn/api/path.html
@@ -793,7 +791,7 @@ console.log(result);
 > 看了上面的示例，相信你已经有点跃跃欲试了，赶快传个字符串parse下吧！
 
 ## 6.6 课程小结
-### 课程小结
+
 
 很高兴您学完了本节课程，关于querystring的一些常用方法就先讲到这里了，如果您还想了解更多的话,可以参考以下地址：
 http://nodejs.cn/api/querystring.html
@@ -899,7 +897,6 @@ console.log(result);
 ```
 
 ## 7.7 课程小结
-### 课程小结
 
 很高兴您学完了本节课程，关于util模块的一些常用方法就先讲到这里了，如果您还想了解更多的话,可以参考以下地址：
 http://nodejs.cn/api/util.html
@@ -967,6 +964,5 @@ child_process.fork( modulePath );
 该方法是spawn()的特殊情景，用于派生Node进程。除了普通ChildProcess实例所具有的所有方法，所返回的对象还具有内建的通讯通道。
 
 ## 8.6 课程小结
-### 课程小结
 
 恭喜你学完了本节课程，关于**child_process**的四个函数的基本简单用法，就先讲到这里了，如果您还想深入了解学习的话,可以参考以下地址：http://nodejs.cn/api/child_process.html
