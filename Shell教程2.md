@@ -1,7 +1,7 @@
 
 # Shell教程 2
 
-<!-- TOC  -->
+<!-- TOC -->
 
 - [Shell教程 2](#shell教程-2)
 - [1 Shell运行环境](#1-shell运行环境)
@@ -51,7 +51,7 @@
     - [6.5  print和printf](#65--print和printf)
     - [6.6  awk编程](#66--awk编程)
 
-<!-- /TOC  -->
+<!-- /TOC -->
 
 # 1 Shell运行环境
 
@@ -737,7 +737,7 @@ $ tr [-ds] SET1 ...
 $ last | tr '[a-z]' '[A-Z]'
 ```
 
- ***范例2*** ：将 /etc/passwd 输出的讯息中，将冒号 (:) 删除。
+ ***范例2*** ：将 /etc/passwd 输出的讯息中，将冒号 : 删除。
 
 ```bash
 $ cat /etc/passwd | tr -d ':'
@@ -772,7 +772,6 @@ $ tar -cvf - /home/test | tar -xvf -
 
  *后面的这个 - 则是取用前一个指令的 stdout* ， 因此，我们就不需要使用 file 了！
 
-> 新建/home/test空文件夹并执行范例命令。
 
 # 4 正规表示法及grep使用
 
@@ -1278,7 +1277,7 @@ drink beer ?
 
 每一行之间都必须要以反斜杠 "\" 来进行新行的添加喔！所以，上面的例子中，我们可以发现在第一行的最后面就有 \ 存在。
 
-> 按照范例运行命令，查看结果是否与教程一致。
+
 
 ## 5.3  以行为单位的替换与显示
 ### 以行为单位的替换与显示
@@ -1306,7 +1305,7 @@ $ nl /etc/passwd | sed -n '5,7p'
 
 通过这个 sed 的以行为单位的显示功能， 就能够 *将某一个文件内的某些行号选择出来显示* 。
 
-> 按照范例运行命令，查看结果是否与教程一致。
+
 
 ## 5.4  数据的搜寻并显示
 ### 数据的搜寻并显示
@@ -1333,7 +1332,7 @@ $ nl /etc/passwd | sed -n '/root/p'
 1  root:x:0:0:root:/root:/bin/bash
 ```
 
-> 按照范例运行命令，查看结果是否与教程一致。
+
 
 ## 5.5  数据的搜寻并删除
 ### 数据的搜寻并删除
@@ -1349,7 +1348,7 @@ $ nl /etc/passwd | sed  '/root/d'
 
 可以看到输出中第一行的匹配root已经删除了。（ *但实际上源文件中并没有删除* ）
 
-> 按照范例运行命令，查看结果是否与教程一致。
+
 
 ## 5.6  数据的搜寻并执行命令
 ### 数据的搜寻并执行命令
@@ -1370,7 +1369,7 @@ nl /etc/passwd | sed -n '/bash/{s/bash/blueshell/;p;q}'
 
 最后的 q 是退出的意思。
 
-> 按照范例运行命令，查看结果是否与教程一致。
+
 
 ## 5.7  数据的搜寻并替换
 ### 数据的搜寻并替换
@@ -1408,7 +1407,7 @@ $ /sbin/ifconfig eth0 | grep 'inet addr' | sed 's/^.*addr://g' | sed 's/Bcast.*$
 192.168.1.100
 ```
 
-> 按照范例运行命令，查看结果是否与教程一致。
+
 
 ## 5.8  多点编辑
 ### 多点编辑
@@ -1423,7 +1422,6 @@ $ nl /etc/passwd | sed -e '3,$d' -e 's/bash/blueshell/'
 
 -e表示 *多点编辑* ，第一个编辑命令删除/etc/passwd第三行到末尾的数据，第二条命令搜索bash替换为blueshell。
 
-> 按照范例运行命令，查看结果是否与教程一致。
 
 ## 5.9  直接修改文件内容
 ### 直接修改文件内容
@@ -1446,7 +1444,6 @@ $ sed -i '$a # This is a test' regular_express.txt
 
  *sed 的“ -i ”选项可以直接修改文件内容* ，这功能非常有帮助！举例来说，如果你有一个 100 万行的文件，你要在第 100 行加某些文字，此时使用 vim 可能会疯掉！因为文件太大了！那怎办？就利用 sed 啊！通过 sed 直接修改/替换的功能，你甚至不需要使用 vim 去修订！
 
-> 按照范例运行命令，查看结果是否与教程一致。
 
 # 6  awk命令详解
 
@@ -1596,7 +1593,7 @@ $ awk -F: '/root/{print $7}' /etc/passwd
 
 这里指定了action{print $7}。
 
-> 按照范例运行命令，查看结果是否与教程一致。
+
 
 ## 6.4  awk内置变量
 ### awk内置变量
@@ -1635,7 +1632,7 @@ filename:/etc/passwd,linenumber:4,columns:7,linecontent:sys:x:3:3:sys:/dev:/bin/
 $ awk  -F ':'  '{printf("filename:%10s,linenumber:%s,columns:%s,linecontent:%s\n",FILENAME,NR,NF,$0)}' /etc/passwd
 ```
 
-> 按照范例运行命令，查看结果是否与教程一致。
+
 
 ## 6.5  print和printf
 ### print和printf
@@ -1753,5 +1750,3 @@ $ awk -F ':' 'BEGIN {count=0;} {name[count] = $1;count++;}; END{for (i = 0; i < 
 ```
 
 这里使用for循环遍历数组。
-
-> 按照范例运行命令，查看结果是否与教程一致。
