@@ -54,7 +54,7 @@
 
 ### 代码拆分
 
- *Webpack*  有两种组织模块依赖的方式，同步和异步。异步依赖作为分割点，形成一个新的快。在优化了依赖树后，每一个异步区块都作为一个文件被打包。
+ *Webpack*  有两种组织模块依赖的方式，同步和异步。异步依赖作为分割点，形成一个新的块。在优化了依赖树后，每一个异步区块都作为一个文件被打包。
 
 ### Loader
 
@@ -79,7 +79,7 @@
 
 可以使用命令 *pwd* 查看我们当前指定的目录。
 
-```javascript
+```bash
 $ pwd
 /home/hubwiz/web
 ```
@@ -88,7 +88,7 @@ $ pwd
 
 我们在指定的目录下，预置一个静态页面（index.html）和一张logo图片，以及style.css文件，在后面的课程知识点中编译之后，访问测试，将会看到你编译的效果。
 
-```javascript
+```bash
 $ ls
 index.html logo.png node_modules style.css scripts
 ```
@@ -156,7 +156,7 @@ $ npm install webpack@1.12.x --save-dev
 
 ```javascript
 // entry.js
-pico entry.js
+vim entry.js
 // 进入编辑器输入
 document.write('It works.');
 // 保存并退出
@@ -181,7 +181,7 @@ bundle.js  1.48 kB       0  [emitted]  main
 
 在点击 *访问测试* 将会打开一个新的窗口。它应该会显示 *It works.* 。
 
- *注意* ：下面的课程中创建编辑文件都是用 *pico 文件名* 。
+ *注意* ：下面的课程中创建编辑文件都是用 *vim 文件名* 。
 
 ## 2.3 两个文件
 ### 两个文件
@@ -190,7 +190,7 @@ bundle.js  1.48 kB       0  [emitted]  main
 
 ```javascript
 // content.js
-pico content.js
+vim content.js
 // 编辑内容
 module.exports = "It works from content.js.";
 ```
@@ -248,7 +248,7 @@ bundle.js  1.7 kB       0  [emitted]  main
 
 我们想要在应用中添加一个css文件。
 
-WebPACK只能处理JavaScript本身，所以我们需要 *css-loader* 去处理 CSS。我们还需要 *style-loader* 去应用这个样式在CSS文件。
+Webpack只能处理JavaScript本身，所以我们需要 *css-loader* 去处理 CSS。我们还需要 *style-loader* 去应用这个样式在CSS文件。
 
 安装 loader：
 

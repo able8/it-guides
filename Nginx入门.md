@@ -1,6 +1,6 @@
 # Nginx 入门
 
-<!-- TOC  -->
+<!-- TOC -->
 
 - [Nginx 入门](#nginx-入门)
 - [1 nginx概述与常用命令](#1-nginx概述与常用命令)
@@ -23,7 +23,7 @@
     - [2.13 负载均衡示例](#213-负载均衡示例)
     - [2.14 Rewritef示例](#214-rewritef示例)
 
-<!-- /TOC  -->
+<!-- /TOC -->
 
 # 1 nginx概述与常用命令
 
@@ -71,8 +71,6 @@ nginx -s reload
 nginx -t
 ```
 
-> 在编辑器中去练一练上面的命令吧！
-
 ## 1.3 nginx初体验
 ### nginx初体验
 
@@ -101,8 +99,6 @@ nginx -t
    }
 }
 ```
-
-> 下面就在我们的编辑环境中去试一试吧，首先启动nginx服务，然后点击【访问测试】，看看会出现什么呢？
 
 # 2 nginx配置
 
@@ -281,13 +277,13 @@ proxy_pass http://www.hubwiz.com;
 
 　　nginx的 *upstream* 目前支持4种方式的分配
 
-　　1)、 *轮询* （默认）  每个请求按时间顺序逐一分配到不同的后端服务器，如果后端服务器down掉，能自动剔除。
+　　1) *轮询* （默认）  每个请求按时间顺序逐一分配到不同的后端服务器，如果后端服务器down掉，能自动剔除。
 
-　　2)、 *weight*   指定轮询几率，weight和访问比率成正比，用于后端服务器性能不均的情况。
+　　2) weight 指定轮询几率，weight和访问比率成正比，用于后端服务器性能不均的情况。
 
-　　3)、_ip *hash*   每个请求按访问ip的hash结果分配，这样每个访客固定访问一个后端服务器，可以解决session的问题。
+　　3) _ip *hash*   每个请求按访问ip的hash结果分配，这样每个访客固定访问一个后端服务器，可以解决session的问题。
 
-　　4)、 *fair* （第三方）  按后端服务器的响应时间来分配请求，响应时间短的优先分配。
+　　4) *fair* （第三方）  按后端服务器的响应时间来分配请求，响应时间短的优先分配。
 
 ```bash
 upstream ixdba.net{
@@ -451,7 +447,6 @@ nginx -c /etc/nginx/Mynginx.conf
 
 <img src="images/54f031e2f8638715e4cb8e0c/1-2-9/mynginx.JPG" alt="">
 
-> 在编辑器中去练一练吧，把上面的转移地址改为百度试试。
 
 ## 2.10 反向代理示例
 ### 反向代理示例
@@ -462,23 +457,22 @@ nginx -c /etc/nginx/Mynginx.conf
 
 ```bash
 ## Basic reverse proxy server ##
-    upstream apachephp  {
-        server ip:8080; #Apache
-    }
-    ## Start www.nowamagic.net ##
-    server {
-        listen 80;
-        server_name  www.nowamagic.net;
-        access_log  logs/quancha.access.log  main;
-        error_log  logs/quancha.error.log;
-        root   html;
-        index  index.html index.htm index.php;
-
-        ## send request back to apache ##
-        location / {
-            proxy_pass  http://apachephp;
-                #……………………
+upstream apachephp  {
+    server ip:8080; #Apache
 }
+## Start www.nowamagic.net ##
+server {
+    listen 80;
+    server_name  www.nowamagic.net;
+    access_log  logs/quancha.access.log  main;
+    error_log  logs/quancha.error.log;
+    root   html;
+    index  index.html index.htm index.php;
+
+    ## send request back to apache ##
+    location / {
+        proxy_pass  http://apachephp;
+    }
 }
 ```
 
@@ -504,21 +498,22 @@ server {
         location = /50x.html {
             root   html;
         }
-      }
-server {
-        listen       80;
-        server_name  www.baidu.com;
-        #charset koi8-r;
-        #access_log  logs/host.access.log  main;
-        location / {
-                      root   /root;
-                      index index.php index.html index.htm;
+    }
 
-        }
-        error_page   500 502 503 504  /50x.html;
-        location = /50x.html {
-            root   html;
-        }
+server {
+    listen       80;
+    server_name  www.baidu.com;
+    #charset koi8-r;
+    #access_log  logs/host.access.log  main;
+    location / {
+                    root   /root;
+                    index index.php index.html index.htm;
+
+    }
+    error_page   500 502 503 504  /50x.html;
+    location = /50x.html {
+        root   html;
+    }
 }
 ```
 
@@ -530,20 +525,20 @@ nginx正向代理配置如下：
 ```bash
 server
 {
-  listen       8080;
-  server_name www.hubwiz.com;
-  index index.html index.htm index.php;
-  root  /home/wwwroot;
-     location / {
-         resolver        192.168.8.88;
-         proxy_pass      $scheme://$http_host$request_uri;
-         proxy_buffers   256 4k;
- }
-   access_log off;
+    listen       8080;
+    server_name www.hubwiz.com;
+    index index.html index.htm index.php;
+    root  /home/wwwroot;
+    location / {
+        resolver        192.168.8.88;
+        proxy_pass      $scheme://$http_host$request_uri;
+        proxy_buffers   256 4k;
+    }
+    access_log off;
 }
 ```
 
-　　以上配置的注意事项：
+以上配置的注意事项：
 
 1，不能有hostname。
 
@@ -551,24 +546,22 @@ server
 
 3，$http_host和$request_uri是nginx系统变量，保持原样即可。
 
-　　检测配置文件无误后，重启nginx，在浏览器中添加代理服务器的IP地址，就可以使用该Nginx正向代理了。
+检测配置文件无误后，重启nginx，在浏览器中添加代理服务器的IP地址，就可以使用该Nginx正向代理了。
 
 ## 2.13 负载均衡示例
 ### 负载均衡示例
 
 ```bash
 upstream backend{
-      #定义负载均衡设备的Ip及设备状态
-      server 127.0.0.1:9090 down;
-      server 192.168.1.12:8080 weight=2 ;
-      server 192.168.1.13:6060 max_fails=3 fail_timeout=30s;
-      server 1192.168.1.14:7070 backup;
+    #定义负载均衡设备的Ip及设备状态
+    server 127.0.0.1:9090 down;
+    server 192.168.1.12:8080 weight=2 ;
+    server 192.168.1.13:6060 max_fails=3 fail_timeout=30s;
+    server 1192.168.1.14:7070 backup;
 }
 server{
-    #…………………………
    location /{
         proxy_pass http://backend;
-        #…………………………
     }
 }
 ```
@@ -596,23 +589,21 @@ events {
     worker_connections  1024;
 }
 http {
-       server {
-            location /hubwiz {
-                      rewrite (.*) http://www.hubwiz.com;
-        }
-           location /baidu {
-                      rewrite (.*) http://www.baidu.com;
-        }
-        error_page   500 502 503 504  /50x.html;
-        location = /50x.html {
-            root   html;
-       }
-   }
+    server {
+        location /hubwiz {
+            rewrite (.*) http://www.hubwiz.com;
+    }
+        location /baidu {
+            rewrite (.*) http://www.baidu.com;
+    }
+    error_page   500 502 503 504  /50x.html;
+    location = /50x.html {
+        root   html;
+    }
+}
 }
 ```
 
-　　按照前面讲的内容以及上面的代码，修改我们自己的配置文件，保存，重新加载nginx，然后点击【访问测试】，在地址栏给出的地址后面分别输入“ */hubwiz* ”、“ */baidu* ”，是不是会和我的结果一样呢？
+按照前面讲的内容以及上面的代码，修改我们自己的配置文件，保存，重新加载nginx，然后点击【访问测试】，在地址栏给出的地址后面分别输入“ */hubwiz* ”、“ */baidu* ”，是不是会和我的结果一样呢？
 
 输入“/hubwiz”转到汇智网，输入“/baidu”是不是转到百度了呢？
-
-> 下面就在我们的编辑环境中去试一试吧。
