@@ -1,6 +1,8 @@
 
-<!-- TOC  -->
+# Node.js 入门
+<!-- TOC -->
 
+- [Node.js 入门](#nodejs-入门)
 - [1 Node.js 快速入门](#1-nodejs-快速入门)
     - [1.1 第一个示例程序 hello world](#11-第一个示例程序-hello-world)
     - [1.2 回调函数应用示例](#12-回调函数应用示例)
@@ -71,17 +73,16 @@
     - [8.5 通过fork函数运行Node.js模块](#85-通过fork函数运行nodejs模块)
     - [8.6 课程小结](#86-课程小结)
 
-<!-- /TOC  -->
+<!-- /TOC -->
 
 # 1 Node.js 快速入门
 
 ## 1.1 第一个示例程序 hello world
 ### 快速入门
 
-欢迎学习node,node使用javascript作为开发语言。没错，就是通常我们在前端页面里使用的javascript！下面我们一起来编写经典的hello world。
+欢迎学习node，node使用javascript作为开发语言。没错，就是通常我们在前端页面里使用的javascript！下面我们一起来编写经典的hello world。
 
-> 请在编辑器中输入以下内容,点击提交。
-`console.log('hello world');`
+> 请在编辑器中输入以下内容,点击提交。 `console.log('hello world');`
 
 ## 1.2 回调函数应用示例
 ### 回调函数
@@ -90,13 +91,11 @@
 
 ```javascript
 setTimeout(function(){
-console.log('callback is called');
+        console.log('callback is called');
 },2000);
 ```
 
 我们传给setTimeout函数传入了一个匿名函数和一个调用时间2000(毫秒)，运行程序后等待2秒，可以看到输出了"callback is called"。
-
-> 如果你要为setTimeout编写一个回调函数，1秒后调用输出"hello world"，该怎么写呢，试一试?
 
 ## 1.3 标准的回调函数中参数err、data的含义
 ### 标准回调函数
@@ -110,8 +109,6 @@ function(err,data){
 ```
 
 为了养成良好的编码习惯，在以后的课程示例或练习中，回调函数格式都将采用这样的格式。
-
-> 试一试，自己来编写一个回调函数吧！
 
 ## 1.4 通过require函数获取模块
 ### 获取模块
@@ -137,7 +134,6 @@ var result = os.platform(); //查看操作系统平台
 //os.release(); 查看操作系统版本
 //os.type();  查看操作系统名称
 //os.arch();  查看操作系统CPU架构
-
 console.log(result);
 ```
 
@@ -190,7 +186,7 @@ stdout是标准输出流，它是干什么的呢？请下看下面的示例：
 
 ```javascript
 console.log = function(d){
-process.stdout.write(d+'\n');
+    process.stdout.write(d+'\n');
 }
 ```
 
@@ -212,10 +208,10 @@ stdin是进程的输入流,我们可以通过注册事件的方式来获取输�
 
 ```javascript
 process.stdin.on('readable', function() {
-var chunk = process.stdin.read();
-if (chunk !== null) {
-process.stdout.write('data: ' + chunk);
-}
+    var chunk = process.stdin.read();
+    if (chunk !== null)  {
+        process.stdout.write('data: ' + chunk);
+    }
 });
 ```
 
@@ -245,7 +241,7 @@ process.exit(code);
 //参数code表示退出码
 process.on("exit",function(code){
 //进行一些清理工作
-console.log("I am tired...")
+    console.log("I am tired...")
 });
 var tick = Date.now();
 console.log(tick);
@@ -259,7 +255,7 @@ console.log(tick);
 ```javascript
 //参数err表示发生的异常
 process.on("uncaughtException",function(err){
-console.log(err);
+    console.log(err);
 });
 //故意抛出一个异常
 throw new Error("我故意的...");
@@ -272,9 +268,7 @@ throw new Error("我故意的...");
 
 ```javascript
 process.stdin.setEncoding(编码);
-
 process.stdout.setEncoding(编码);
-
 process.stderr.setEncoding(编码);
 ```
 
@@ -286,7 +280,7 @@ process的常用方法就讲到这里了，如果你想了解更多可以参考�
 # 3 Node.js 文件I/O
 
 ## 3.1 文件I/O fs模块简介
-### 文件I/O <small> fs模块的基本用法 </small>
+### fs模块的基本用法
 
 开发中我们经常会有文件I/O的需求，node.js中提供一个名为fs的模块来支持I/O操作，fs模块的文件I/O是对标准POSIX函数的简单封装。
 
@@ -301,8 +295,8 @@ process的常用方法就讲到这里了，如果你想了解更多可以参考�
 var fs= require("fs");
 
 fs.writeFile('test.txt', 'Hello Node', function (err) {
-if (err) throw err;
-console.log('Saved successfully'); //文件被保存
+    if (err) throw err;
+    console.log('Saved successfully'); //文件被保存
 });
 ```
 
@@ -319,10 +313,9 @@ writeFile函数虽然可以写入文件，但是如果文件已经存在，我�
 var fs= require("fs");
 
 fs.appendFile('test.txt', 'data to append', function (err) {
-if (err) throw err;
-
-//数据被添加到文件的尾部
-console.log('The "data to append" was appended to file!');
+    if (err) throw err;
+    //数据被添加到文件的尾部
+    console.log('The "data to append" was appended to file!');
 });
 ```
 
@@ -341,7 +334,7 @@ exists的回调函数只有一个参数，类型为布尔型，通过它来表�
 var fs= require("fs");
 
 fs.exists('/etc/passwd', function (exists) {
-console.log(exists ? "存在" : "不存在!");
+    console.log(exists ? "存在" : "不存在!");
 });
 ```
 
@@ -354,8 +347,8 @@ console.log(exists ? "存在" : "不存在!");
 var fs= require("fs");
 
 fs.rename(旧文件，新文件，回调函数(err){
-if (err) throw err;
-console.log('Successful modification,');
+    if (err) throw err;
+    console.log('Successful modification,');
 });
 ```
 
@@ -368,8 +361,8 @@ console.log('Successful modification,');
 var fs = require('fs');
 
 fs.rename(oldPath,newPath,function (err) {
-if (err) throw err;
-console.log('renamed complete');
+    if (err) throw err;
+    console.log('renamed complete');
 });
 ```
 
@@ -384,8 +377,8 @@ console.log('renamed complete');
 var fs = require('fs');
 
 fs.readFile(文件名, function (err, data) {
-if (err) throw err;
-console.log(data);
+    if (err) throw err;
+    console.log(data);
 });
 ```
 
@@ -404,8 +397,8 @@ console.log(data);
 var fs = require('fs');
 
 fs.unlink(文件, function(err) {
-if (err) throw err;
-console.log('successfully deleted');
+    if (err) throw err;
+    console.log('successfully deleted');
 });
 ```
 
@@ -437,8 +430,8 @@ fs.mkdir(路径，权限，回调函数(err));
 var fs = require('fs');
 
 fs.rmdir(path, function(err) {
-if (err) throw err;
-console.log('ok');
+    if (err) throw err;
+    console.log('ok');
 });
 ```
 
@@ -467,7 +460,7 @@ fs模块不但提供异步的文件操作，还提供相应的同步操作方法
 # 4 Node.js url处理
 
 ## 4.1 url模块处理简介
-### url处理 <small> url模块的基本用法 </small>
+### url模块的基本用法
 
 node.js为互联网而生，和url打交道是无法避免的了，url模块提供一些基础的url处理。
 
@@ -684,7 +677,6 @@ console.log(data1 + ' "and" ' + data2);
 
 ### extname函数的基本用法
 
-</div>
 
 extname函数返回路径中文件的扩展名(以最后一个'.'开始,返回'.'以及'.'以后的所有字符串,如没有'.',则返回空字符串). 如下示例：
 
@@ -809,7 +801,7 @@ http://nodejs.cn/api/querystring.html
 # 7 Node.js 实用工具
 
 ## 7.1 Node.js 实用工具简介
-### 实用工具<small> UTIL模块的基本介绍 </small>
+### util模块的基本介绍
 
 关于模块的如何访问前面已经讲述过了，相信大家已经完全掌握了，这节课我们来学习util模块。util模块呢，是一个Node.js核心模块，提供常用函数的集合，用于弥补核心JavaScript的一些功能过于精简的不足。并且还提供了一系列常用工具，用来对数据的输出和验证。
 
@@ -823,8 +815,6 @@ var util = require('util');
 var result = util.inspect(object);
 console.log(result);
 ```
-
-> 试一试录入任意字符对象，查看结果如何？
 
 ## 7.3 使用format函数将字符串格式化
 ##### format函数的基本用法
@@ -917,7 +907,7 @@ http://nodejs.cn/api/util.html
 # 8 Node.js 子进程
 
 ## 8.1 子进程child_process模块简介
-### 子进程<small> child_process模块的基本介绍 </small>
+### child_process模块的基本介绍
 
 众所周知node.js是基于单线程模型架构，这样的设计可以带来高效的CPU利用率，但是无法却利用多个核心的CPU，为了解决这个问题，node.js提供了child_process模块，通过多进程来实现对多核CPU的利用.
 child_process模块提供了四个创建子进程的函数，分别是spawn，exec，execFile和fork。
